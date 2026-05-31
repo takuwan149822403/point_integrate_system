@@ -3,6 +3,113 @@
   "fingerprint": "246bfd4d9bc46182",
   "loop_name": "apply_generated_changes_artifact_guard",
   "development_task_id": "T03",
-  "signature_counts": {},
-  "history": []
+  "signature_counts": {
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_404_route_behavior": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_auth_service_logic": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_create_app_and_client": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_display_definition_exists": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_login_screen_and_register_screen_render_assets": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_protected_design_routes_are_available_after_login": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_public_password_reset_and_error_routes": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_register_login_logout_session_flow": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_root_redirects_by_auth_state": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_static_assets_exist": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:tests/run_001/test_auth.py:from:__future__:annotations": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:tests/run_001/test_auth.py:from:point_integrate_system.services:AuthService": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T03",
+      "last_excerpt": "removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_root_redirects_by_auth_state` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-API-REMOVED tests/run_001/test_auth.py: public API `test_static_assets_exist` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:__future__:annotations` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it.\n- ARTIFACT-IMPORT-CONTRACT-REMOVED tests/run_001/test_auth.py: existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten / action=Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    }
+  },
+  "history": [
+    {
+      "attempt": 1,
+      "phase": "artifact_guard:T03",
+      "signatures": [
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_404_route_behavior",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_auth_service_logic",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_create_app_and_client",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_display_definition_exists",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_login_screen_and_register_screen_render_assets",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_protected_design_routes_are_available_after_login",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_public_password_reset_and_error_routes",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_register_login_logout_session_flow",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_root_redirects_by_auth_state",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-API-REMOVED:tests/run_001/test_auth.py:test_static_assets_exist",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:tests/run_001/test_auth.py:from:__future__:annotations",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:tests/run_001/test_auth.py:from:point_integrate_system.services:AuthService"
+      ],
+      "repeated": []
+    }
+  ],
+  "repeated": [],
+  "max_repeat_count": 1
 }

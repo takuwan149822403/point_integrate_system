@@ -1,0 +1,93 @@
+{
+  "schema_version": "source_test_triage_gate.v1",
+  "development_task_id": "T03",
+  "attempt": 1,
+  "failure_kind": "artifact_write_guard_failure",
+  "decision": "ambiguous",
+  "confidence": 0.58,
+  "auto_repair_allowed": false,
+  "reason_codes": [
+    "TEST_ONLY_FINDINGS_WITHOUT_STRONG_TEST_DEFECT_EVIDENCE"
+  ],
+  "evidence": {
+    "finding_paths": [
+      "tests/run_001/test_auth.py"
+    ],
+    "change_paths": [
+      "src/point_integrate_system/templates/base.html",
+      "src/point_integrate_system/templates/auth.html",
+      "src/point_integrate_system/templates/register.html",
+      "src/point_integrate_system/templates/menu.html",
+      "src/point_integrate_system/templates/error.html",
+      "src/point_integrate_system/static/css/style.css",
+      "src/point_integrate_system/static/js/main.js",
+      "reports/run_001/display_difinition.md",
+      "tests/run_001/test_auth.py"
+    ],
+    "fix_instruction_paths": [],
+    "source_paths": [
+      "src/point_integrate_system/templates/base.html",
+      "src/point_integrate_system/templates/auth.html",
+      "src/point_integrate_system/templates/register.html",
+      "src/point_integrate_system/templates/menu.html",
+      "src/point_integrate_system/templates/error.html",
+      "src/point_integrate_system/static/css/style.css",
+      "src/point_integrate_system/static/js/main.js"
+    ],
+    "test_paths": [
+      "tests/run_001/test_auth.py"
+    ],
+    "finding_source_paths": [],
+    "finding_test_paths": [
+      "tests/run_001/test_auth.py"
+    ],
+    "db_binding": {
+      "enabled": true,
+      "models_with_sqlalchemy_db": [
+        "src/point_integrate_system/models.py"
+      ],
+      "repositories_using_db": [
+        "src/point_integrate_system/repositories.py"
+      ],
+      "app_factory_files": [
+        "src/point_integrate_system/app.py"
+      ],
+      "app_factory_calls_db_init_app": true,
+      "app_factory_missing_db_init_app_files": [],
+      "config_files": [
+        "src/point_integrate_system/config.py"
+      ],
+      "config_has_sqlalchemy_settings": true,
+      "config_missing_sqlalchemy_settings_files": [],
+      "dependency_manifest_has_flask_sqlalchemy": true,
+      "dependency_manifest_missing_flask_sqlalchemy": false
+    },
+    "workflow_internal_marker": false,
+    "dependency_or_environment_marker": false
+  },
+  "repair_scope": {
+    "scope": "ambiguous_no_broad_repair",
+    "must_modify_any_of": [],
+    "forbidden_modify_globs": [
+      "src/**",
+      "tests/**"
+    ],
+    "allowed_ops": [],
+    "source_and_tests_same_response_allowed": false,
+    "next_step": "collect_additional_evidence_or_fail_fast_b票; do not send src/** and tests/** together to CodeWriter"
+  },
+  "strategy": {
+    "repeated_guard_signature_count": 1,
+    "repeated_items": [],
+    "strategy_shift_required": false,
+    "required_next_strategy": "normal_guard_repair",
+    "fail_fast_recommended": false,
+    "do_not_repeat_previous_strategy": false
+  },
+  "policy": {
+    "conservative_test_defect_bias": true,
+    "ambiguous_never_broad_repair": true,
+    "production_defect_forbids_tests": false,
+    "test_defect_requires_high_confidence": true
+  }
+}

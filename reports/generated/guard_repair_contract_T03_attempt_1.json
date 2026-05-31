@@ -1,0 +1,302 @@
+{
+  "schema_version": "guard_repair_contract.v46",
+  "created_at": "2026-05-31T10:09:33.422410+00:00",
+  "development_task_id": "T03",
+  "failure_kind": "artifact_write_guard_failure",
+  "repair_mode": "targeted_patch_operation",
+  "guard_driven_repair": true,
+  "blocked_findings": [
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_404_route_behavior` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_auth_service_logic` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_create_app_and_client` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_display_definition_exists` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_login_screen_and_register_screen_render_assets` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_protected_design_routes_are_available_after_login` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_public_password_reset_and_error_routes` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_register_login_logout_session_flow` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_root_redirects_by_auth_state` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "public API `test_static_assets_exist` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "existing import contract `from:__future__:annotations` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "tests/run_001/test_auth.py",
+      "title": "existing import contract `from:point_integrate_system.services:AuthService` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    }
+  ],
+  "target_files": [
+    "tests/run_001/test_auth.py",
+    "src/point_integrate_system/templates/base.html",
+    "src/point_integrate_system/templates/auth.html",
+    "src/point_integrate_system/templates/register.html",
+    "src/point_integrate_system/templates/menu.html",
+    "src/point_integrate_system/templates/error.html",
+    "src/point_integrate_system/static/css/style.css",
+    "src/point_integrate_system/static/js/main.js",
+    "reports/run_001/display_difinition.md"
+  ],
+  "read_only_preserve": {
+    "tests/run_001/test_auth.py": {
+      "preserve_all_existing_definitions": true,
+      "preserve_all_existing_imports": true,
+      "preserve_all_existing_api_io": true,
+      "preserve_symbols_from_guard": [
+        "test_404_route_behavior",
+        "test_auth_service_logic",
+        "test_create_app_and_client",
+        "test_display_definition_exists",
+        "test_login_screen_and_register_screen_render_assets",
+        "test_protected_design_routes_are_available_after_login",
+        "test_public_password_reset_and_error_routes",
+        "test_register_login_logout_session_flow",
+        "test_root_redirects_by_auth_state",
+        "test_static_assets_exist",
+        "from:__future__:annotations",
+        "from:point_integrate_system.services:AuthService"
+      ]
+    }
+  },
+  "preserve_symbols": {
+    "tests/run_001/test_auth.py": [
+      "test_404_route_behavior",
+      "test_auth_service_logic",
+      "test_create_app_and_client",
+      "test_display_definition_exists",
+      "test_login_screen_and_register_screen_render_assets",
+      "test_protected_design_routes_are_available_after_login",
+      "test_public_password_reset_and_error_routes",
+      "test_register_login_logout_session_flow",
+      "test_root_redirects_by_auth_state",
+      "test_static_assets_exist",
+      "from:__future__:annotations",
+      "from:point_integrate_system.services:AuthService"
+    ]
+  },
+  "allowed_patch_operations": [
+    "add_import_if_missing",
+    "insert_after",
+    "append_to_file",
+    "append_class",
+    "append_function",
+    "append_method",
+    "add_class_attribute",
+    "append_missing_export"
+  ],
+  "forbidden_operations": [
+    "rewrite_file",
+    "remove_class",
+    "remove_function",
+    "remove_method",
+    "remove_field",
+    "rename_symbol",
+    "change_signature",
+    "remove_import",
+    "rewrite_imports",
+    "change_api_io_contract",
+    "edit_tests_to_hide_source_failure"
+  ],
+  "freeform_source_files_allowed": false,
+  "source_file_output_policy": {
+    "existing_target_files_in_files_array": "forbidden",
+    "new_files_in_files_array": "allowed",
+    "existing_files_must_use": "patch_operations",
+    "fail_fast_if_only_existing_file_rewrites": true
+  },
+  "targeted_fix_examples": [
+    "Do not rewrite the target file. Existing target files must be modified through patch_operations only; preserve all existing definitions/imports/API and add only the missing lines/classes/methods."
+  ],
+  "[制限事項:GUARD_DRIVEN_REPAIR]": [
+    "Do not repeat the same freeform generation that was just rejected by the guard.",
+    "Do not rewrite existing files. Apply only the allowed targeted patch operations.",
+    "If the target path already exists, do not include it in files/tests; use patch_operations instead.",
+    "Every symbol/import/field mentioned in preserve_symbols or read_only_preserve is already tested and must remain intact."
+  ],
+  "[機能要件:GUARD_DRIVEN_REPAIR]": [
+    "Repair the root cause shown by the guard/failure evidence.",
+    "Return only files directly needed for the allowed patch operations.",
+    "Keep the resulting project overlay-safe for the existing workspace."
+  ],
+  "source_test_triage_gate": {
+    "schema_version": "source_test_triage_gate.v1",
+    "development_task_id": "T03",
+    "attempt": 1,
+    "failure_kind": "artifact_write_guard_failure",
+    "decision": "ambiguous",
+    "confidence": 0.58,
+    "auto_repair_allowed": false,
+    "reason_codes": [
+      "TEST_ONLY_FINDINGS_WITHOUT_STRONG_TEST_DEFECT_EVIDENCE"
+    ],
+    "evidence": {
+      "finding_paths": [
+        "tests/run_001/test_auth.py"
+      ],
+      "change_paths": [
+        "src/point_integrate_system/templates/base.html",
+        "src/point_integrate_system/templates/auth.html",
+        "src/point_integrate_system/templates/register.html",
+        "src/point_integrate_system/templates/menu.html",
+        "src/point_integrate_system/templates/error.html",
+        "src/point_integrate_system/static/css/style.css",
+        "src/point_integrate_system/static/js/main.js",
+        "reports/run_001/display_difinition.md",
+        "tests/run_001/test_auth.py"
+      ],
+      "fix_instruction_paths": [],
+      "source_paths": [
+        "src/point_integrate_system/templates/base.html",
+        "src/point_integrate_system/templates/auth.html",
+        "src/point_integrate_system/templates/register.html",
+        "src/point_integrate_system/templates/menu.html",
+        "src/point_integrate_system/templates/error.html",
+        "src/point_integrate_system/static/css/style.css",
+        "src/point_integrate_system/static/js/main.js"
+      ],
+      "test_paths": [
+        "tests/run_001/test_auth.py"
+      ],
+      "finding_source_paths": [],
+      "finding_test_paths": [
+        "tests/run_001/test_auth.py"
+      ],
+      "db_binding": {
+        "enabled": true,
+        "models_with_sqlalchemy_db": [
+          "src/point_integrate_system/models.py"
+        ],
+        "repositories_using_db": [
+          "src/point_integrate_system/repositories.py"
+        ],
+        "app_factory_files": [
+          "src/point_integrate_system/app.py"
+        ],
+        "app_factory_calls_db_init_app": true,
+        "app_factory_missing_db_init_app_files": [],
+        "config_files": [
+          "src/point_integrate_system/config.py"
+        ],
+        "config_has_sqlalchemy_settings": true,
+        "config_missing_sqlalchemy_settings_files": [],
+        "dependency_manifest_has_flask_sqlalchemy": true,
+        "dependency_manifest_missing_flask_sqlalchemy": false
+      },
+      "workflow_internal_marker": false,
+      "dependency_or_environment_marker": false
+    },
+    "repair_scope": {
+      "scope": "ambiguous_no_broad_repair",
+      "must_modify_any_of": [],
+      "forbidden_modify_globs": [
+        "src/**",
+        "tests/**"
+      ],
+      "allowed_ops": [],
+      "source_and_tests_same_response_allowed": false,
+      "next_step": "collect_additional_evidence_or_fail_fast_b票; do not send src/** and tests/** together to CodeWriter"
+    },
+    "strategy": {
+      "repeated_guard_signature_count": 1,
+      "repeated_items": [],
+      "strategy_shift_required": false,
+      "required_next_strategy": "normal_guard_repair",
+      "fail_fast_recommended": false,
+      "do_not_repeat_previous_strategy": false
+    },
+    "policy": {
+      "conservative_test_defect_bias": true,
+      "ambiguous_never_broad_repair": true,
+      "production_defect_forbids_tests": false,
+      "test_defect_requires_high_confidence": true
+    }
+  },
+  "repair_scope": {
+    "scope": "ambiguous_no_broad_repair",
+    "must_modify_any_of": [],
+    "forbidden_modify_globs": [
+      "src/**",
+      "tests/**"
+    ],
+    "allowed_ops": [],
+    "source_and_tests_same_response_allowed": false,
+    "next_step": "collect_additional_evidence_or_fail_fast_b票; do not send src/** and tests/** together to CodeWriter"
+  }
+}

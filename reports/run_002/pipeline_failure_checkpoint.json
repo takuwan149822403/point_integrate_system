@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-05-31T10:09:33.568513+00:00",
+  "request": {
+    "target_repository": "takuwan149822403/point_integrate_system",
+    "target_subdirectory": "",
+    "target_branch": "main",
+    "commit_branch": "ai/python-feature-002",
+    "resume_from_task_id": "T03",
+    "reference_branches": "main",
+    "task": "issue#01を参照",
+    "task_issue_number": "1",
+    "project_mode": "python_flask",
+    "framework": "flask",
+    "database": "auto",
+    "frontend_stack": "jquery",
+    "test_level": "smoke",
+    "auto_fix_loop": "true",
+    "auto_commit": "true",
+    "create_pull_request": "false",
+    "output_language": "ja",
+    "constraints": {
+      "framework": "flask",
+      "database": "auto",
+      "frontend_stack": "jquery",
+      "reference_branches": "main",
+      "task_issue_number": "1",
+      "target_subdirectory": ""
+    },
+    "metadata": {
+      "framework": "flask",
+      "database": "auto",
+      "frontend_stack": "jquery",
+      "target_repository": "takuwan149822403/point_integrate_system",
+      "target_branch": "main",
+      "commit_branch": "ai/python-feature-002",
+      "resume_from_task_id": "T03",
+      "target_subdirectory": "",
+      "test_level": "smoke",
+      "project_mode": "python_flask",
+      "output_language": "ja",
+      "aideveloper_model": "gpt-5.5",
+      "openai_model": "gpt-5.5"
+    }
+  },
+  "staged_summary": {
+    "status": "failure",
+    "project_mode": "python_flask",
+    "generation_mode": "staged",
+    "started_at": "2026-05-31T10:06:39.722152+00:00",
+    "resume_from_task_id": "T03",
+    "pre_skipped_tasks": [
+      {
+        "task_id": "T01",
+        "title": "Flask基盤・起動構成",
+        "category": "scaffold"
+      },
+      {
+        "task_id": "T02",
+        "title": "永続化モデル・Repository",
+        "category": "persistence"
+      }
+    ],
+    "completed_tasks": [],
+    "task_results": [
+      {
+        "task_id": "T03",
+        "title": "認証・セッション・ユーザー入口",
+        "category": "auth",
+        "is_core_task": true,
+        "started_at": "2026-05-31T10:06:39.722363+00:00",
+        "code_writer": {},
+        "bootstrap": {},
+        "contract_gate": {},
+        "tests": {},
+        "finished_at": "2026-05-31T10:09:33.517080+00:00",
+        "status": "failure",
+        "error": "command failed rc=1: /opt/hostedtoolcache/Python/3.11.15/x64/bin/python scripts/apply_generated_changes.py --request plans/generated/request.json --workspace workspace/target_repo --repo-context plans/generated/repo_context.json --development-plan plans/generated/development_plan.json --development-task-id T03 --summary-output reports/generated/code_writer_summary_T03.json --empty-retry 1 --max-empty-response-retries 8 --empty-response-timeout-seconds 900",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/AIDeveloper/AIDeveloper/scripts/run_staged_development.py\", line 1212, in main\n    rc = _run(\n         ^^^^^\n  File \"/home/runner/work/AIDeveloper/AIDeveloper/scripts/run_staged_development.py\", line 74, in _run\n    raise RuntimeError(f\"command failed rc={completed.returncode}: {' '.join(cmd)}\")\nRuntimeError: command failed rc=1: /opt/hostedtoolcache/Python/3.11.15/x64/bin/python scripts/apply_generated_changes.py --request plans/generated/request.json --workspace workspace/target_repo --repo-context plans/generated/repo_context.json --development-plan plans/generated/development_plan.json --development-task-id T03 --summary-output reports/generated/code_writer_summary_T03.json --empty-retry 1 --max-empty-response-retries 8 --empty-response-timeout-seconds 900\n"
+      }
+    ],
+    "policy": {
+      "core_task_categories_stop_on_failure": [
+        "auth",
+        "config",
+        "database",
+        "db",
+        "domain",
+        "integration",
+        "model",
+        "repository",
+        "scaffold"
+      ],
+      "web_contract_gate": true
+    },
+    "generated_at": "2026-05-31T10:09:33.517705+00:00",
+    "error": "command failed rc=1: /opt/hostedtoolcache/Python/3.11.15/x64/bin/python scripts/apply_generated_changes.py --request plans/generated/request.json --workspace workspace/target_repo --repo-context plans/generated/repo_context.json --development-plan plans/generated/development_plan.json --development-task-id T03 --summary-output reports/generated/code_writer_summary_T03.json --empty-retry 1 --max-empty-response-retries 8 --empty-response-timeout-seconds 900",
+    "failed_task": {
+      "task_id": "T03",
+      "title": "認証・セッション・ユーザー入口",
+      "category": "auth"
+    },
+    "next_resume_task_id": "T03",
+    "skipped_tasks": [
+      {
+        "task_id": "T03",
+        "title": "認証・セッション・ユーザー入口",
+        "category": "auth"
+      },
+      {
+        "task_id": "T04",
+        "title": "主要業務ワークフロー",
+        "category": "domain"
+      },
+      {
+        "task_id": "T05",
+        "title": "通知・外部通信境界",
+        "category": "communication"
+      },
+      {
+        "task_id": "T06",
+        "title": "グループ・共有状態管理",
+        "category": "grouping"
+      },
+      {
+        "task_id": "T07",
+        "title": "画面・静的ファイル・画面仕様書",
+        "category": "ui"
+      },
+      {
+        "task_id": "T08",
+        "title": "JSON/XMLインターフェース",
+        "category": "interface"
+      },
+      {
+        "task_id": "T09",
+        "title": "全体結合・README・最終補強",
+        "category": "integration"
+      }
+    ]
+  },
+  "next_resume_task_id": "T03"
+}
