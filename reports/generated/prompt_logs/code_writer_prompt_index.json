@@ -1,0 +1,101 @@
+{
+  "schema_version": "prompt_log_index.v1",
+  "log_file": "reports/generated/prompt_logs/code_writer_prompts.jsonl",
+  "record_count": 8,
+  "latest_records": [
+    {
+      "logged_at": "2026-05-31T04:55:09.816348+00:00",
+      "development_task_id": "T01",
+      "subtask_id": "",
+      "phase": "initial_generation",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 102448,
+      "prompt_sha256": "c77cacd79e3c8dd3059755a8adc7fd441e6b4f03bab528f04e1ecfa65327620f"
+    },
+    {
+      "logged_at": "2026-05-31T04:56:02.327587+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "initial_generation",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 144041,
+      "prompt_sha256": "9178e85fe32cd4eebf9ce6df29a97639b3b181ce637f379e0aad18c5bf022eec"
+    },
+    {
+      "logged_at": "2026-05-31T04:57:31.852940+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "flask_sqlalchemy_binding_failure",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 127112,
+      "prompt_sha256": "81b4883430c04a55a7a1b76391132f9627f3b68207a73ec5e80659c8e04c13e3"
+    },
+    {
+      "logged_at": "2026-05-31T04:58:20.869638+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "flask_sqlalchemy_binding_failure",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 100788,
+      "prompt_sha256": "142684d022d7545f41822866a41039545f0a0c58a07897b955633e09c2a6d3ce"
+    },
+    {
+      "logged_at": "2026-05-31T05:00:16.608970+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "flask_sqlalchemy_binding_failure",
+      "repair_mode": "targeted_patch_operation",
+      "failure_kind": "artifact_write_guard_failure",
+      "model": "gpt-5.5",
+      "prompt_chars": 101200,
+      "prompt_sha256": "d1581acba66e8f6c131e1057cd7f5b750e261e09f430e90ac818b47cf94bf9c4"
+    },
+    {
+      "logged_at": "2026-05-31T05:00:52.554468+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "flask_sqlalchemy_binding_failure",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 127112,
+      "prompt_sha256": "cfd23c804f747d4adf688df1593c2fd0e698c1c332f60fe078f7c27f334cde40"
+    },
+    {
+      "logged_at": "2026-05-31T05:01:26.318102+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "flask_sqlalchemy_binding_failure",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 100788,
+      "prompt_sha256": "c439a968d6c0105f86e380d56949cb7df3be61724929bd9b8eb064ffe2d3fc52"
+    },
+    {
+      "logged_at": "2026-05-31T05:03:03.349770+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "flask_sqlalchemy_binding_failure",
+      "repair_mode": "targeted_patch_operation",
+      "failure_kind": "artifact_write_guard_failure",
+      "model": "gpt-5.5",
+      "prompt_chars": 101200,
+      "prompt_sha256": "4f86cb0007c3ac298e5a1899fa2e14108bad3c6a34c913418d0eb50e4d548a8d"
+    }
+  ],
+  "settings": {
+    "max_bytes": 10485760,
+    "max_records": 50,
+    "include_full_text": true,
+    "redact_secrets": true
+  }
+}

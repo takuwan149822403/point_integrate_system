@@ -1,0 +1,271 @@
+{
+  "status": "success",
+  "development_task_id": "T01",
+  "project_mode": "python_flask",
+  "attempts": [
+    {
+      "attempt": 1,
+      "file_count": 10,
+      "report_only_fallback": false,
+      "remaining_timeout_seconds": 848,
+      "web_contract_write_policy": {
+        "enabled": false
+      },
+      "forced_additive_filter": {
+        "enabled": false,
+        "dropped_existing_rewrites": [],
+        "kept_files": []
+      },
+      "patch_operation_count": 0,
+      "artifact_write_guard": {
+        "status": "success",
+        "enabled": false,
+        "finding_count": 0
+      },
+      "generated_python_safety": {
+        "status": "success",
+        "python_file_count": 7,
+        "blocking_count": 0,
+        "warning_count": 0
+      },
+      "generated_contract_safety": {
+        "status": "success",
+        "blocking_count": 0,
+        "warning_count": 0
+      },
+      "error": ""
+    }
+  ],
+  "empty_like_count": 0,
+  "written_count": 10,
+  "written_files": [
+    "app.py",
+    "src/app.py",
+    "src/point_integrate_system/__init__.py",
+    "src/point_integrate_system/app.py",
+    "src/point_integrate_system/config.py",
+    "requirements.txt",
+    "pyproject.toml",
+    "README.md",
+    "tests/run_001/conftest.py",
+    "tests/run_001/test_app_factory.py"
+  ],
+  "report_context_manifest": {
+    "schema_version": "report_context_manifest.v1",
+    "reports_dir": "reports",
+    "development_task_id": "T01",
+    "current_run": "",
+    "previous_run": "",
+    "policy": {
+      "keep_report_history_on_disk": true,
+      "prompt_scope": "previous_run_and_current_task_only",
+      "do_not_embed_all_reports_run_history": true,
+      "dedupe_by_sha256": true,
+      "large_report_files_are_manifest_only": true,
+      "report_file_size_limit": 160000
+    },
+    "allowed_report_files": {
+      "code_writer": [],
+      "development_manager": [],
+      "review": [],
+      "test": []
+    },
+    "all_allowed_report_paths": [],
+    "excluded_report_globs": []
+  },
+  "web_contract_write_policy": {
+    "enabled": false
+  },
+  "forced_additive_filter": {
+    "enabled": false,
+    "dropped_existing_rewrites": [],
+    "kept_files": []
+  },
+  "patch_operation_count": 0,
+  "artifact_write_guard": {
+    "status": "success",
+    "schema_version": "artifact_write_guard.v45",
+    "enabled": false,
+    "subtask_id": "",
+    "classification": "",
+    "checked_files": [],
+    "allowed_writes": [],
+    "read_only_files": [],
+    "protected_exports": {},
+    "findings": []
+  },
+  "generated_python_safety": {
+    "schema_version": "generated_python_safety.v37",
+    "status": "success",
+    "python_file_count": 7,
+    "file_count": 7,
+    "finding_count": 0,
+    "blocking_count": 0,
+    "warning_count": 0,
+    "blocking_findings": [],
+    "warnings": [],
+    "finding_clusters": [],
+    "finding_rule_counts": {},
+    "missing_symbols_by_file": {},
+    "dependency_repair_recommended": false,
+    "files": [
+      {
+        "path": "app.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/app.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/__init__.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/app.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/config.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "tests/run_001/conftest.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "tests/run_001/test_app_factory.py",
+        "status": "success",
+        "findings": []
+      }
+    ]
+  },
+  "generated_contract_safety": {
+    "status": "success",
+    "schema_version": "generated_contract_safety.v39",
+    "development_task_id": "T01",
+    "package": "point_integrate_system",
+    "python_overlay_file_count": 7,
+    "blocking_count": 0,
+    "warning_count": 0,
+    "findings": [],
+    "finding_clusters": [],
+    "finding_rule_counts": {},
+    "missing_symbols_by_file": {},
+    "missing_exports_by_target": {},
+    "dependency_repair_recommended": false,
+    "workspace_overlay": {
+      "enabled": true,
+      "workspace_python_file_count": 0,
+      "generated_overlay_python_file_count": 7,
+      "virtual_package_python_file_count": 3,
+      "generated_overlay_files": [
+        "app.py",
+        "src/app.py",
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py",
+        "tests/run_001/conftest.py",
+        "tests/run_001/test_app_factory.py"
+      ],
+      "scope_source_file_count": 3,
+      "scope_reference_file_count": 3
+    },
+    "contract_safety_scope": {
+      "enabled": false,
+      "classification": "",
+      "subtask_id": "",
+      "source_files": [
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py"
+      ],
+      "reference_files": [
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py"
+      ],
+      "required_exports": {
+        "src/point_integrate_system/config.py": [
+          "Config",
+          "DevelopmentConfig",
+          "ProductionConfig",
+          "TestingConfig",
+          "config_by_name",
+          "get_config"
+        ],
+        "src/point_integrate_system/errors.py": [
+          "AppError",
+          "AuthError",
+          "ConflictError",
+          "DomainServiceError",
+          "LoginError",
+          "PermissionError",
+          "PersistenceError",
+          "RegistrationError"
+        ],
+        "src/point_integrate_system/app.py": [
+          "create_app"
+        ],
+        "src/point_integrate_system/services.py": [
+          "AuthService",
+          "DomainService"
+        ],
+        "src/point_integrate_system/models.py": [
+          "Coupon",
+          "Notification",
+          "Order",
+          "Payment",
+          "PointAccount",
+          "PointTransaction",
+          "Rank",
+          "User",
+          "UserGroup",
+          "db"
+        ],
+        "src/point_integrate_system/repositories.py": [
+          "CouponRepository",
+          "NotificationRepository",
+          "OrderRepository",
+          "PaymentRepository",
+          "PointAccountRepository",
+          "PointTransactionRepository",
+          "RankRepository",
+          "RepositoryError",
+          "UserGroupRepository",
+          "UserRepository"
+        ]
+      },
+      "planned_later_exports": {},
+      "enforce_plan_exports": true,
+      "enforce_model_kwargs": true,
+      "enforce_dependency_direction": true,
+      "enforce_persistence_contract": true,
+      "reason": "full_package_contract_safety"
+    },
+    "flask_sqlalchemy_contract_checked": false,
+    "route_service_contract_checked": false
+  },
+  "internal_subtask_contract_summary": "",
+  "internal_subtask_contract_summary_exists": false,
+  "internal_subtask_contract_summary_manifest": "",
+  "context_slimming": {
+    "enabled": true,
+    "development_plan_sent_as_slice": true,
+    "repo_context_reports_limited_by_manifest": true
+  },
+  "summary": "T01の責務に限定し、template/static/DB/authへ依存しないFlask最小起動構成を作成しました。GET / は直接200のプレーンテキストを返します。",
+  "notes": [
+    "T01_MINIMAL_SCAFFOLD契約を優先し、templates/static/display_difinition.mdは生成していません。",
+    "T01ではDB、認証、Repository、Service、業務routeを実装していません。",
+    "起動エントリポイントはタスク許可ファイルに合わせてrootのapp.pyとsrc/app.pyに実装しました。",
+    "LLM writer used: gpt-5.5",
+    "Prompt used: code_writer_flask"
+  ]
+}

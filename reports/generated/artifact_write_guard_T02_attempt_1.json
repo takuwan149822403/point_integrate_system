@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "schema_version": "artifact_write_guard.v45",
+  "enabled": true,
+  "subtask_id": "",
+  "classification": "",
+  "checked_files": [
+    "src/point_integrate_system/models.py",
+    "src/point_integrate_system/repositories.py",
+    "tests/run_001/test_models.py",
+    "tests/run_001/test_repositories.py"
+  ],
+  "allowed_writes": [],
+  "read_only_files": [],
+  "protected_exports": {},
+  "findings": []
+}

@@ -1,0 +1,342 @@
+{
+  "schema_version": "repair_loop_state.v2",
+  "fingerprint": "9e9523e2d039fb9d",
+  "loop_name": "task_test",
+  "development_task_id": "T02",
+  "signature_counts": {
+    "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances": {
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    }
+  },
+  "history": [
+    {
+      "attempt": 1,
+      "phase": "task_test:T02",
+      "signatures": [
+        "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances"
+      ],
+      "repeated": []
+    },
+    {
+      "attempt": 2,
+      "phase": "task_test:T02",
+      "signatures": [
+        "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances"
+      ],
+      "repeated": [
+        {
+          "signature": "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 2,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        }
+      ]
+    },
+    {
+      "attempt": 3,
+      "phase": "task_test:T02",
+      "signatures": [
+        "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance",
+        "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances"
+      ],
+      "repeated": [
+        {
+          "signature": "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        },
+        {
+          "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances",
+          "count": 3,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T02",
+          "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+        }
+      ]
+    }
+  ],
+  "repeated": [
+    {
+      "signature": "exception:RuntimeError:The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instanc",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instan",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instance",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    },
+    {
+      "signature": "pytest_node:ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances",
+      "count": 3,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T02",
+      "last_excerpt": "lask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\nERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?\n"
+    }
+  ],
+  "max_repeat_count": 3
+}

@@ -1,0 +1,107 @@
+{
+  "status": "success",
+  "schema_version": "generated_contract_safety.v39",
+  "development_task_id": "T02",
+  "package": "point_integrate_system",
+  "python_overlay_file_count": 4,
+  "blocking_count": 0,
+  "warning_count": 0,
+  "findings": [],
+  "finding_clusters": [],
+  "finding_rule_counts": {},
+  "missing_symbols_by_file": {},
+  "missing_exports_by_target": {},
+  "dependency_repair_recommended": false,
+  "workspace_overlay": {
+    "enabled": true,
+    "workspace_python_file_count": 3,
+    "generated_overlay_python_file_count": 4,
+    "virtual_package_python_file_count": 5,
+    "generated_overlay_files": [
+      "src/point_integrate_system/models.py",
+      "src/point_integrate_system/repositories.py",
+      "tests/run_001/test_models.py",
+      "tests/run_001/test_repositories.py"
+    ],
+    "scope_source_file_count": 5,
+    "scope_reference_file_count": 5
+  },
+  "contract_safety_scope": {
+    "enabled": false,
+    "classification": "",
+    "subtask_id": "",
+    "source_files": [
+      "src/point_integrate_system/__init__.py",
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/config.py",
+      "src/point_integrate_system/models.py",
+      "src/point_integrate_system/repositories.py"
+    ],
+    "reference_files": [
+      "src/point_integrate_system/__init__.py",
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/config.py",
+      "src/point_integrate_system/models.py",
+      "src/point_integrate_system/repositories.py"
+    ],
+    "required_exports": {
+      "src/point_integrate_system/config.py": [
+        "Config",
+        "DevelopmentConfig",
+        "ProductionConfig",
+        "TestingConfig",
+        "config_by_name",
+        "get_config"
+      ],
+      "src/point_integrate_system/errors.py": [
+        "AppError",
+        "AuthError",
+        "ConflictError",
+        "DomainServiceError",
+        "LoginError",
+        "PermissionError",
+        "PersistenceError",
+        "RegistrationError"
+      ],
+      "src/point_integrate_system/app.py": [
+        "create_app"
+      ],
+      "src/point_integrate_system/services.py": [
+        "AuthService",
+        "DomainService"
+      ],
+      "src/point_integrate_system/models.py": [
+        "Coupon",
+        "Notification",
+        "Order",
+        "Payment",
+        "PointAccount",
+        "PointTransaction",
+        "Rank",
+        "User",
+        "UserGroup",
+        "db"
+      ],
+      "src/point_integrate_system/repositories.py": [
+        "CouponRepository",
+        "NotificationRepository",
+        "OrderRepository",
+        "PaymentRepository",
+        "PointAccountRepository",
+        "PointTransactionRepository",
+        "RankRepository",
+        "RepositoryError",
+        "UserGroupRepository",
+        "UserRepository"
+      ]
+    },
+    "planned_later_exports": {},
+    "enforce_plan_exports": true,
+    "enforce_model_kwargs": true,
+    "enforce_dependency_direction": true,
+    "enforce_persistence_contract": true,
+    "reason": "full_package_contract_safety"
+  },
+  "flask_sqlalchemy_contract_checked": false,
+  "route_service_contract_checked": false
+}

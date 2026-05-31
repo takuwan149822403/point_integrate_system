@@ -1,0 +1,209 @@
+{
+  "status": "failure",
+  "project_mode": "python_flask",
+  "generation_mode": "staged",
+  "started_at": "2026-05-31T04:55:09.122893+00:00",
+  "resume_from_task_id": "T01",
+  "pre_skipped_tasks": [],
+  "completed_tasks": [
+    {
+      "task_id": "T01",
+      "title": "Flask基盤・起動構成",
+      "category": "scaffold"
+    }
+  ],
+  "task_results": [
+    {
+      "task_id": "T01",
+      "title": "Flask基盤・起動構成",
+      "category": "scaffold",
+      "is_core_task": true,
+      "started_at": "2026-05-31T04:55:09.123119+00:00",
+      "code_writer": {
+        "status": "pass",
+        "returncode": 0,
+        "summary_output": "reports/generated/code_writer_summary_T01.json"
+      },
+      "bootstrap": {
+        "status": "pass",
+        "returncode": 0,
+        "summary_output": "reports/generated/web_bootstrap_loop_summary_T01.json"
+      },
+      "contract_gate": {
+        "status": "pass",
+        "returncode": 0,
+        "summary_output": "reports/generated/web_contract_gate_summary_T01.json"
+      },
+      "tests": {
+        "status": "success",
+        "returncode": 0,
+        "summary_output": "reports/generated/task_test_remediation_summary_T01.json",
+        "details": {
+          "status": "success",
+          "development_task_id": "T01",
+          "task_title": "Flask基盤・起動構成",
+          "test_files": [
+            "tests/run_001/test_app_factory.py"
+          ],
+          "source_hash": "d6117da6595b9b54a2e29ea8c06a5ad988fb3fdb2ec742e6fc6aefe435e54586",
+          "repair_fingerprint": "dec40296bd4e014f",
+          "repair_state_action": "initialized",
+          "attempts": [
+            {
+              "attempt": 1,
+              "pytest_returncode": 0,
+              "pytest_log": "logs/pytest-task-T01-attempt-1.log",
+              "status": "pass",
+              "classification": {
+                "auth_like_task": false,
+                "observed_routes": [],
+                "failed_nodes": [],
+                "route_not_registered_or_not_handled": false,
+                "flask_endpoint_namespace_drift_failure": false,
+                "missing_url_for_endpoints": [],
+                "report_artifact_only_failure": false,
+                "flask_app_identity_failure": false,
+                "flask_behavior_contract_failure": false,
+                "t01_minimal_scaffold_failure": false,
+                "t01_template_dependency_failure": false,
+                "t01_root_status_drift_failure": false,
+                "flask_root_redirect_policy_failure": false,
+                "flask_form_error_status_policy_failure": false,
+                "flask_static_reference_contract_failure": false,
+                "flask_api_misuse_failure": false,
+                "flask_route_500_failure": false,
+                "auth_session_assertion_failure": false,
+                "auth_error_body_assertion_failure": false,
+                "business_route_scope_drift_failure": false,
+                "service_serialization_failure": false,
+                "persistence_contract_failure": false,
+                "flask_sqlalchemy_binding_failure": false,
+                "previous_stage_regression": false,
+                "previous_stage_regression_type": "",
+                "session_validity_failure": false,
+                "custom_error_page_failure": false,
+                "app_factory_config_mapping_error": false,
+                "classifier_parser_error": ""
+              },
+              "triage": {},
+              "failure_signatures": [],
+              "repeated_failure_state": {
+                "max_repeat_count": 0,
+                "repeated": [],
+                "state_file": "workspace/target_repo/.aideveloper/repair_loop_state_T01.json"
+              },
+              "fix": {}
+            }
+          ],
+          "policy": {
+            "scope": "development_task",
+            "skip_if_source_hash_unchanged_and_previous_passed": true,
+            "requested_max_attempts": 3,
+            "effective_max_attempts": 6,
+            "fix_severity_threshold": "high",
+            "quality_plan": "plans/generated/quality_plan.json",
+            "repeat_analysis_threshold": 2,
+            "repeat_stop_threshold": 3,
+            "generic_failure_classifier": true
+          },
+          "passed_attempt": 1
+        }
+      },
+      "artifact_lock_output": "reports/generated/stage_artifact_lock_T01.json",
+      "finished_at": "2026-05-31T04:56:01.824727+00:00",
+      "status": "success",
+      "success_checkpoint_output": "reports/generated/staged_success_checkpoint_T01.json"
+    },
+    {
+      "task_id": "T02",
+      "title": "永続化モデル・Repository",
+      "category": "persistence",
+      "is_core_task": true,
+      "started_at": "2026-05-31T04:56:01.825528+00:00",
+      "code_writer": {
+        "status": "pass",
+        "returncode": 0,
+        "summary_output": "reports/generated/code_writer_summary_T02.json"
+      },
+      "bootstrap": {
+        "status": "pass",
+        "returncode": 0,
+        "summary_output": "reports/generated/web_bootstrap_loop_summary_T02.json"
+      },
+      "contract_gate": {
+        "status": "pass",
+        "returncode": 0,
+        "summary_output": "reports/generated/web_contract_gate_summary_T02.json"
+      },
+      "tests": {},
+      "finished_at": "2026-05-31T05:04:41.127274+00:00",
+      "status": "failure",
+      "error": "task test remediation failed for T02",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/AIDeveloper/AIDeveloper/scripts/run_staged_development.py\", line 1262, in main\n    task_summary[\"tests\"] = _run_task_test_remediation(\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/AIDeveloper/AIDeveloper/scripts/run_staged_development.py\", line 946, in _run_task_test_remediation\n    raise RuntimeError(f\"task test remediation failed for {task_id}\")\nRuntimeError: task test remediation failed for T02\n"
+    }
+  ],
+  "policy": {
+    "core_task_categories_stop_on_failure": [
+      "auth",
+      "config",
+      "database",
+      "db",
+      "domain",
+      "integration",
+      "model",
+      "repository",
+      "scaffold"
+    ],
+    "web_contract_gate": true
+  },
+  "generated_at": "2026-05-31T05:04:41.128110+00:00",
+  "error": "task test remediation failed for T02",
+  "failed_task": {
+    "task_id": "T02",
+    "title": "永続化モデル・Repository",
+    "category": "persistence"
+  },
+  "next_resume_task_id": "T02",
+  "skipped_tasks": [
+    {
+      "task_id": "T02",
+      "title": "永続化モデル・Repository",
+      "category": "persistence"
+    },
+    {
+      "task_id": "T03",
+      "title": "認証・セッション・ユーザー入口",
+      "category": "auth"
+    },
+    {
+      "task_id": "T04",
+      "title": "主要業務ワークフロー",
+      "category": "domain"
+    },
+    {
+      "task_id": "T05",
+      "title": "通知・外部通信境界",
+      "category": "communication"
+    },
+    {
+      "task_id": "T06",
+      "title": "グループ・共有状態管理",
+      "category": "grouping"
+    },
+    {
+      "task_id": "T07",
+      "title": "画面・静的ファイル・画面仕様書",
+      "category": "ui"
+    },
+    {
+      "task_id": "T08",
+      "title": "JSON/XMLインターフェース",
+      "category": "interface"
+    },
+    {
+      "task_id": "T09",
+      "title": "全体結合・README・最終補強",
+      "category": "integration"
+    }
+  ]
+}

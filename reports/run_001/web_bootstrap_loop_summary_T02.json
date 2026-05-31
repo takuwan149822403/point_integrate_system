@@ -1,0 +1,28 @@
+{
+  "status": "deferred",
+  "project_mode": "python_flask",
+  "development_task_id": "T02",
+  "task_category": "persistence",
+  "scope": "scoped",
+  "defer_static_missing_until_ui": true,
+  "attempts": [
+    {
+      "attempt": 1,
+      "verify_returncode": 1,
+      "verify_output": "reports/generated/web_app_verify_attempt_1_T02.json",
+      "verify": {
+        "status": "failure",
+        "classification": "static_missing",
+        "summary": "Flask app imports and create_app() works, but templates/static artifacts are incomplete.",
+        "package": "point_integrate_system",
+        "missing_import": "",
+        "notes": [
+          "Missing Flask templates/static files: src/point_integrate_system/templates, src/point_integrate_system/static/css, src/point_integrate_system/static/js, src/point_integrate_system/templates/*.html, src/point_integrate_system/static/css/*.css, src/point_integrate_system/static/js/*.js"
+        ]
+      },
+      "fix": {}
+    }
+  ],
+  "classification": "static_missing_deferred",
+  "reason": "static/template artifacts are deferred until UI/integration task. Import and create_app were already successful."
+}

@@ -1,0 +1,420 @@
+EEEEEEEE                                                                 [100%]
+==================================== ERRORS ====================================
+______________ ERROR at setup of test_db_extension_is_initialized ______________
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: テスト用FlaskアプリでDBスキーマを作成・破棄できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_models.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+___________ ERROR at setup of test_user_model_can_be_saved_and_found ___________
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: テスト用FlaskアプリでDBスキーマを作成・破棄できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_models.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+______ ERROR at setup of test_major_models_can_be_created_saved_and_found ______
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: テスト用FlaskアプリでDBスキーマを作成・破棄できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_models.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+_______ ERROR at setup of test_forbidden_alias_keywords_are_not_accepted _______
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: テスト用FlaskアプリでDBスキーマを作成・破棄できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_models.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+_______ ERROR at setup of test_user_repository_create_find_update_delete _______
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: Repository試験用のDBを初期化できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_repositories.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+______ ERROR at setup of test_point_repositories_save_and_search_by_user _______
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: Repository試験用のDBを初期化できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_repositories.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+_______ ERROR at setup of test_repository_rolls_back_on_integrity_error ________
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: Repository試験用のDBを初期化できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_repositories.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+________ ERROR at setup of test_repository_rejects_unknown_update_field ________
+
+    @pytest.fixture()
+    def app():
+        '''試験区分: 正常系
+        確認項目: Repository試験用のDBを初期化できること。
+        '''
+        flask_app = create_app('testing')
+        flask_app.config.update(
+            TESTING=True,
+            SQLALCHEMY_DATABASE_URI='sqlite:///:memory:',
+            SQLALCHEMY_TRACK_MODIFICATIONS=False,
+        )
+        with flask_app.app_context():
+>           db.create_all()
+
+tests/run_001/test_repositories.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:900: in create_all
+    self._call_for_binds(bind_key, "create_all")
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:871: in _call_for_binds
+    engine = self.engines[key]
+             ^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <SQLAlchemy>
+
+    @property
+    def engines(self) -> t.Mapping[str | None, sa.engine.Engine]:
+        """Map of bind keys to :class:`sqlalchemy.engine.Engine` instances for current
+        application. The ``None`` key refers to the default engine, and is available as
+        :attr:`engine`.
+    
+        To customize, set the :data:`.SQLALCHEMY_BINDS` config, and set defaults by
+        passing the ``engine_options`` parameter to the extension.
+    
+        This requires that a Flask application context is active.
+    
+        .. versionadded:: 3.0
+        """
+        app = current_app._get_current_object()  # type: ignore[attr-defined]
+    
+        if app not in self._app_engines:
+>           raise RuntimeError(
+                "The current Flask app is not registered with this 'SQLAlchemy'"
+                " instance. Did you forget to call 'init_app', or did you create"
+                " multiple 'SQLAlchemy' instances?"
+            )
+E           RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask_sqlalchemy/extension.py:690: RuntimeError
+- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T02-attempt-2.xml -
+=========================== short test summary info ============================
+ERROR tests/run_001/test_models.py::test_db_extension_is_initialized - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_models.py::test_user_model_can_be_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_models.py::test_major_models_can_be_created_saved_and_found - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_models.py::test_forbidden_alias_keywords_are_not_accepted - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_repositories.py::test_user_repository_create_find_update_delete - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_repositories.py::test_point_repositories_save_and_search_by_user - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_repositories.py::test_repository_rolls_back_on_integrity_error - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?
+ERROR tests/run_001/test_repositories.py::test_repository_rejects_unknown_update_field - RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?

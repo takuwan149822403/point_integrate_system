@@ -1,0 +1,73 @@
+{
+  "status": "failure",
+  "failure_reason": "empty_or_report_only_generation_timeout",
+  "development_task_id": "T02",
+  "project_mode": "python_flask",
+  "attempts": [
+    {
+      "attempt": 1,
+      "file_count": 0,
+      "report_only_fallback": false,
+      "remaining_timeout_seconds": 250,
+      "error": "LLM response did not contain any generated source files."
+    },
+    {
+      "attempt": 2,
+      "file_count": 0,
+      "report_only_fallback": false,
+      "remaining_timeout_seconds": 134,
+      "error": "Artifact write guard rejected CodeWriter output for flask_sqlalchemy_binding_failure\n- ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED src/point_integrate_system/models.py: public class attribute `Notification.created_at` would be removed / action=Preserve the existing class attribute/field and add new fields separately if needed.\n- ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED src/point_integrate_system/models.py: public class attribute `Notification.event_type` would be removed / action=Preserve the existing class attribute/field and add new fields separately if needed.\n- ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED src/point_integrate_system/models.py: public class attribute `Notification.payload_json` would be removed / action=Preserve the existing class attribute/field and add new fields separately if needed.\n- ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED src/point_integrate_system/models.py: public class attribute `User.owned_groups` would be removed / action=Preserve the existing class attribute/field and add new fields separately if needed.\n- ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED src/point_integrate_system/models.py: public class attribute `User.point_account` would be removed / action=Preserve the existing class attribute/field and add new fields separately if needed.\n- ARTIFACT-PUBLIC-API-REMOVED src/point_integrate_system/models.py: public API `UserGroup` would be removed / action=Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_many` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED src/point_integrate_system/repositories.py: method `BaseRepository.create` signature would change / action=Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change.\n- ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED src/point_integrate_system/repositories.py: method `BaseRepository.delete` signature would change / action=Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change.\n- ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED src/point_integrate_system/repositories.py: method `BaseRepository.find_by` signature would change / action=Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change.\n- ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED src/point_integrate_system/repositories.py: method `BaseRepository.first_by` signature would change / action=Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change.\n- ... 13 more findings"
+    },
+    {
+      "attempt": 3,
+      "file_count": 0,
+      "report_only_fallback": false,
+      "remaining_timeout_seconds": 100,
+      "error": "LLM response did not contain any generated source files."
+    }
+  ],
+  "empty_like_count": 0,
+  "error": "LLM response did not contain any generated source files.",
+  "timeout_seconds": 300,
+  "max_attempts": 3,
+  "fallback_allowed": false,
+  "fallback_policy_reason": "source-producing task category/title/allowed_files matched: persistence",
+  "report_context_manifest": {
+    "schema_version": "report_context_manifest.v1",
+    "reports_dir": "reports",
+    "development_task_id": "T02",
+    "current_run": "",
+    "previous_run": "",
+    "policy": {
+      "keep_report_history_on_disk": true,
+      "prompt_scope": "previous_run_and_current_task_only",
+      "do_not_embed_all_reports_run_history": true,
+      "dedupe_by_sha256": true,
+      "large_report_files_are_manifest_only": true,
+      "report_file_size_limit": 160000
+    },
+    "allowed_report_files": {
+      "code_writer": [],
+      "development_manager": [],
+      "review": [],
+      "test": []
+    },
+    "all_allowed_report_paths": [],
+    "excluded_report_globs": []
+  },
+  "context_slimming": {
+    "enabled": true,
+    "development_plan_sent_as_slice": true,
+    "repo_context_reports_limited_by_manifest": true
+  },
+  "request_contract": {
+    "request_schema": "agents.orchestrator.schemas.TaskRequest",
+    "project_mode_source": "development_plan has priority during staged development"
+  },
+  "recommendation": "Treat this as one failed repair/generation loop attempt. Do not accept report/docs fallback as implementation success for source-producing tasks. Retry the staged task or make Code Writer return needs_more_context with requested_files.",
+  "empty_response_policy": {
+    "retry_until_timeout_or_max_attempts": true,
+    "preferred_non_generation_response": "status=needs_more_context with context_request.requested_files",
+    "report_only_fallback_is_failure_for_source_tasks": true
+  }
+}

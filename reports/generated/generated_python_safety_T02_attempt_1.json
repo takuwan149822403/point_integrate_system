@@ -1,0 +1,37 @@
+{
+  "schema_version": "generated_python_safety.v37",
+  "status": "success",
+  "python_file_count": 4,
+  "file_count": 4,
+  "finding_count": 0,
+  "blocking_count": 0,
+  "warning_count": 0,
+  "blocking_findings": [],
+  "warnings": [],
+  "finding_clusters": [],
+  "finding_rule_counts": {},
+  "missing_symbols_by_file": {},
+  "dependency_repair_recommended": false,
+  "files": [
+    {
+      "path": "src/point_integrate_system/models.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/repositories.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "tests/run_001/test_models.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "tests/run_001/test_repositories.py",
+      "status": "success",
+      "findings": []
+    }
+  ]
+}

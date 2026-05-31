@@ -1,0 +1,456 @@
+{
+  "status": "failure",
+  "schema_version": "artifact_write_guard.v45",
+  "enabled": true,
+  "subtask_id": "",
+  "classification": "flask_sqlalchemy_binding_failure",
+  "checked_files": [
+    "src/point_integrate_system/models.py",
+    "src/point_integrate_system/repositories.py",
+    "tests/run_001/test_models.py",
+    "tests/run_001/test_repositories.py"
+  ],
+  "allowed_writes": [
+    "src/point_integrate_system/models.py",
+    "src/point_integrate_system/repositories.py",
+    "src/point_integrate_system/app.py",
+    "src/point_integrate_system/config.py",
+    "tests/run_XXX/test_models.py",
+    "tests/run_XXX/test_repositories.py",
+    "src/*/app.py",
+    "src/*/models.py",
+    "src/*/config.py",
+    "src/*/repositories.py",
+    "src/*/errors.py",
+    "src/*/__init__.py",
+    "src/*/routes.py",
+    "src/*/views.py",
+    "src/*/auth.py",
+    "src/*/services.py",
+    "src/*/validators.py",
+    "src/*/forms.py",
+    "src/*/templates/*.html",
+    "src/*/static/css/*.css",
+    "src/*/static/js/*.js"
+  ],
+  "read_only_files": [],
+  "protected_exports": {},
+  "findings": [
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Coupon.description` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Coupon.status` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Coupon.title` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Coupon.user` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Coupon.user_id` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Notification.created_at` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Notification.event_type` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Notification.payload_json` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Notification.user` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Notification.user_id` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Order.description` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Order.status` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Order.title` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Order.user` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Order.user_id` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Payment.description` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Payment.status` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Payment.title` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Payment.user` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Payment.user_id` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Rank.description` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Rank.status` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Rank.title` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Rank.user` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `Rank.user_id` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.coupons` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.notifications` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.orders` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.owned_groups` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.payments` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.point_account` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public class attribute `User.ranks` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "src/point_integrate_system/models.py",
+      "title": "public API `UserGroup` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.add` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.add_many` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.create` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.delete` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.find_by` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.first_by` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.get_by_id` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.list_all` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.update` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `CouponRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `NotificationRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `OrderRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `PaymentRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `RankRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-API-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public API `UserGroupRepository` would be removed",
+      "reason": "A later stage attempted to remove a public class/function/value protected by the artifact lock.",
+      "action": "Preserve the public API or add an explicit allowed_destructive_changes entry for this symbol."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "existing import contract `from:.models:UserGroup` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "existing import contract `from:typing:Iterable` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-WRITE-OUT-OF-SCOPE",
+      "file": "tests/run_001/test_models.py",
+      "title": "generated file is outside this subtask write scope",
+      "reason": "Internal subtasks must not rewrite files owned by earlier stages or later subtasks.",
+      "action": "Return only files listed in allowed_writes/allowed_files, or request an explicit destructive-change permission."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-WRITE-OUT-OF-SCOPE",
+      "file": "tests/run_001/test_repositories.py",
+      "title": "generated file is outside this subtask write scope",
+      "reason": "Internal subtasks must not rewrite files owned by earlier stages or later subtasks.",
+      "action": "Return only files listed in allowed_writes/allowed_files, or request an explicit destructive-change permission."
+    }
+  ]
+}
