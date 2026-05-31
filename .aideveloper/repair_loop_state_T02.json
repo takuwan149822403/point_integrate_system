@@ -1,0 +1,10 @@
+{
+  "schema_version": "repair_loop_state.v2",
+  "fingerprint": "f54db9d4592bc2e7",
+  "loop_name": "task_test",
+  "development_task_id": "T02",
+  "signature_counts": {},
+  "history": [],
+  "status": "resolved",
+  "resolved_at": "2026-05-31T09:19:57.932813+00:00"
+}

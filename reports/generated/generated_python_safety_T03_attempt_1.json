@@ -1,0 +1,57 @@
+{
+  "schema_version": "generated_python_safety.v37",
+  "status": "success",
+  "python_file_count": 8,
+  "file_count": 8,
+  "finding_count": 0,
+  "blocking_count": 0,
+  "warning_count": 0,
+  "blocking_findings": [],
+  "warnings": [],
+  "finding_clusters": [],
+  "finding_rule_counts": {},
+  "missing_symbols_by_file": {},
+  "dependency_repair_recommended": false,
+  "files": [
+    {
+      "path": "src/point_integrate_system/errors.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/validators.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/forms.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/services.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/routes.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/auth.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "src/point_integrate_system/views.py",
+      "status": "success",
+      "findings": []
+    },
+    {
+      "path": "tests/run_001/test_auth.py",
+      "status": "success",
+      "findings": []
+    }
+  ]
+}

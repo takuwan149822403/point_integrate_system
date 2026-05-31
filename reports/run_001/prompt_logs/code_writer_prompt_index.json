@@ -1,0 +1,46 @@
+{
+  "schema_version": "prompt_log_index.v1",
+  "log_file": "reports/generated/prompt_logs/code_writer_prompts.jsonl",
+  "record_count": 3,
+  "latest_records": [
+    {
+      "logged_at": "2026-05-31T09:17:57.013357+00:00",
+      "development_task_id": "T01",
+      "subtask_id": "",
+      "phase": "initial_generation",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 102936,
+      "prompt_sha256": "a60cc6dbb5ca169e6c1774b4f820041078f7668a7c12537ae97f13e1833f8c5d"
+    },
+    {
+      "logged_at": "2026-05-31T09:18:36.868799+00:00",
+      "development_task_id": "T02",
+      "subtask_id": "",
+      "phase": "initial_generation",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 144529,
+      "prompt_sha256": "f5b500d468cbd199d51819fd6b629042426802c9b69c30ca5011b6756c6b6a43"
+    },
+    {
+      "logged_at": "2026-05-31T09:19:58.475452+00:00",
+      "development_task_id": "T03",
+      "subtask_id": "",
+      "phase": "initial_generation",
+      "repair_mode": "",
+      "failure_kind": "",
+      "model": "gpt-5.5",
+      "prompt_chars": 146250,
+      "prompt_sha256": "fca17ecbeea5f60c39b3abd51a5fd3ccf51a7a4c287b630890e742734ed945b4"
+    }
+  ],
+  "settings": {
+    "max_bytes": 10485760,
+    "max_records": 50,
+    "include_full_text": true,
+    "redact_secrets": true
+  }
+}

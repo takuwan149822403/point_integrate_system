@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page_title|default('メニュー') }} - ポイント統合システム{% endblock %}
+
+{% block content %}
+<section class="card menu-card" aria-labelledby="menu-title">
+  <p class="eyebrow">認証済み</p>
+  <h1 id="menu-title">{{ page_title|default('メニュー') }}</h1>
+  {% if user %}
+    <p class="lead">{{ user.name }} さん、ようこそ。</p>
+  {% endif %}
+  <div class="menu-grid" aria-label="機能メニュー">
+    <a class="menu-item" href="{{ url_for('auth.profile_edit') }}">プロフィール編集</a>
+    <a class="menu-item" href="{{ url_for('auth.points_add') }}">ポイント追加</a>
+    <a class="menu-item" href="{{ url_for('auth.coupons') }}">クーポン一覧</a>
+    <a class="menu-item" href="{{ url_for('auth.coupons_use') }}">クーポン利用</a>
+    <a class="menu-item" href="{{ url_for('auth.credit_card') }}">クレジットカード</a>
+    <a class="menu-item" href="{{ url_for('auth.legacy_transfer') }}">旧サービス連携</a>
+    <a class="menu-item" href="{{ url_for('auth.family') }}">ファミリー共有</a>
+  </div>
+  <div class="button-row">
+    <a class="button button-danger" href="{{ url_for('auth.logout') }}" data-confirm-logout="true">ログアウト</a>
+  </div>
+</section>
+{% endblock %}

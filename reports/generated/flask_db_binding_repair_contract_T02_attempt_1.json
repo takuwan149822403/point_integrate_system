@@ -1,0 +1,126 @@
+{
+  "enabled": true,
+  "status": "actionable",
+  "contract": {
+    "schema_version": "flask_db_binding_repair_contract.v1",
+    "status": "actionable",
+    "enabled": true,
+    "generated_at": "2026-05-31T09:19:56.320182+00:00",
+    "development_task_id": "T02",
+    "package": "point_integrate_system",
+    "failure_kind": "FLASK_SQLALCHEMY_BINDING_INCOMPLETE",
+    "decision": "production_defect",
+    "confidence": 0.94,
+    "reason_codes": [
+      "MODELS_HAS_SQLALCHEMY_DB_SINGLETON",
+      "APP_FACTORY_DB_IMPORT_MISSING",
+      "APP_FACTORY_DB_INIT_APP_MISSING",
+      "SQLALCHEMY_CONFIG_KEYS_MISSING",
+      "DEPENDENCY_MANIFEST_MISSING_FLASK_SQLALCHEMY"
+    ],
+    "evidence": {
+      "app_factory_file": "src/point_integrate_system/app.py",
+      "models_file": "src/point_integrate_system/models.py",
+      "config_file": "src/point_integrate_system/config.py",
+      "repositories_file": "src/point_integrate_system/repositories.py",
+      "models_has_sqlalchemy_db_singleton": true,
+      "app_factory_imports_db_from_models": false,
+      "app_factory_calls_db_init_app": false,
+      "config_has_sqlalchemy_keys": false,
+      "dependency_manifest_paths": [
+        "requirements.txt",
+        "pyproject.toml"
+      ],
+      "dependency_manifest_has_flask_sqlalchemy": false,
+      "manifests_with_dependency": [],
+      "missing": [
+        "app_imports_db_from_models",
+        "app_calls_db_init_app",
+        "sqlalchemy_config_keys",
+        "dependency_manifest_flask_sqlalchemy"
+      ]
+    },
+    "target_files": [
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/config.py",
+      "requirements.txt"
+    ],
+    "must_modify_any_of": [
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/config.py",
+      "requirements.txt"
+    ],
+    "forbidden_modify_globs": [
+      "tests/**"
+    ],
+    "allowed_ops": [
+      "add_import_if_missing",
+      "insert_before",
+      "add_class_attribute",
+      "append_to_file",
+      "ensure_dependency"
+    ],
+    "required_patch_operations": [
+      {
+        "op": "add_import_if_missing",
+        "path": "src/point_integrate_system/app.py",
+        "import_line": "from .models import db",
+        "reason": "create_app must initialize the same SQLAlchemy singleton exported by models.py"
+      },
+      {
+        "op": "insert_before",
+        "path": "src/point_integrate_system/app.py",
+        "anchor": "return app",
+        "content": "    db.init_app(app)",
+        "reason": "Bind the SQLAlchemy extension to the Flask app factory before returning app"
+      },
+      {
+        "op": "add_class_attribute",
+        "path": "src/point_integrate_system/config.py",
+        "class_name": "Config",
+        "attribute_line": "SQLALCHEMY_DATABASE_URI = \"sqlite:///app.db\"",
+        "reason": "Provide a default database URI without rewriting existing config exports"
+      },
+      {
+        "op": "add_class_attribute",
+        "path": "src/point_integrate_system/config.py",
+        "class_name": "Config",
+        "attribute_line": "SQLALCHEMY_TRACK_MODIFICATIONS = False",
+        "reason": "Disable SQLAlchemy event tracking by default"
+      },
+      {
+        "op": "add_class_attribute",
+        "path": "src/point_integrate_system/config.py",
+        "class_name": "TestingConfig",
+        "attribute_line": "SQLALCHEMY_DATABASE_URI = \"sqlite:///:memory:\"",
+        "reason": "Make db.create_all/drop_all reliable in task-level tests"
+      },
+      {
+        "op": "add_class_attribute",
+        "path": "src/point_integrate_system/config.py",
+        "class_name": "TestingConfig",
+        "attribute_line": "SQLALCHEMY_TRACK_MODIFICATIONS = False",
+        "reason": "Keep TestingConfig aligned with Flask-SQLAlchemy defaults"
+      },
+      {
+        "op": "ensure_dependency",
+        "path": "requirements.txt",
+        "requirement": "Flask-SQLAlchemy>=3.1",
+        "reason": "Source imports flask_sqlalchemy, so the generated repo must install Flask-SQLAlchemy"
+      }
+    ],
+    "non_breaking_rules": [
+      "Existing app.py/config.py may be patched, but must not be fully regenerated.",
+      "Do not create a second SQLAlchemy() instance.",
+      "Do not modify tests to hide DB binding failures.",
+      "Preserve existing create_app/config public API and add only missing DB binding pieces."
+    ]
+  },
+  "dropped_full_rewrites": [],
+  "operation_change_paths": [
+    "src/point_integrate_system/app.py",
+    "src/point_integrate_system/config.py",
+    "requirements.txt"
+  ],
+  "policy": "Flask-SQLAlchemy integration edge repair: keep current-stage models/repositories, but patch previous-stage app.py/config.py/dependency manifests additively."
+}

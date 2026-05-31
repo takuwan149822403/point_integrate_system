@@ -1,0 +1,331 @@
+{
+  "status": "success",
+  "development_task_id": "T03",
+  "project_mode": "python_flask",
+  "attempts": [
+    {
+      "attempt": 1,
+      "file_count": 16,
+      "report_only_fallback": false,
+      "remaining_timeout_seconds": 709,
+      "web_contract_write_policy": {
+        "enabled": false
+      },
+      "db_binding_repair_contract": {
+        "enabled": true,
+        "status": "satisfied",
+        "dropped_full_rewrites": [],
+        "operation_change_paths": []
+      },
+      "forced_additive_filter": {
+        "enabled": false,
+        "dropped_existing_rewrites": [],
+        "kept_files": []
+      },
+      "patch_operation_count": 0,
+      "artifact_write_guard": {
+        "status": "success",
+        "enabled": true,
+        "finding_count": 0
+      },
+      "generated_python_safety": {
+        "status": "success",
+        "python_file_count": 8,
+        "blocking_count": 0,
+        "warning_count": 0
+      },
+      "generated_contract_safety": {
+        "status": "success",
+        "blocking_count": 0,
+        "warning_count": 0
+      },
+      "error": ""
+    }
+  ],
+  "empty_like_count": 0,
+  "written_count": 16,
+  "written_files": [
+    "src/point_integrate_system/errors.py",
+    "src/point_integrate_system/validators.py",
+    "src/point_integrate_system/forms.py",
+    "src/point_integrate_system/services.py",
+    "src/point_integrate_system/routes.py",
+    "src/point_integrate_system/auth.py",
+    "src/point_integrate_system/views.py",
+    "src/point_integrate_system/templates/base.html",
+    "src/point_integrate_system/templates/auth.html",
+    "src/point_integrate_system/templates/register.html",
+    "src/point_integrate_system/templates/menu.html",
+    "src/point_integrate_system/templates/error.html",
+    "src/point_integrate_system/static/css/style.css",
+    "src/point_integrate_system/static/js/main.js",
+    "reports/run_001/display_difinition.md",
+    "tests/run_001/test_auth.py"
+  ],
+  "report_context_manifest": {
+    "schema_version": "report_context_manifest.v1",
+    "reports_dir": "reports",
+    "development_task_id": "T03",
+    "current_run": "",
+    "previous_run": "",
+    "policy": {
+      "keep_report_history_on_disk": true,
+      "prompt_scope": "previous_run_and_current_task_only",
+      "do_not_embed_all_reports_run_history": true,
+      "dedupe_by_sha256": true,
+      "large_report_files_are_manifest_only": true,
+      "report_file_size_limit": 160000
+    },
+    "allowed_report_files": {
+      "code_writer": [],
+      "development_manager": [],
+      "review": [],
+      "test": []
+    },
+    "all_allowed_report_paths": [],
+    "excluded_report_globs": []
+  },
+  "web_contract_write_policy": {
+    "enabled": false
+  },
+  "forced_additive_filter": {
+    "enabled": false,
+    "dropped_existing_rewrites": [],
+    "kept_files": []
+  },
+  "patch_operation_count": 0,
+  "artifact_write_guard": {
+    "status": "success",
+    "schema_version": "artifact_write_guard.v45",
+    "enabled": true,
+    "subtask_id": "",
+    "classification": "",
+    "checked_files": [
+      "src/point_integrate_system/errors.py",
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/forms.py",
+      "src/point_integrate_system/services.py",
+      "src/point_integrate_system/routes.py",
+      "src/point_integrate_system/auth.py",
+      "src/point_integrate_system/views.py",
+      "src/point_integrate_system/templates/base.html",
+      "src/point_integrate_system/templates/auth.html",
+      "src/point_integrate_system/templates/register.html",
+      "src/point_integrate_system/templates/menu.html",
+      "src/point_integrate_system/templates/error.html",
+      "src/point_integrate_system/static/css/style.css",
+      "src/point_integrate_system/static/js/main.js",
+      "reports/run_001/display_difinition.md",
+      "tests/run_001/test_auth.py"
+    ],
+    "allowed_writes": [],
+    "read_only_files": [],
+    "protected_exports": {},
+    "findings": []
+  },
+  "generated_python_safety": {
+    "schema_version": "generated_python_safety.v37",
+    "status": "success",
+    "python_file_count": 8,
+    "file_count": 8,
+    "finding_count": 0,
+    "blocking_count": 0,
+    "warning_count": 0,
+    "blocking_findings": [],
+    "warnings": [],
+    "finding_clusters": [],
+    "finding_rule_counts": {},
+    "missing_symbols_by_file": {},
+    "dependency_repair_recommended": false,
+    "files": [
+      {
+        "path": "src/point_integrate_system/errors.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/validators.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/forms.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/services.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/routes.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/auth.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "src/point_integrate_system/views.py",
+        "status": "success",
+        "findings": []
+      },
+      {
+        "path": "tests/run_001/test_auth.py",
+        "status": "success",
+        "findings": []
+      }
+    ]
+  },
+  "generated_contract_safety": {
+    "status": "success",
+    "schema_version": "generated_contract_safety.v39",
+    "development_task_id": "T03",
+    "package": "point_integrate_system",
+    "python_overlay_file_count": 8,
+    "blocking_count": 0,
+    "warning_count": 0,
+    "findings": [],
+    "finding_clusters": [],
+    "finding_rule_counts": {},
+    "missing_symbols_by_file": {},
+    "missing_exports_by_target": {},
+    "dependency_repair_recommended": false,
+    "workspace_overlay": {
+      "enabled": true,
+      "workspace_python_file_count": 5,
+      "generated_overlay_python_file_count": 8,
+      "virtual_package_python_file_count": 12,
+      "generated_overlay_files": [
+        "src/point_integrate_system/auth.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/forms.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/views.py",
+        "tests/run_001/test_auth.py"
+      ],
+      "scope_source_file_count": 12,
+      "scope_reference_file_count": 12
+    },
+    "contract_safety_scope": {
+      "enabled": false,
+      "classification": "",
+      "subtask_id": "",
+      "source_files": [
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/auth.py",
+        "src/point_integrate_system/config.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/forms.py",
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/views.py"
+      ],
+      "reference_files": [
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/auth.py",
+        "src/point_integrate_system/config.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/forms.py",
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/views.py"
+      ],
+      "required_exports": {
+        "src/point_integrate_system/config.py": [
+          "Config",
+          "DevelopmentConfig",
+          "ProductionConfig",
+          "TestingConfig",
+          "config_by_name",
+          "get_config"
+        ],
+        "src/point_integrate_system/errors.py": [
+          "AppError",
+          "AuthError",
+          "ConflictError",
+          "DomainServiceError",
+          "LoginError",
+          "PermissionError",
+          "PersistenceError",
+          "RegistrationError"
+        ],
+        "src/point_integrate_system/app.py": [
+          "create_app"
+        ],
+        "src/point_integrate_system/services.py": [
+          "AuthService",
+          "DomainService"
+        ],
+        "src/point_integrate_system/models.py": [
+          "Coupon",
+          "Notification",
+          "Order",
+          "Payment",
+          "PointAccount",
+          "PointTransaction",
+          "Rank",
+          "User",
+          "UserGroup",
+          "db"
+        ],
+        "src/point_integrate_system/repositories.py": [
+          "CouponRepository",
+          "NotificationRepository",
+          "OrderRepository",
+          "PaymentRepository",
+          "PointAccountRepository",
+          "PointTransactionRepository",
+          "RankRepository",
+          "RepositoryError",
+          "UserGroupRepository",
+          "UserRepository"
+        ]
+      },
+      "planned_later_exports": {},
+      "enforce_plan_exports": true,
+      "enforce_model_kwargs": true,
+      "enforce_dependency_direction": true,
+      "enforce_persistence_contract": true,
+      "reason": "full_package_contract_safety"
+    },
+    "flask_sqlalchemy_contract_checked": false,
+    "route_service_contract_checked": false
+  },
+  "internal_subtask_contract_summary": "",
+  "internal_subtask_contract_summary_exists": false,
+  "internal_subtask_contract_summary_manifest": "",
+  "artifact_guard_retry_state": {
+    "state_file": "workspace/target_repo/.aideveloper/artifact_guard_retry_state_T03.json",
+    "state_action": "initialized",
+    "max_repeat_count": 0,
+    "repeated": []
+  },
+  "context_slimming": {
+    "enabled": true,
+    "development_plan_sent_as_slice": true,
+    "repo_context_reports_limited_by_manifest": true
+  },
+  "summary": "T03認証・セッション入口として、登録・ログイン・ログアウト、セッション維持、GET / の認証状態別リダイレクト、4xx系エラー画面、認証後メニューと設計URLの最小画面を追加しました。既存app.pyは再生成せず、Blueprint登録と開発用SECRET_KEY補完のみpatch_operationsで追加します。display_difinition.mdはHTML/CSS/JS生成に必須のため、allowed_files外ですがreports/run_001へ追加します。",
+  "notes": [
+    "既存app.pyはT01/T02の試験済み成果物として扱い、全文再生成せずBlueprint登録のみを追加するパッチにしました。",
+    "GET / の既存T01ルートが残っていても、auth_bp.before_app_request が先に認証状態別リダイレクトを返すため、T03の入口要件を満たします。",
+    "T03では既存のDB/Repositoryを破壊しないため、AuthServiceは公開メソッドを保った開発・テスト用インメモリストアで実装しています。後続でRepository委譲へ差し替え可能です。",
+    "フロントエンドスタック指定に従い、jQuery 3.7.1をbase.htmlで読み込み、ログアウト確認とフォーム補助に利用しています。",
+    "LLM writer used: gpt-5.5",
+    "Prompt used: code_writer_flask"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "success",
+  "schema_version": "artifact_write_guard.v45",
+  "enabled": true,
+  "subtask_id": "",
+  "classification": "",
+  "checked_files": [
+    "src/point_integrate_system/errors.py",
+    "src/point_integrate_system/validators.py",
+    "src/point_integrate_system/forms.py",
+    "src/point_integrate_system/services.py",
+    "src/point_integrate_system/routes.py",
+    "src/point_integrate_system/auth.py",
+    "src/point_integrate_system/views.py",
+    "src/point_integrate_system/templates/base.html",
+    "src/point_integrate_system/templates/auth.html",
+    "src/point_integrate_system/templates/register.html",
+    "src/point_integrate_system/templates/menu.html",
+    "src/point_integrate_system/templates/error.html",
+    "src/point_integrate_system/static/css/style.css",
+    "src/point_integrate_system/static/js/main.js",
+    "reports/run_001/display_difinition.md",
+    "tests/run_001/test_auth.py"
+  ],
+  "allowed_writes": [],
+  "read_only_files": [],
+  "protected_exports": {},
+  "findings": []
+}

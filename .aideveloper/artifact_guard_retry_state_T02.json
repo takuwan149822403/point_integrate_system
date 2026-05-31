@@ -1,0 +1,8 @@
+{
+  "schema_version": "repair_loop_state.v2",
+  "fingerprint": "48642557497ad905",
+  "loop_name": "apply_generated_changes_artifact_guard",
+  "development_task_id": "T02",
+  "signature_counts": {},
+  "history": []
+}

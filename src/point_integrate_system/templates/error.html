@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}エラー {{ status_code }} - ポイント統合システム{% endblock %}
+
+{% block content %}
+<section class="card error-card" aria-labelledby="error-title">
+  <p class="eyebrow">HTTP {{ status_code }}</p>
+  <h1 id="error-title">エラーが発生しました</h1>
+  <p class="lead">{{ message }}</p>
+  <div class="button-row">
+    {% if session.get('user_id') %}
+      <a class="button button-primary" href="{{ url_for('auth.menu') }}">メニューへ戻る</a>
+    {% else %}
+      <a class="button button-primary" href="{{ url_for('auth.login') }}">ログインへ戻る</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

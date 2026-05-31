@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "schema_version": "artifact_write_guard.v45",
+  "enabled": false,
+  "subtask_id": "",
+  "classification": "",
+  "checked_files": [],
+  "allowed_writes": [],
+  "read_only_files": [],
+  "protected_exports": {},
+  "findings": []
+}
