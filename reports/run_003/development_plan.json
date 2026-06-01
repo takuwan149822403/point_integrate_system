@@ -1,0 +1,4539 @@
+{
+  "schema_version": "1.0",
+  "system_name": "point_integrate_system",
+  "project_mode": "python_flask",
+  "complexity": "large",
+  "generation_mode": "staged",
+  "complexity_score": 13,
+  "reason": "inputが長文、URL/画面候補が多い、DBあり、Webあり、認証あり、通知/メールあり、共有状態/グループ処理あり、JSON/XML連携あり、複数業務ワークフローあり のため generation_mode=staged と判定。",
+  "signals": {
+    "chars": 32596,
+    "lines": 2078,
+    "heading_count": 141,
+    "bullet_count": 767,
+    "route_like_count": 101,
+    "model_like_count": 256,
+    "capabilities": {
+      "database": true,
+      "web": true,
+      "auth": true,
+      "mail": true,
+      "file_io": true,
+      "interface_data_exchange": true,
+      "ui": true,
+      "group_shared_state": true,
+      "notification": true,
+      "domain_workflow": true
+    }
+  },
+  "capabilities": {
+    "database": true,
+    "web": true,
+    "auth": true,
+    "mail": true,
+    "file_io": true,
+    "interface_data_exchange": true,
+    "ui": true,
+    "group_shared_state": true,
+    "notification": true,
+    "domain_workflow": true
+  },
+  "screen_flow_design": {
+    "required": true,
+    "schema_version": "screen_flow_design.v2",
+    "system_name": "point_integrate_system",
+    "project_mode": "python_flask",
+    "design_resolution_policy": {
+      "schema_version": "manager_design_resolution_policy.v1",
+      "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+      "precedence": [
+        "explicit coding-level design in GitHub Issue / uploaded design documents",
+        "Manager-synthesized detailed coding design in development_plan",
+        "AIDeveloper framework defaults"
+      ],
+      "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+      "contracted_designs": [
+        "screen_flow_design",
+        "dev_access_design",
+        "database_schema_design",
+        "module_contract_design",
+        "service_model_binding_design"
+      ]
+    },
+    "design_source": {
+      "kind": "screen_flow_design",
+      "source": "explicit_requirement",
+      "explicit_in_requirement": true,
+      "evidence": [
+        "/register",
+        "/legacy-transfer",
+        "/login",
+        "/logout",
+        "/menu",
+        "/profile/edit",
+        "/points/add",
+        "/coupons",
+        "/coupons/use",
+        "/credit-card",
+        "/family",
+        "/password-reset/request",
+        "/password-reset/<token>",
+        "/error"
+      ],
+      "lock_stage": "coding_plan",
+      "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+    },
+    "behavior_defaults": {
+      "design_resolution_policy": {
+        "schema_version": "manager_design_resolution_policy.v1",
+        "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+        "precedence": [
+          "explicit coding-level design in GitHub Issue / uploaded design documents",
+          "Manager-synthesized detailed coding design in development_plan",
+          "AIDeveloper framework defaults"
+        ],
+        "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+        "contracted_designs": [
+          "screen_flow_design",
+          "dev_access_design",
+          "database_schema_design",
+          "module_contract_design",
+          "service_model_binding_design"
+        ]
+      },
+      "html_form_auth_error_status_policy": "Issueで明示がない限り、認証・登録・権限・セッション系の異常入力は通常フォームの200再表示で握りつぶさず、400/401/403/409/422等の適切なHTTPステータスと対応するエラー画面で扱う。",
+      "root_url_policy": "Issueで明示がない限り、GET / は単なるランディングページにしない。未認証なら /login、認証済みなら /menu へリダイレクトする。",
+      "test_generation_policy": "生成テストはscreen_flow_designを期待値にする。"
+    },
+    "screens": [
+      {
+        "screen_id": "explicit_register_1",
+        "name": "ユーザー登録画面",
+        "url": "/register",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/register"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_legacy_transfer_2",
+        "name": "legacy-transfer 画面",
+        "url": "/legacy-transfer",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/legacy-transfer"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_login_3",
+        "name": "ログイン画面",
+        "url": "/login",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/login"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_logout_4",
+        "name": "ログアウト",
+        "url": "/logout",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/logout"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_menu_5",
+        "name": "メニュー画面",
+        "url": "/menu",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/menu"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_profile_edit_6",
+        "name": "編集画面",
+        "url": "/profile/edit",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/profile/edit"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_points_add_7",
+        "name": "add 画面",
+        "url": "/points/add",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/points/add"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_coupons_8",
+        "name": "coupons 画面",
+        "url": "/coupons",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/coupons"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_coupons_use_9",
+        "name": "use 画面",
+        "url": "/coupons/use",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/coupons/use"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_credit_card_10",
+        "name": "credit-card 画面",
+        "url": "/credit-card",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/credit-card"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_family_11",
+        "name": "family 画面",
+        "url": "/family",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/family"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_password_reset_request_12",
+        "name": "request 画面",
+        "url": "/password-reset/request",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/password-reset/request"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_password_reset_token_13",
+        "name": "<token> 画面",
+        "url": "/password-reset/<token>",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/password-reset/<token>"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "explicit_error_14",
+        "name": "error 画面",
+        "url": "/error",
+        "method": "GET",
+        "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+        "transitions": [
+          "Issue explicit route; preserve URL/method contract"
+        ],
+        "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/error"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "root_entry",
+        "name": "トップ入口",
+        "url": "/",
+        "method": "GET",
+        "overview": "認証状態に応じて次画面へ振り分ける入口。",
+        "transitions": [
+          "未認証 -> /login",
+          "認証済み -> /menu"
+        ],
+        "error_policy": "Issue未指定のためManagerが補完した既定方針。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "auth capability"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "screen_id": "error",
+        "name": "エラー画面",
+        "url": "/error or rendered error.html",
+        "method": "GET/render",
+        "overview": "認証・登録・権限・セッション異常時の表示先。",
+        "transitions": [
+          "recover -> /login or /register"
+        ],
+        "error_policy": "Issue未指定のためManagerが補完した既定方針。",
+        "design_source": {
+          "kind": "screen_route",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "auth capability"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      }
+    ],
+    "note": "Manager Agentがコーディング前に確定した簡易画面設計。詳細画面仕様は後続のdisplay_difinition.mdで拡張するが、このURL/遷移契約から逸脱しない。"
+  },
+  "dev_access_design": {
+    "required": true,
+    "schema_version": "dev_access_design.v2",
+    "system_name": "point_integrate_system",
+    "design_resolution_policy": {
+      "schema_version": "manager_design_resolution_policy.v1",
+      "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+      "precedence": [
+        "explicit coding-level design in GitHub Issue / uploaded design documents",
+        "Manager-synthesized detailed coding design in development_plan",
+        "AIDeveloper framework defaults"
+      ],
+      "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+      "contracted_designs": [
+        "screen_flow_design",
+        "dev_access_design",
+        "database_schema_design",
+        "module_contract_design",
+        "service_model_binding_design"
+      ]
+    },
+    "design_source": {
+      "kind": "dev_access_design",
+      "source": "explicit_requirement",
+      "explicit_in_requirement": true,
+      "evidence": [
+        "/register",
+        "/legacy-transfer",
+        "/login",
+        "/logout",
+        "/menu",
+        "/profile/edit",
+        "/points/add",
+        "/coupons",
+        "/coupons/use",
+        "/credit-card",
+        "/family",
+        "/password-reset/request",
+        "/password-reset/<token>",
+        "/error"
+      ],
+      "lock_stage": "coding_plan",
+      "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+    },
+    "endpoints": [
+      {
+        "name": "ユーザー登録画面",
+        "url": "/register",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/register"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "legacy-transfer 画面",
+        "url": "/legacy-transfer",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/legacy-transfer"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "ログイン画面",
+        "url": "/login",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/login"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "ログアウト",
+        "url": "/logout",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/logout"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "メニュー画面",
+        "url": "/menu",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/menu"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "編集画面",
+        "url": "/profile/edit",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/profile/edit"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "add 画面",
+        "url": "/points/add",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/points/add"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "coupons 画面",
+        "url": "/coupons",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/coupons"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "use 画面",
+        "url": "/coupons/use",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/coupons/use"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "credit-card 画面",
+        "url": "/credit-card",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/credit-card"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "family 画面",
+        "url": "/family",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/family"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "request 画面",
+        "url": "/password-reset/request",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/password-reset/request"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "<token> 画面",
+        "url": "/password-reset/<token>",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/password-reset/<token>"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "error 画面",
+        "url": "/error",
+        "method": "GET",
+        "purpose": "Issue/設計書に現れた開発時確認URL",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "explicit_requirement",
+          "explicit_in_requirement": true,
+          "evidence": [
+            "/error"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "name": "root_entry",
+        "url": "/",
+        "method": "GET",
+        "purpose": "未認証は/login、認証済みは/menuへ振り分ける入口",
+        "design_source": {
+          "kind": "dev_access_endpoint",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "auth capability"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      }
+    ],
+    "dev_accounts": [
+      {
+        "role": "standard_user",
+        "email": "dev.user@example.com",
+        "password": "Password123!",
+        "name": "開発ユーザー",
+        "scope": "local test / GitHub Actions only",
+        "design_source": {
+          "kind": "dev_account",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "auth capability"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      }
+    ],
+    "security_constraints": [
+      "仮認証情報は開発・テスト専用。実アカウント・本番secretを生成しない。",
+      "後続タスクはこのURL/仮アカウント契約から逸脱しない。"
+    ]
+  },
+  "database_schema_design": {
+    "required": true,
+    "schema_version": "database_schema_design.v2",
+    "system_name": "point_integrate_system",
+    "design_resolution_policy": {
+      "schema_version": "manager_design_resolution_policy.v1",
+      "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+      "precedence": [
+        "explicit coding-level design in GitHub Issue / uploaded design documents",
+        "Manager-synthesized detailed coding design in development_plan",
+        "AIDeveloper framework defaults"
+      ],
+      "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+      "contracted_designs": [
+        "screen_flow_design",
+        "dev_access_design",
+        "database_schema_design",
+        "module_contract_design",
+        "service_model_binding_design"
+      ]
+    },
+    "design_source": {
+      "kind": "database_schema_design",
+      "source": "manager_inferred_before_coding",
+      "explicit_in_requirement": false,
+      "evidence": [
+        "point",
+        "point",
+        "coupon",
+        "rank",
+        "申請",
+        "決済",
+        "通知",
+        "group"
+      ],
+      "lock_stage": "coding_plan",
+      "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+    },
+    "sqlalchemy_config_contract": {
+      "Config": [
+        "SQLALCHEMY_DATABASE_URI",
+        "SQLALCHEMY_TRACK_MODIFICATIONS"
+      ],
+      "TestingConfig": {
+        "SQLALCHEMY_DATABASE_URI": "sqlite:///:memory:",
+        "TESTING": true
+      },
+      "DevelopmentConfig": "DATABASE_URL env fallback to local SQLite",
+      "ProductionConfig": "DATABASE_URL env required or explicitly documented fallback"
+    },
+    "tables": [
+      {
+        "model": "User",
+        "table": "users",
+        "purpose": "認証・セッションの主体ユーザー",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "auth capability"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "name",
+            "type": "String(120)",
+            "nullable": false
+          },
+          {
+            "name": "email",
+            "type": "String(255)",
+            "nullable": false,
+            "unique": true
+          },
+          {
+            "name": "password_hash",
+            "type": "String(255)",
+            "nullable": false
+          },
+          {
+            "name": "is_active",
+            "type": "Boolean",
+            "nullable": false,
+            "default": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "name",
+          "email",
+          "password_hash",
+          "is_active"
+        ],
+        "forbidden_aliases": {
+          "password": "password_hash",
+          "mail": "email"
+        }
+      },
+      {
+        "model": "PointAccount",
+        "table": "point_accounts",
+        "purpose": "ポイント残高・アカウント状態",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "point"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "balance",
+            "type": "Integer",
+            "nullable": false,
+            "default": 0
+          },
+          {
+            "name": "status",
+            "type": "String(32)",
+            "nullable": false,
+            "default": "active"
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "balance",
+          "status"
+        ],
+        "forbidden_aliases": {
+          "points": "balance"
+        }
+      },
+      {
+        "model": "PointTransaction",
+        "table": "point_transactions",
+        "purpose": "ポイント増減・履歴",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "point"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "point_delta",
+            "type": "Integer",
+            "nullable": false
+          },
+          {
+            "name": "transaction_type",
+            "type": "String(32)",
+            "nullable": false
+          },
+          {
+            "name": "description",
+            "type": "String(255)",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "point_delta",
+          "transaction_type",
+          "description"
+        ],
+        "forbidden_aliases": {
+          "points": "point_delta",
+          "note": "description",
+          "related_member_id": "user_id"
+        }
+      },
+      {
+        "model": "Coupon",
+        "table": "coupons",
+        "purpose": "クーポン・特典",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "coupon"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "title",
+            "type": "String(160)",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "String(32)",
+            "nullable": false,
+            "default": "active"
+          },
+          {
+            "name": "description",
+            "type": "Text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        }
+      },
+      {
+        "model": "Rank",
+        "table": "ranks",
+        "purpose": "ランク・会員グレード",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "rank"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "title",
+            "type": "String(160)",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "String(32)",
+            "nullable": false,
+            "default": "active"
+          },
+          {
+            "name": "description",
+            "type": "Text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        }
+      },
+      {
+        "model": "Order",
+        "table": "orders",
+        "purpose": "注文・申請・依頼",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "申請"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "title",
+            "type": "String(160)",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "String(32)",
+            "nullable": false,
+            "default": "active"
+          },
+          {
+            "name": "description",
+            "type": "Text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        }
+      },
+      {
+        "model": "Payment",
+        "table": "payments",
+        "purpose": "支払い・決済",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "決済"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "title",
+            "type": "String(160)",
+            "nullable": false
+          },
+          {
+            "name": "status",
+            "type": "String(32)",
+            "nullable": false,
+            "default": "active"
+          },
+          {
+            "name": "description",
+            "type": "Text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          },
+          {
+            "name": "updated_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        }
+      },
+      {
+        "model": "Notification",
+        "table": "notifications",
+        "purpose": "通知",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "通知"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "event_type",
+            "type": "String(64)",
+            "nullable": false
+          },
+          {
+            "name": "payload_json",
+            "type": "Text",
+            "nullable": true
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "user_id",
+          "event_type",
+          "payload_json"
+        ],
+        "forbidden_aliases": {
+          "payload": "payload_json",
+          "type": "event_type"
+        }
+      },
+      {
+        "model": "UserGroup",
+        "table": "user_groups",
+        "purpose": "共有・グループ状態",
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "group"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "fields": [
+          {
+            "name": "id",
+            "type": "Integer",
+            "primary_key": true
+          },
+          {
+            "name": "name",
+            "type": "String(120)",
+            "nullable": false
+          },
+          {
+            "name": "owner_user_id",
+            "type": "Integer",
+            "foreign_key": "users.id",
+            "nullable": false
+          },
+          {
+            "name": "created_at",
+            "type": "DateTime",
+            "nullable": false
+          }
+        ],
+        "constructor_fields": [
+          "name",
+          "owner_user_id"
+        ],
+        "forbidden_aliases": {
+          "owner_id": "owner_user_id"
+        }
+      }
+    ],
+    "rules": [
+      "このDB設計はManager Agentがコーディング前に確定した詳細設計であり、T02以降のモデル名・テーブル名・フィールド名の基準とする。",
+      "service/repository/routesは constructor_fields に存在する名前だけをモデル生成時のkeyword引数として使う。",
+      "別名を使いたい場合は forbidden_aliases の正規フィールド名へ変換する。",
+      "DBスキーマ変更が必要な場合は、設計契約・models・repositories・services・testsを同一attemptで整合させ、summaryに理由を書く。"
+    ]
+  },
+  "module_contract_design": {
+    "required": true,
+    "schema_version": "module_contract_design.v2",
+    "system_name": "point_integrate_system",
+    "design_resolution_policy": {
+      "schema_version": "manager_design_resolution_policy.v1",
+      "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+      "precedence": [
+        "explicit coding-level design in GitHub Issue / uploaded design documents",
+        "Manager-synthesized detailed coding design in development_plan",
+        "AIDeveloper framework defaults"
+      ],
+      "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+      "contracted_designs": [
+        "screen_flow_design",
+        "dev_access_design",
+        "database_schema_design",
+        "module_contract_design",
+        "service_model_binding_design"
+      ]
+    },
+    "design_source": {
+      "kind": "module_contract_design",
+      "source": "manager_inferred_before_coding",
+      "explicit_in_requirement": false,
+      "evidence": [
+        "capabilities",
+        "database_schema_design"
+      ],
+      "lock_stage": "coding_plan",
+      "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+    },
+    "modules": {
+      "src/point_integrate_system/config.py": {
+        "exports": [
+          "Config",
+          "DevelopmentConfig",
+          "TestingConfig",
+          "ProductionConfig",
+          "config_by_name",
+          "get_config"
+        ],
+        "design_source": {
+          "kind": "module_exports",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "Flask config contract"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "rules": [
+          "後続タスクで削除・renameしない。"
+        ]
+      },
+      "src/point_integrate_system/errors.py": {
+        "exports": [
+          "AppError",
+          "AuthError",
+          "RegistrationError",
+          "LoginError",
+          "PermissionError",
+          "ConflictError",
+          "DomainServiceError",
+          "PersistenceError"
+        ],
+        "design_source": {
+          "kind": "module_exports",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "error handling contract"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "rules": [
+          "services/routesがimportする独自例外は必ずここに定義する。",
+          "新しい例外名を使う場合は同じattemptでerrors.pyへ定義する。"
+        ]
+      },
+      "src/point_integrate_system/app.py": {
+        "exports": [
+          "create_app"
+        ],
+        "design_source": {
+          "kind": "module_exports",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "Flask app factory contract"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "rules": [
+          "create_app(config_name) は全タスクで安定公開シンボルとして保持する。"
+        ]
+      },
+      "src/point_integrate_system/services.py": {
+        "exports": [
+          "AuthService",
+          "DomainService"
+        ],
+        "design_source": {
+          "kind": "module_exports",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "capability-based service contract"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "rules": [
+          "errors.py/models.py/repositories.pyの公開契約外シンボルをimportしない。"
+        ]
+      },
+      "src/point_integrate_system/models.py": {
+        "exports": [
+          "db",
+          "User",
+          "PointAccount",
+          "PointTransaction",
+          "Coupon",
+          "Rank",
+          "Order",
+          "Payment",
+          "Notification",
+          "UserGroup"
+        ],
+        "design_source": {
+          "kind": "module_exports",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "User",
+            "PointAccount",
+            "PointTransaction",
+            "Coupon",
+            "Rank",
+            "Order",
+            "Payment",
+            "Notification",
+            "UserGroup"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "rules": [
+          "T02以降、モデル名とフィールド名をT04で勝手に変更しない。"
+        ]
+      },
+      "src/point_integrate_system/repositories.py": {
+        "exports": [
+          "UserRepository",
+          "PointAccountRepository",
+          "PointTransactionRepository",
+          "CouponRepository",
+          "RankRepository",
+          "OrderRepository",
+          "PaymentRepository",
+          "NotificationRepository",
+          "UserGroupRepository",
+          "RepositoryError"
+        ],
+        "design_source": {
+          "kind": "module_exports",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "UserRepository",
+            "PointAccountRepository",
+            "PointTransactionRepository",
+            "CouponRepository",
+            "RankRepository",
+            "OrderRepository",
+            "PaymentRepository",
+            "NotificationRepository",
+            "UserGroupRepository"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        },
+        "rules": [
+          "存在しないモデルフィールドを前提にしたRepository APIを作らない。"
+        ]
+      }
+    },
+    "rules": [
+      "from .errors import X / from .models import Y のX/Yは、対応モジュールのexportsに存在しなければならない。",
+      "後続タスクは過去タスクで確定した公開シンボルを削除・renameしない。",
+      "新規公開シンボルが必要な場合は、定義ファイルと利用ファイルを同一attemptで整合させる。"
+    ]
+  },
+  "service_model_binding_design": {
+    "required": true,
+    "schema_version": "service_model_binding_design.v2",
+    "system_name": "point_integrate_system",
+    "design_resolution_policy": {
+      "schema_version": "manager_design_resolution_policy.v1",
+      "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+      "precedence": [
+        "explicit coding-level design in GitHub Issue / uploaded design documents",
+        "Manager-synthesized detailed coding design in development_plan",
+        "AIDeveloper framework defaults"
+      ],
+      "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+      "contracted_designs": [
+        "screen_flow_design",
+        "dev_access_design",
+        "database_schema_design",
+        "module_contract_design",
+        "service_model_binding_design"
+      ]
+    },
+    "design_source": {
+      "kind": "service_model_binding_design",
+      "source": "manager_inferred_before_coding",
+      "explicit_in_requirement": false,
+      "evidence": [
+        "User",
+        "PointAccount",
+        "PointTransaction",
+        "Coupon",
+        "Rank",
+        "Order",
+        "Payment",
+        "Notification",
+        "UserGroup"
+      ],
+      "lock_stage": "coding_plan",
+      "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+    },
+    "bindings": [
+      {
+        "model": "User",
+        "table": "users",
+        "allowed_constructor_keywords": [
+          "name",
+          "email",
+          "password_hash",
+          "is_active"
+        ],
+        "all_model_fields": [
+          "id",
+          "name",
+          "email",
+          "password_hash",
+          "is_active",
+          "created_at",
+          "updated_at"
+        ],
+        "forbidden_aliases": {
+          "password": "password_hash",
+          "mail": "email"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "auth capability"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "PointAccount",
+        "table": "point_accounts",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "balance",
+          "status"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "balance",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "forbidden_aliases": {
+          "points": "balance"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "point"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "PointTransaction",
+        "table": "point_transactions",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "point_delta",
+          "transaction_type",
+          "description"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "point_delta",
+          "transaction_type",
+          "description",
+          "created_at"
+        ],
+        "forbidden_aliases": {
+          "points": "point_delta",
+          "note": "description",
+          "related_member_id": "user_id"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "point"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "Coupon",
+        "table": "coupons",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "title",
+          "status",
+          "description",
+          "created_at",
+          "updated_at"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "coupon"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "Rank",
+        "table": "ranks",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "title",
+          "status",
+          "description",
+          "created_at",
+          "updated_at"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "rank"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "Order",
+        "table": "orders",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "title",
+          "status",
+          "description",
+          "created_at",
+          "updated_at"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "申請"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "Payment",
+        "table": "payments",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "title",
+          "status",
+          "description"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "title",
+          "status",
+          "description",
+          "created_at",
+          "updated_at"
+        ],
+        "forbidden_aliases": {
+          "name": "title",
+          "note": "description"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "決済"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "Notification",
+        "table": "notifications",
+        "allowed_constructor_keywords": [
+          "user_id",
+          "event_type",
+          "payload_json"
+        ],
+        "all_model_fields": [
+          "id",
+          "user_id",
+          "event_type",
+          "payload_json",
+          "created_at"
+        ],
+        "forbidden_aliases": {
+          "payload": "payload_json",
+          "type": "event_type"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "通知"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      },
+      {
+        "model": "UserGroup",
+        "table": "user_groups",
+        "allowed_constructor_keywords": [
+          "name",
+          "owner_user_id"
+        ],
+        "all_model_fields": [
+          "id",
+          "name",
+          "owner_user_id",
+          "created_at"
+        ],
+        "forbidden_aliases": {
+          "owner_id": "owner_user_id"
+        },
+        "design_source": {
+          "kind": "database_table",
+          "source": "manager_inferred_before_coding",
+          "explicit_in_requirement": false,
+          "evidence": [
+            "group"
+          ],
+          "lock_stage": "coding_plan",
+          "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+        }
+      }
+    ],
+    "rules": [
+      "Service/RepositoryでSQLAlchemyモデルを生成する時、allowed_constructor_keywords以外のkeyword引数を渡さない。",
+      "別名はforbidden_aliasesの正規フィールドへ変換してからモデルへ渡す。",
+      "T04以降の業務ロジックはT02のdatabase_schema_designを読み、モデルフィールドを再発明しない。"
+    ]
+  },
+  "manager_contracts": {
+    "screen_flow_design": {
+      "required": true,
+      "schema_version": "screen_flow_design.v2",
+      "system_name": "point_integrate_system",
+      "project_mode": "python_flask",
+      "design_resolution_policy": {
+        "schema_version": "manager_design_resolution_policy.v1",
+        "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+        "precedence": [
+          "explicit coding-level design in GitHub Issue / uploaded design documents",
+          "Manager-synthesized detailed coding design in development_plan",
+          "AIDeveloper framework defaults"
+        ],
+        "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+        "contracted_designs": [
+          "screen_flow_design",
+          "dev_access_design",
+          "database_schema_design",
+          "module_contract_design",
+          "service_model_binding_design"
+        ]
+      },
+      "design_source": {
+        "kind": "screen_flow_design",
+        "source": "explicit_requirement",
+        "explicit_in_requirement": true,
+        "evidence": [
+          "/register",
+          "/legacy-transfer",
+          "/login",
+          "/logout",
+          "/menu",
+          "/profile/edit",
+          "/points/add",
+          "/coupons",
+          "/coupons/use",
+          "/credit-card",
+          "/family",
+          "/password-reset/request",
+          "/password-reset/<token>",
+          "/error"
+        ],
+        "lock_stage": "coding_plan",
+        "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+      },
+      "behavior_defaults": {
+        "design_resolution_policy": {
+          "schema_version": "manager_design_resolution_policy.v1",
+          "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+          "precedence": [
+            "explicit coding-level design in GitHub Issue / uploaded design documents",
+            "Manager-synthesized detailed coding design in development_plan",
+            "AIDeveloper framework defaults"
+          ],
+          "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+          "contracted_designs": [
+            "screen_flow_design",
+            "dev_access_design",
+            "database_schema_design",
+            "module_contract_design",
+            "service_model_binding_design"
+          ]
+        },
+        "html_form_auth_error_status_policy": "Issueで明示がない限り、認証・登録・権限・セッション系の異常入力は通常フォームの200再表示で握りつぶさず、400/401/403/409/422等の適切なHTTPステータスと対応するエラー画面で扱う。",
+        "root_url_policy": "Issueで明示がない限り、GET / は単なるランディングページにしない。未認証なら /login、認証済みなら /menu へリダイレクトする。",
+        "test_generation_policy": "生成テストはscreen_flow_designを期待値にする。"
+      },
+      "screens": [
+        {
+          "screen_id": "explicit_register_1",
+          "name": "ユーザー登録画面",
+          "url": "/register",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/register"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_legacy_transfer_2",
+          "name": "legacy-transfer 画面",
+          "url": "/legacy-transfer",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/legacy-transfer"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_login_3",
+          "name": "ログイン画面",
+          "url": "/login",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/login"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_logout_4",
+          "name": "ログアウト",
+          "url": "/logout",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/logout"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_menu_5",
+          "name": "メニュー画面",
+          "url": "/menu",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/menu"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_profile_edit_6",
+          "name": "編集画面",
+          "url": "/profile/edit",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/profile/edit"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_points_add_7",
+          "name": "add 画面",
+          "url": "/points/add",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/points/add"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_coupons_8",
+          "name": "coupons 画面",
+          "url": "/coupons",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/coupons"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_coupons_use_9",
+          "name": "use 画面",
+          "url": "/coupons/use",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/coupons/use"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_credit_card_10",
+          "name": "credit-card 画面",
+          "url": "/credit-card",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/credit-card"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_family_11",
+          "name": "family 画面",
+          "url": "/family",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/family"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_password_reset_request_12",
+          "name": "request 画面",
+          "url": "/password-reset/request",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/password-reset/request"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_password_reset_token_13",
+          "name": "<token> 画面",
+          "url": "/password-reset/<token>",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/password-reset/<token>"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "explicit_error_14",
+          "name": "error 画面",
+          "url": "/error",
+          "method": "GET",
+          "overview": "Issue/設計書に現れたURL。詳細挙動が未記載の場合はManagerが画面遷移を補完する。",
+          "transitions": [
+            "Issue explicit route; preserve URL/method contract"
+          ],
+          "error_policy": "Issueで明示されたHTTP方針があれば優先。未指定ならbehavior_defaultsに従う。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/error"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "root_entry",
+          "name": "トップ入口",
+          "url": "/",
+          "method": "GET",
+          "overview": "認証状態に応じて次画面へ振り分ける入口。",
+          "transitions": [
+            "未認証 -> /login",
+            "認証済み -> /menu"
+          ],
+          "error_policy": "Issue未指定のためManagerが補完した既定方針。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "auth capability"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "screen_id": "error",
+          "name": "エラー画面",
+          "url": "/error or rendered error.html",
+          "method": "GET/render",
+          "overview": "認証・登録・権限・セッション異常時の表示先。",
+          "transitions": [
+            "recover -> /login or /register"
+          ],
+          "error_policy": "Issue未指定のためManagerが補完した既定方針。",
+          "design_source": {
+            "kind": "screen_route",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "auth capability"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        }
+      ],
+      "note": "Manager Agentがコーディング前に確定した簡易画面設計。詳細画面仕様は後続のdisplay_difinition.mdで拡張するが、このURL/遷移契約から逸脱しない。"
+    },
+    "dev_access_design": {
+      "required": true,
+      "schema_version": "dev_access_design.v2",
+      "system_name": "point_integrate_system",
+      "design_resolution_policy": {
+        "schema_version": "manager_design_resolution_policy.v1",
+        "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+        "precedence": [
+          "explicit coding-level design in GitHub Issue / uploaded design documents",
+          "Manager-synthesized detailed coding design in development_plan",
+          "AIDeveloper framework defaults"
+        ],
+        "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+        "contracted_designs": [
+          "screen_flow_design",
+          "dev_access_design",
+          "database_schema_design",
+          "module_contract_design",
+          "service_model_binding_design"
+        ]
+      },
+      "design_source": {
+        "kind": "dev_access_design",
+        "source": "explicit_requirement",
+        "explicit_in_requirement": true,
+        "evidence": [
+          "/register",
+          "/legacy-transfer",
+          "/login",
+          "/logout",
+          "/menu",
+          "/profile/edit",
+          "/points/add",
+          "/coupons",
+          "/coupons/use",
+          "/credit-card",
+          "/family",
+          "/password-reset/request",
+          "/password-reset/<token>",
+          "/error"
+        ],
+        "lock_stage": "coding_plan",
+        "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+      },
+      "endpoints": [
+        {
+          "name": "ユーザー登録画面",
+          "url": "/register",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/register"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "legacy-transfer 画面",
+          "url": "/legacy-transfer",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/legacy-transfer"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "ログイン画面",
+          "url": "/login",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/login"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "ログアウト",
+          "url": "/logout",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/logout"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "メニュー画面",
+          "url": "/menu",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/menu"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "編集画面",
+          "url": "/profile/edit",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/profile/edit"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "add 画面",
+          "url": "/points/add",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/points/add"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "coupons 画面",
+          "url": "/coupons",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/coupons"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "use 画面",
+          "url": "/coupons/use",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/coupons/use"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "credit-card 画面",
+          "url": "/credit-card",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/credit-card"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "family 画面",
+          "url": "/family",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/family"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "request 画面",
+          "url": "/password-reset/request",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/password-reset/request"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "<token> 画面",
+          "url": "/password-reset/<token>",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/password-reset/<token>"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "error 画面",
+          "url": "/error",
+          "method": "GET",
+          "purpose": "Issue/設計書に現れた開発時確認URL",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "explicit_requirement",
+            "explicit_in_requirement": true,
+            "evidence": [
+              "/error"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "name": "root_entry",
+          "url": "/",
+          "method": "GET",
+          "purpose": "未認証は/login、認証済みは/menuへ振り分ける入口",
+          "design_source": {
+            "kind": "dev_access_endpoint",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "auth capability"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        }
+      ],
+      "dev_accounts": [
+        {
+          "role": "standard_user",
+          "email": "dev.user@example.com",
+          "password": "Password123!",
+          "name": "開発ユーザー",
+          "scope": "local test / GitHub Actions only",
+          "design_source": {
+            "kind": "dev_account",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "auth capability"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        }
+      ],
+      "security_constraints": [
+        "仮認証情報は開発・テスト専用。実アカウント・本番secretを生成しない。",
+        "後続タスクはこのURL/仮アカウント契約から逸脱しない。"
+      ]
+    },
+    "database_schema_design": {
+      "required": true,
+      "schema_version": "database_schema_design.v2",
+      "system_name": "point_integrate_system",
+      "design_resolution_policy": {
+        "schema_version": "manager_design_resolution_policy.v1",
+        "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+        "precedence": [
+          "explicit coding-level design in GitHub Issue / uploaded design documents",
+          "Manager-synthesized detailed coding design in development_plan",
+          "AIDeveloper framework defaults"
+        ],
+        "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+        "contracted_designs": [
+          "screen_flow_design",
+          "dev_access_design",
+          "database_schema_design",
+          "module_contract_design",
+          "service_model_binding_design"
+        ]
+      },
+      "design_source": {
+        "kind": "database_schema_design",
+        "source": "manager_inferred_before_coding",
+        "explicit_in_requirement": false,
+        "evidence": [
+          "point",
+          "point",
+          "coupon",
+          "rank",
+          "申請",
+          "決済",
+          "通知",
+          "group"
+        ],
+        "lock_stage": "coding_plan",
+        "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+      },
+      "sqlalchemy_config_contract": {
+        "Config": [
+          "SQLALCHEMY_DATABASE_URI",
+          "SQLALCHEMY_TRACK_MODIFICATIONS"
+        ],
+        "TestingConfig": {
+          "SQLALCHEMY_DATABASE_URI": "sqlite:///:memory:",
+          "TESTING": true
+        },
+        "DevelopmentConfig": "DATABASE_URL env fallback to local SQLite",
+        "ProductionConfig": "DATABASE_URL env required or explicitly documented fallback"
+      },
+      "tables": [
+        {
+          "model": "User",
+          "table": "users",
+          "purpose": "認証・セッションの主体ユーザー",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "auth capability"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "name",
+              "type": "String(120)",
+              "nullable": false
+            },
+            {
+              "name": "email",
+              "type": "String(255)",
+              "nullable": false,
+              "unique": true
+            },
+            {
+              "name": "password_hash",
+              "type": "String(255)",
+              "nullable": false
+            },
+            {
+              "name": "is_active",
+              "type": "Boolean",
+              "nullable": false,
+              "default": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "name",
+            "email",
+            "password_hash",
+            "is_active"
+          ],
+          "forbidden_aliases": {
+            "password": "password_hash",
+            "mail": "email"
+          }
+        },
+        {
+          "model": "PointAccount",
+          "table": "point_accounts",
+          "purpose": "ポイント残高・アカウント状態",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "point"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "balance",
+              "type": "Integer",
+              "nullable": false,
+              "default": 0
+            },
+            {
+              "name": "status",
+              "type": "String(32)",
+              "nullable": false,
+              "default": "active"
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "balance",
+            "status"
+          ],
+          "forbidden_aliases": {
+            "points": "balance"
+          }
+        },
+        {
+          "model": "PointTransaction",
+          "table": "point_transactions",
+          "purpose": "ポイント増減・履歴",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "point"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "point_delta",
+              "type": "Integer",
+              "nullable": false
+            },
+            {
+              "name": "transaction_type",
+              "type": "String(32)",
+              "nullable": false
+            },
+            {
+              "name": "description",
+              "type": "String(255)",
+              "nullable": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "point_delta",
+            "transaction_type",
+            "description"
+          ],
+          "forbidden_aliases": {
+            "points": "point_delta",
+            "note": "description",
+            "related_member_id": "user_id"
+          }
+        },
+        {
+          "model": "Coupon",
+          "table": "coupons",
+          "purpose": "クーポン・特典",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "coupon"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "title",
+              "type": "String(160)",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "String(32)",
+              "nullable": false,
+              "default": "active"
+            },
+            {
+              "name": "description",
+              "type": "Text",
+              "nullable": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          }
+        },
+        {
+          "model": "Rank",
+          "table": "ranks",
+          "purpose": "ランク・会員グレード",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "rank"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "title",
+              "type": "String(160)",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "String(32)",
+              "nullable": false,
+              "default": "active"
+            },
+            {
+              "name": "description",
+              "type": "Text",
+              "nullable": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          }
+        },
+        {
+          "model": "Order",
+          "table": "orders",
+          "purpose": "注文・申請・依頼",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "申請"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "title",
+              "type": "String(160)",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "String(32)",
+              "nullable": false,
+              "default": "active"
+            },
+            {
+              "name": "description",
+              "type": "Text",
+              "nullable": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          }
+        },
+        {
+          "model": "Payment",
+          "table": "payments",
+          "purpose": "支払い・決済",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "決済"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "title",
+              "type": "String(160)",
+              "nullable": false
+            },
+            {
+              "name": "status",
+              "type": "String(32)",
+              "nullable": false,
+              "default": "active"
+            },
+            {
+              "name": "description",
+              "type": "Text",
+              "nullable": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            },
+            {
+              "name": "updated_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          }
+        },
+        {
+          "model": "Notification",
+          "table": "notifications",
+          "purpose": "通知",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "通知"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "event_type",
+              "type": "String(64)",
+              "nullable": false
+            },
+            {
+              "name": "payload_json",
+              "type": "Text",
+              "nullable": true
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "user_id",
+            "event_type",
+            "payload_json"
+          ],
+          "forbidden_aliases": {
+            "payload": "payload_json",
+            "type": "event_type"
+          }
+        },
+        {
+          "model": "UserGroup",
+          "table": "user_groups",
+          "purpose": "共有・グループ状態",
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "group"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "fields": [
+            {
+              "name": "id",
+              "type": "Integer",
+              "primary_key": true
+            },
+            {
+              "name": "name",
+              "type": "String(120)",
+              "nullable": false
+            },
+            {
+              "name": "owner_user_id",
+              "type": "Integer",
+              "foreign_key": "users.id",
+              "nullable": false
+            },
+            {
+              "name": "created_at",
+              "type": "DateTime",
+              "nullable": false
+            }
+          ],
+          "constructor_fields": [
+            "name",
+            "owner_user_id"
+          ],
+          "forbidden_aliases": {
+            "owner_id": "owner_user_id"
+          }
+        }
+      ],
+      "rules": [
+        "このDB設計はManager Agentがコーディング前に確定した詳細設計であり、T02以降のモデル名・テーブル名・フィールド名の基準とする。",
+        "service/repository/routesは constructor_fields に存在する名前だけをモデル生成時のkeyword引数として使う。",
+        "別名を使いたい場合は forbidden_aliases の正規フィールド名へ変換する。",
+        "DBスキーマ変更が必要な場合は、設計契約・models・repositories・services・testsを同一attemptで整合させ、summaryに理由を書く。"
+      ]
+    },
+    "module_contract_design": {
+      "required": true,
+      "schema_version": "module_contract_design.v2",
+      "system_name": "point_integrate_system",
+      "design_resolution_policy": {
+        "schema_version": "manager_design_resolution_policy.v1",
+        "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+        "precedence": [
+          "explicit coding-level design in GitHub Issue / uploaded design documents",
+          "Manager-synthesized detailed coding design in development_plan",
+          "AIDeveloper framework defaults"
+        ],
+        "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+        "contracted_designs": [
+          "screen_flow_design",
+          "dev_access_design",
+          "database_schema_design",
+          "module_contract_design",
+          "service_model_binding_design"
+        ]
+      },
+      "design_source": {
+        "kind": "module_contract_design",
+        "source": "manager_inferred_before_coding",
+        "explicit_in_requirement": false,
+        "evidence": [
+          "capabilities",
+          "database_schema_design"
+        ],
+        "lock_stage": "coding_plan",
+        "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+      },
+      "modules": {
+        "src/point_integrate_system/config.py": {
+          "exports": [
+            "Config",
+            "DevelopmentConfig",
+            "TestingConfig",
+            "ProductionConfig",
+            "config_by_name",
+            "get_config"
+          ],
+          "design_source": {
+            "kind": "module_exports",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "Flask config contract"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "rules": [
+            "後続タスクで削除・renameしない。"
+          ]
+        },
+        "src/point_integrate_system/errors.py": {
+          "exports": [
+            "AppError",
+            "AuthError",
+            "RegistrationError",
+            "LoginError",
+            "PermissionError",
+            "ConflictError",
+            "DomainServiceError",
+            "PersistenceError"
+          ],
+          "design_source": {
+            "kind": "module_exports",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "error handling contract"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "rules": [
+            "services/routesがimportする独自例外は必ずここに定義する。",
+            "新しい例外名を使う場合は同じattemptでerrors.pyへ定義する。"
+          ]
+        },
+        "src/point_integrate_system/app.py": {
+          "exports": [
+            "create_app"
+          ],
+          "design_source": {
+            "kind": "module_exports",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "Flask app factory contract"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "rules": [
+            "create_app(config_name) は全タスクで安定公開シンボルとして保持する。"
+          ]
+        },
+        "src/point_integrate_system/services.py": {
+          "exports": [
+            "AuthService",
+            "DomainService"
+          ],
+          "design_source": {
+            "kind": "module_exports",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "capability-based service contract"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "rules": [
+            "errors.py/models.py/repositories.pyの公開契約外シンボルをimportしない。"
+          ]
+        },
+        "src/point_integrate_system/models.py": {
+          "exports": [
+            "db",
+            "User",
+            "PointAccount",
+            "PointTransaction",
+            "Coupon",
+            "Rank",
+            "Order",
+            "Payment",
+            "Notification",
+            "UserGroup"
+          ],
+          "design_source": {
+            "kind": "module_exports",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "User",
+              "PointAccount",
+              "PointTransaction",
+              "Coupon",
+              "Rank",
+              "Order",
+              "Payment",
+              "Notification",
+              "UserGroup"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "rules": [
+            "T02以降、モデル名とフィールド名をT04で勝手に変更しない。"
+          ]
+        },
+        "src/point_integrate_system/repositories.py": {
+          "exports": [
+            "UserRepository",
+            "PointAccountRepository",
+            "PointTransactionRepository",
+            "CouponRepository",
+            "RankRepository",
+            "OrderRepository",
+            "PaymentRepository",
+            "NotificationRepository",
+            "UserGroupRepository",
+            "RepositoryError"
+          ],
+          "design_source": {
+            "kind": "module_exports",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "UserRepository",
+              "PointAccountRepository",
+              "PointTransactionRepository",
+              "CouponRepository",
+              "RankRepository",
+              "OrderRepository",
+              "PaymentRepository",
+              "NotificationRepository",
+              "UserGroupRepository"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          },
+          "rules": [
+            "存在しないモデルフィールドを前提にしたRepository APIを作らない。"
+          ]
+        }
+      },
+      "rules": [
+        "from .errors import X / from .models import Y のX/Yは、対応モジュールのexportsに存在しなければならない。",
+        "後続タスクは過去タスクで確定した公開シンボルを削除・renameしない。",
+        "新規公開シンボルが必要な場合は、定義ファイルと利用ファイルを同一attemptで整合させる。"
+      ]
+    },
+    "service_model_binding_design": {
+      "required": true,
+      "schema_version": "service_model_binding_design.v2",
+      "system_name": "point_integrate_system",
+      "design_resolution_policy": {
+        "schema_version": "manager_design_resolution_policy.v1",
+        "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+        "precedence": [
+          "explicit coding-level design in GitHub Issue / uploaded design documents",
+          "Manager-synthesized detailed coding design in development_plan",
+          "AIDeveloper framework defaults"
+        ],
+        "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+        "contracted_designs": [
+          "screen_flow_design",
+          "dev_access_design",
+          "database_schema_design",
+          "module_contract_design",
+          "service_model_binding_design"
+        ]
+      },
+      "design_source": {
+        "kind": "service_model_binding_design",
+        "source": "manager_inferred_before_coding",
+        "explicit_in_requirement": false,
+        "evidence": [
+          "User",
+          "PointAccount",
+          "PointTransaction",
+          "Coupon",
+          "Rank",
+          "Order",
+          "Payment",
+          "Notification",
+          "UserGroup"
+        ],
+        "lock_stage": "coding_plan",
+        "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+      },
+      "bindings": [
+        {
+          "model": "User",
+          "table": "users",
+          "allowed_constructor_keywords": [
+            "name",
+            "email",
+            "password_hash",
+            "is_active"
+          ],
+          "all_model_fields": [
+            "id",
+            "name",
+            "email",
+            "password_hash",
+            "is_active",
+            "created_at",
+            "updated_at"
+          ],
+          "forbidden_aliases": {
+            "password": "password_hash",
+            "mail": "email"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "auth capability"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "PointAccount",
+          "table": "point_accounts",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "balance",
+            "status"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "balance",
+            "status",
+            "created_at",
+            "updated_at"
+          ],
+          "forbidden_aliases": {
+            "points": "balance"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "point"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "PointTransaction",
+          "table": "point_transactions",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "point_delta",
+            "transaction_type",
+            "description"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "point_delta",
+            "transaction_type",
+            "description",
+            "created_at"
+          ],
+          "forbidden_aliases": {
+            "points": "point_delta",
+            "note": "description",
+            "related_member_id": "user_id"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "point"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "Coupon",
+          "table": "coupons",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "title",
+            "status",
+            "description",
+            "created_at",
+            "updated_at"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "coupon"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "Rank",
+          "table": "ranks",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "title",
+            "status",
+            "description",
+            "created_at",
+            "updated_at"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "rank"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "Order",
+          "table": "orders",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "title",
+            "status",
+            "description",
+            "created_at",
+            "updated_at"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "申請"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "Payment",
+          "table": "payments",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "title",
+            "status",
+            "description"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "title",
+            "status",
+            "description",
+            "created_at",
+            "updated_at"
+          ],
+          "forbidden_aliases": {
+            "name": "title",
+            "note": "description"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "決済"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "Notification",
+          "table": "notifications",
+          "allowed_constructor_keywords": [
+            "user_id",
+            "event_type",
+            "payload_json"
+          ],
+          "all_model_fields": [
+            "id",
+            "user_id",
+            "event_type",
+            "payload_json",
+            "created_at"
+          ],
+          "forbidden_aliases": {
+            "payload": "payload_json",
+            "type": "event_type"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "通知"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        },
+        {
+          "model": "UserGroup",
+          "table": "user_groups",
+          "allowed_constructor_keywords": [
+            "name",
+            "owner_user_id"
+          ],
+          "all_model_fields": [
+            "id",
+            "name",
+            "owner_user_id",
+            "created_at"
+          ],
+          "forbidden_aliases": {
+            "owner_id": "owner_user_id"
+          },
+          "design_source": {
+            "kind": "database_table",
+            "source": "manager_inferred_before_coding",
+            "explicit_in_requirement": false,
+            "evidence": [
+              "group"
+            ],
+            "lock_stage": "coding_plan",
+            "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+          }
+        }
+      ],
+      "rules": [
+        "Service/RepositoryでSQLAlchemyモデルを生成する時、allowed_constructor_keywords以外のkeyword引数を渡さない。",
+        "別名はforbidden_aliasesの正規フィールドへ変換してからモデルへ渡す。",
+        "T04以降の業務ロジックはT02のdatabase_schema_designを読み、モデルフィールドを再発明しない。"
+      ]
+    },
+    "design_resolution_policy": {
+      "schema_version": "manager_design_resolution_policy.v1",
+      "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+      "precedence": [
+        "explicit coding-level design in GitHub Issue / uploaded design documents",
+        "Manager-synthesized detailed coding design in development_plan",
+        "AIDeveloper framework defaults"
+      ],
+      "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+      "contracted_designs": [
+        "screen_flow_design",
+        "dev_access_design",
+        "database_schema_design",
+        "module_contract_design",
+        "service_model_binding_design",
+        "module_dependency_design"
+      ],
+      "module_dependency_rule": "Manager Agentはコーディング前にローカルパッケージ名とモジュール間import依存方向を矢印で確定する。後続フェーズはこの依存方向を守り、循環importや未定義ローカルimportを発生させない。"
+    },
+    "module_dependency_design": {
+      "required": true,
+      "schema_version": "module_dependency_design.v1",
+      "system_name": "point_integrate_system",
+      "design_source": {
+        "kind": "module_dependency_design",
+        "source": "manager_inferred_before_coding",
+        "explicit_in_requirement": false,
+        "evidence": [
+          "Flask layered architecture default"
+        ],
+        "lock_stage": "coding_plan",
+        "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+      },
+      "package_names": {
+        "source_root": "src",
+        "package": "point_integrate_system",
+        "import_root": "point_integrate_system",
+        "app_factory_module": "point_integrate_system.app",
+        "routes_module": "point_integrate_system.routes",
+        "models_module": "point_integrate_system.models",
+        "services_module": "point_integrate_system.services",
+        "repositories_module": "point_integrate_system.repositories",
+        "errors_module": "point_integrate_system.errors"
+      },
+      "compact_arrows": [
+        "src/point_integrate_system/app.py -> src/point_integrate_system/config.py",
+        "src/point_integrate_system/app.py -> src/point_integrate_system/models.py",
+        "src/point_integrate_system/app.py -> src/point_integrate_system/routes.py",
+        "src/point_integrate_system/routes.py -> src/point_integrate_system/forms.py",
+        "src/point_integrate_system/routes.py -> src/point_integrate_system/services.py",
+        "src/point_integrate_system/routes.py -> src/point_integrate_system/errors.py",
+        "src/point_integrate_system/services.py -> src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/services.py -> src/point_integrate_system/models.py",
+        "src/point_integrate_system/services.py -> src/point_integrate_system/errors.py",
+        "src/point_integrate_system/repositories.py -> src/point_integrate_system/models.py",
+        "src/point_integrate_system/repositories.py -> src/point_integrate_system/errors.py",
+        "tests/run_XXX -> src/point_integrate_system/app.py",
+        "tests/run_XXX -> src/point_integrate_system/models.py",
+        "tests/run_XXX -> src/point_integrate_system/repositories.py",
+        "tests/run_XXX -> src/point_integrate_system/services.py"
+      ],
+      "edges": [
+        {
+          "from": "src/point_integrate_system/app.py",
+          "to": "src/point_integrate_system/config.py",
+          "arrow": "src/point_integrate_system/app.py -> src/point_integrate_system/config.py",
+          "reason": "load runtime configuration"
+        },
+        {
+          "from": "src/point_integrate_system/app.py",
+          "to": "src/point_integrate_system/models.py",
+          "arrow": "src/point_integrate_system/app.py -> src/point_integrate_system/models.py",
+          "reason": "initialize db extension if database is enabled"
+        },
+        {
+          "from": "src/point_integrate_system/app.py",
+          "to": "src/point_integrate_system/routes.py",
+          "arrow": "src/point_integrate_system/app.py -> src/point_integrate_system/routes.py",
+          "reason": "register Flask blueprints/routes"
+        },
+        {
+          "from": "src/point_integrate_system/routes.py",
+          "to": "src/point_integrate_system/forms.py",
+          "arrow": "src/point_integrate_system/routes.py -> src/point_integrate_system/forms.py",
+          "reason": "parse/validate browser form input"
+        },
+        {
+          "from": "src/point_integrate_system/routes.py",
+          "to": "src/point_integrate_system/services.py",
+          "arrow": "src/point_integrate_system/routes.py -> src/point_integrate_system/services.py",
+          "reason": "delegate application behavior"
+        },
+        {
+          "from": "src/point_integrate_system/routes.py",
+          "to": "src/point_integrate_system/errors.py",
+          "arrow": "src/point_integrate_system/routes.py -> src/point_integrate_system/errors.py",
+          "reason": "convert application errors to HTTP responses"
+        },
+        {
+          "from": "src/point_integrate_system/services.py",
+          "to": "src/point_integrate_system/repositories.py",
+          "arrow": "src/point_integrate_system/services.py -> src/point_integrate_system/repositories.py",
+          "reason": "perform persistence through repository layer"
+        },
+        {
+          "from": "src/point_integrate_system/services.py",
+          "to": "src/point_integrate_system/models.py",
+          "arrow": "src/point_integrate_system/services.py -> src/point_integrate_system/models.py",
+          "reason": "use model contracts and DTO-like data"
+        },
+        {
+          "from": "src/point_integrate_system/services.py",
+          "to": "src/point_integrate_system/errors.py",
+          "arrow": "src/point_integrate_system/services.py -> src/point_integrate_system/errors.py",
+          "reason": "raise application/domain errors"
+        },
+        {
+          "from": "src/point_integrate_system/repositories.py",
+          "to": "src/point_integrate_system/models.py",
+          "arrow": "src/point_integrate_system/repositories.py -> src/point_integrate_system/models.py",
+          "reason": "use SQLAlchemy models/db"
+        },
+        {
+          "from": "src/point_integrate_system/repositories.py",
+          "to": "src/point_integrate_system/errors.py",
+          "arrow": "src/point_integrate_system/repositories.py -> src/point_integrate_system/errors.py",
+          "reason": "wrap persistence failures"
+        },
+        {
+          "from": "tests/run_XXX",
+          "to": "src/point_integrate_system/app.py",
+          "arrow": "tests/run_XXX -> src/point_integrate_system/app.py",
+          "reason": "create Flask test app"
+        },
+        {
+          "from": "tests/run_XXX",
+          "to": "src/point_integrate_system/models.py",
+          "arrow": "tests/run_XXX -> src/point_integrate_system/models.py",
+          "reason": "verify model contracts"
+        },
+        {
+          "from": "tests/run_XXX",
+          "to": "src/point_integrate_system/repositories.py",
+          "arrow": "tests/run_XXX -> src/point_integrate_system/repositories.py",
+          "reason": "verify repository contracts"
+        },
+        {
+          "from": "tests/run_XXX",
+          "to": "src/point_integrate_system/services.py",
+          "arrow": "tests/run_XXX -> src/point_integrate_system/services.py",
+          "reason": "verify service behavior"
+        }
+      ],
+      "rules": [
+        "Imports should follow the arrow direction. Avoid reverse imports that create cycles.",
+        "models.py must not import routes.py/services.py/repositories.py.",
+        "repositories.py must not import routes.py or app.py.",
+        "services.py must not import routes.py or app.py.",
+        "routes.py may call services/forms/errors, but should not directly own persistence transaction policy.",
+        "app.py wires config/db/blueprints and should avoid business logic.",
+        "If a new local module is introduced, add its import direction to this design and keep module_contract_design exports aligned."
+      ]
+    }
+  },
+  "implementation_tasks": [
+    {
+      "task_id": "T01",
+      "title": "Flask基盤・起動構成",
+      "category": "scaffold",
+      "depends_on": [],
+      "goal": "root app.py / src app.py / create_app / config / README の最小起動構成を作成する。T01ではtemplate/static/DB/authに依存しないGET / 200応答に限定する。",
+      "allowed_files": [
+        "app.py",
+        "src/app.py",
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py",
+        "requirements.txt",
+        "pyproject.toml",
+        "README.md"
+      ],
+      "acceptance_criteria": [
+        "py app.py または python app.py で起動できる。",
+        "create_app() をimportできる。",
+        "GET / はtemplate非依存で200を返す。"
+      ],
+      "test_tasks": [
+        "TT01"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: Flask基盤・起動構成. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T02",
+      "title": "永続化モデル・Repository",
+      "category": "persistence",
+      "depends_on": [
+        "T01"
+      ],
+      "goal": "SQLAlchemyモデル、DB初期化、Repository層を作成する。",
+      "allowed_files": [
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py",
+        "tests/run_XXX/test_models.py",
+        "tests/run_XXX/test_repositories.py"
+      ],
+      "acceptance_criteria": [
+        "DB初期化が成功する。",
+        "主要モデルを作成・保存・検索できる。"
+      ],
+      "test_tasks": [
+        "TT02"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: 永続化モデル・Repository. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T03",
+      "title": "認証・セッション・ユーザー入口",
+      "category": "auth",
+      "depends_on": [
+        "T01",
+        "T02"
+      ],
+      "goal": "登録、ログイン、ログアウト、セッション維持、認証前後の画面遷移を実装する。Issueで明示がない場合も、GET / は単なるランディングページにせず、未認証なら /login、認証済みなら /menu へリダイレクトする。認証系の異常入力は 400/401/403/409/422 等の適切なHTTPステータスと対応するエラー画面で扱う。",
+      "allowed_files": [
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/forms.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/templates/base.html",
+        "src/point_integrate_system/templates/auth.html",
+        "src/point_integrate_system/templates/register.html",
+        "src/point_integrate_system/templates/menu.html",
+        "src/point_integrate_system/templates/error.html",
+        "src/point_integrate_system/static/css/style.css",
+        "src/point_integrate_system/static/js/main.js",
+        "tests/run_XXX/test_auth.py"
+      ],
+      "acceptance_criteria": [
+        "登録・ログイン・ログアウトがFlask test clientで通る。",
+        "セッション制御が機能する。",
+        "GET / は未認証時 /login、認証済み時 /menu へリダイレクトする。",
+        "認証・登録の異常系は通常のフォーム200再表示ではなく、適切な4xx/401/403/409/422系ステータスとエラー画面で処理する。",
+        "各画面のURL・遷移先・概要は screen_flow_design と一致する。"
+      ],
+      "test_tasks": [
+        "TT03"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: 認証・セッション・ユーザー入口. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T04",
+      "title": "主要業務ワークフロー",
+      "category": "domain",
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "goal": "要件の中核となる業務ロジック、状態更新、計算、一覧/詳細表示を実装する。",
+      "allowed_files": [
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/templates/menu.html",
+        "src/point_integrate_system/templates/list.html",
+        "src/point_integrate_system/templates/detail.html",
+        "src/point_integrate_system/templates/form.html",
+        "tests/run_XXX/test_domain_workflows.py"
+      ],
+      "acceptance_criteria": [
+        "主要業務フローがservice層で実装される。",
+        "主要画面から業務操作できる。",
+        "Serviceはdatabase_schema_designのモデル名・フィールド名・constructor_fieldsから逸脱しない。",
+        "import/exportはmodule_contract_designと一致し、未定義シンボルをimportしない。"
+      ],
+      "test_tasks": [
+        "TT04"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: 主要業務ワークフロー. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T05",
+      "title": "通知・外部通信境界",
+      "category": "communication",
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "goal": "メール送信、通知、デバッグモード時の疑似送信、非デバッグ時の実送信境界を実装する。",
+      "allowed_files": [
+        "src/point_integrate_system/mail_service.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/config.py",
+        "tests/run_XXX/test_mail_service.py"
+      ],
+      "acceptance_criteria": [
+        "デバッグ時は疑似送信できる。",
+        "非デバッグ時の実送信関数がmock可能である。"
+      ],
+      "test_tasks": [
+        "TT05"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: 通知・外部通信境界. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T06",
+      "title": "グループ・共有状態管理",
+      "category": "grouping",
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ],
+      "goal": "複数ユーザーまたは複数要素のグループ化、共有状態、統合処理を実装する。",
+      "allowed_files": [
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/templates/group.html",
+        "src/point_integrate_system/templates/family.html",
+        "tests/run_XXX/test_grouping.py",
+        "tests/run_XXX/test_family.py"
+      ],
+      "acceptance_criteria": [
+        "グループ作成・追加・共有状態更新が動作する。"
+      ],
+      "test_tasks": [
+        "TT06"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: グループ・共有状態管理. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T07",
+      "title": "画面・静的ファイル・画面仕様書",
+      "category": "ui",
+      "depends_on": [
+        "T01",
+        "T04"
+      ],
+      "goal": "HTML/CSS/JavaScriptとdisplay_difinition.mdを整備する。",
+      "allowed_files": [
+        "src/point_integrate_system/templates/*.html",
+        "src/point_integrate_system/static/css/style.css",
+        "src/point_integrate_system/static/js/main.js",
+        "reports/run_XXX/display_difinition.md",
+        "tests/run_XXX/test_templates.py",
+        "tests/run_XXX/test_static_assets.py",
+        "tests/run_XXX/test_display_definition.py"
+      ],
+      "acceptance_criteria": [
+        "主要画面が存在する。",
+        "CSS/JS参照が整合する。",
+        "display_difinition.mdが成果物と一致する。"
+      ],
+      "test_tasks": [
+        "TT07"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: 画面・静的ファイル・画面仕様書. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T08",
+      "title": "JSON/XMLインターフェース",
+      "category": "interface",
+      "depends_on": [
+        "T01",
+        "T04"
+      ],
+      "goal": "JSON/XMLシリアライズ、サンプルデータ、interface_difinition.mdを実装する。",
+      "allowed_files": [
+        "src/point_integrate_system/serializers.py",
+        "data/exchange/*.json",
+        "data/exchange/*.xml",
+        "reports/run_XXX/interface_difinition.md",
+        "tests/run_XXX/test_serializers.py",
+        "tests/run_XXX/test_interface_definition.py"
+      ],
+      "acceptance_criteria": [
+        "serialize/deserializeが通る。",
+        "interface_difinition.mdが実装と整合する。"
+      ],
+      "test_tasks": [
+        "TT08"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: JSON/XMLインターフェース. Keep changes focused on allowed files and preserve completed task behavior."
+    },
+    {
+      "task_id": "T09",
+      "title": "全体結合・README・最終補強",
+      "category": "integration",
+      "depends_on": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08"
+      ],
+      "goal": "全体のimport、起動、代表フロー、README、テスト整合を補強する。",
+      "allowed_files": [
+        "README.md",
+        "requirements.txt",
+        "pyproject.toml",
+        "app.py",
+        "src/app.py",
+        "src/point_integrate_system/**/*.py",
+        "tests/run_XXX/test_integration_flows.py"
+      ],
+      "acceptance_criteria": [
+        "代表フローが結合試験で通る。",
+        "READMEに起動・試験・設計概要がある。"
+      ],
+      "test_tasks": [
+        "TT09"
+      ],
+      "forbidden_actions": [
+        "既存の完了済みタスク成果物を全面再生成しない。",
+        "現在のタスク範囲外の大規模リファクタリングを行わない。",
+        "root entrypoint、設定、DB初期化方式を理由なく破壊しない。",
+        "要件にない外部システム、DB、Web、画像出力を勝手に追加しない。",
+        "allowed_filesにないファイルを修正する場合はsummaryに理由を書く。"
+      ],
+      "code_writer_instruction": "Implement only this task: 全体結合・README・最終補強. Keep changes focused on allowed files and preserve completed task behavior."
+    }
+  ],
+  "test_tasks": [
+    {
+      "test_task_id": "TT01",
+      "related_implementation_task": "T01",
+      "title": "Flask基盤・起動構成 の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_app_factory.py"
+      ],
+      "viewpoints": [
+        "create_app() が成功する。",
+        "root app.py から起動できる。",
+        "T01ではrender_template/redirect/DB/auth依存を使わずGET / が200を返す。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT02",
+      "related_implementation_task": "T02",
+      "title": "永続化モデル・Repository の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_models.py",
+        "tests/run_XXX/test_repositories.py"
+      ],
+      "viewpoints": [
+        "SQLAlchemyモデルの作成確認。",
+        "Repositoryの保存・検索確認。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT03",
+      "related_implementation_task": "T03",
+      "title": "認証・セッション・ユーザー入口 の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_auth.py"
+      ],
+      "viewpoints": [
+        "登録正常系/異常系。",
+        "ログイン正常系/異常系。",
+        "ログアウトと未認証遷移。",
+        "GET / の認証状態別リダイレクト。",
+        "認証系エラー画面とHTTPステータス。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT04",
+      "related_implementation_task": "T04",
+      "title": "主要業務ワークフロー の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_domain_workflows.py"
+      ],
+      "viewpoints": [
+        "主要業務ロジック正常系。",
+        "入力異常系。",
+        "状態更新の確認。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT05",
+      "related_implementation_task": "T05",
+      "title": "通知・外部通信境界 の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_mail_service.py"
+      ],
+      "viewpoints": [
+        "疑似送信保存。",
+        "SMTP設定不足時のエラー。",
+        "実送信関数のmock可能性。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT06",
+      "related_implementation_task": "T06",
+      "title": "グループ・共有状態管理 の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_grouping.py",
+        "tests/run_XXX/test_family.py"
+      ],
+      "viewpoints": [
+        "グループ登録。",
+        "存在しない対象の異常系。",
+        "共有状態の増減。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT07",
+      "related_implementation_task": "T07",
+      "title": "画面・静的ファイル・画面仕様書 の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_templates.py",
+        "tests/run_XXX/test_static_assets.py",
+        "tests/run_XXX/test_display_definition.py"
+      ],
+      "viewpoints": [
+        "template存在。",
+        "CSS/JS参照。",
+        "画面仕様書整合。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT08",
+      "related_implementation_task": "T08",
+      "title": "JSON/XMLインターフェース の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_serializers.py",
+        "tests/run_XXX/test_interface_definition.py"
+      ],
+      "viewpoints": [
+        "JSON roundtrip。",
+        "XML roundtrip。",
+        "仕様書整合。"
+      ],
+      "priority": "high"
+    },
+    {
+      "test_task_id": "TT09",
+      "related_implementation_task": "T09",
+      "title": "全体結合・README・最終補強 の局所試験",
+      "test_files": [
+        "tests/run_XXX/test_integration_flows.py"
+      ],
+      "viewpoints": [
+        "代表業務フロー。",
+        "README確認。",
+        "import整合。"
+      ],
+      "priority": "high"
+    }
+  ],
+  "final_integration_tests": [
+    "起動性確認",
+    "主要正常系フロー",
+    "主要異常系フロー",
+    "README/利用手順確認",
+    "主要URL確認",
+    "template描画確認",
+    "static CSS/JS参照確認",
+    "display_difinition.md整合",
+    "DBモデルと永続化の結合確認",
+    "認証・セッション代表フロー",
+    "通知/メール送信境界の確認",
+    "JSON/XML roundtripとinterface_difinition.md整合"
+  ],
+  "manager_policy": {
+    "empty_files_response": "If Code Writer returns no files, retry with the same task and a strict minimum-file contract. If it still fails, split the task further.",
+    "task_scope": "Each task should primarily modify allowed_files. Cross-task edits require a summary reason.",
+    "review_scope": "Task-local review/test first, then full review/test after all tasks complete.",
+    "coding_plan_as_detailed_design": "Manager Agentが作成するコーディング計画書は、人間のU字モデルにおける詳細設計書相当として扱う。Issue/基本設計に不足するコーディングレベル設計はManagerが動的に確定し、CodeWriter以降は遵守する。",
+    "module_dependency_design": "ローカルパッケージのimport依存方向を矢印で固定し、CodeWriter以降はこの方向から逸脱しない。"
+  },
+  "design_resolution_policy": {
+    "schema_version": "manager_design_resolution_policy.v1",
+    "principle": "人間は基本設計までを与え、Manager Agentがコーディング前に詳細設計粒度の契約を確定する。CodeWriter、試験、修復フェーズはこの計画書の契約を上位仕様として扱う。",
+    "precedence": [
+      "explicit coding-level design in GitHub Issue / uploaded design documents",
+      "Manager-synthesized detailed coding design in development_plan",
+      "AIDeveloper framework defaults"
+    ],
+    "dynamic_completion_rule": "Issue/基本設計にURL、DBテーブル、公開シンボル、Service/Modelバインディングが不足する場合、Manager Agentがコーディング計画書の時点で動的に補完し、後続フェーズで勝手に変更しない。",
+    "contracted_designs": [
+      "screen_flow_design",
+      "dev_access_design",
+      "database_schema_design",
+      "module_contract_design",
+      "service_model_binding_design",
+      "module_dependency_design"
+    ],
+    "module_dependency_rule": "Manager Agentはコーディング前にローカルパッケージ名とモジュール間import依存方向を矢印で確定する。後続フェーズはこの依存方向を守り、循環importや未定義ローカルimportを発生させない。"
+  },
+  "module_dependency_design": {
+    "required": true,
+    "schema_version": "module_dependency_design.v1",
+    "system_name": "point_integrate_system",
+    "design_source": {
+      "kind": "module_dependency_design",
+      "source": "manager_inferred_before_coding",
+      "explicit_in_requirement": false,
+      "evidence": [
+        "Flask layered architecture default"
+      ],
+      "lock_stage": "coding_plan",
+      "change_policy": "後続の製造・試験・修復フェーズではこの設計を遵守する。変更が必要な場合は、関連する設計契約・実装・試験を同一attemptで整合させ、summaryに理由を書く。"
+    },
+    "package_names": {
+      "source_root": "src",
+      "package": "point_integrate_system",
+      "import_root": "point_integrate_system",
+      "app_factory_module": "point_integrate_system.app",
+      "routes_module": "point_integrate_system.routes",
+      "models_module": "point_integrate_system.models",
+      "services_module": "point_integrate_system.services",
+      "repositories_module": "point_integrate_system.repositories",
+      "errors_module": "point_integrate_system.errors"
+    },
+    "compact_arrows": [
+      "src/point_integrate_system/app.py -> src/point_integrate_system/config.py",
+      "src/point_integrate_system/app.py -> src/point_integrate_system/models.py",
+      "src/point_integrate_system/app.py -> src/point_integrate_system/routes.py",
+      "src/point_integrate_system/routes.py -> src/point_integrate_system/forms.py",
+      "src/point_integrate_system/routes.py -> src/point_integrate_system/services.py",
+      "src/point_integrate_system/routes.py -> src/point_integrate_system/errors.py",
+      "src/point_integrate_system/services.py -> src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py -> src/point_integrate_system/models.py",
+      "src/point_integrate_system/services.py -> src/point_integrate_system/errors.py",
+      "src/point_integrate_system/repositories.py -> src/point_integrate_system/models.py",
+      "src/point_integrate_system/repositories.py -> src/point_integrate_system/errors.py",
+      "tests/run_XXX -> src/point_integrate_system/app.py",
+      "tests/run_XXX -> src/point_integrate_system/models.py",
+      "tests/run_XXX -> src/point_integrate_system/repositories.py",
+      "tests/run_XXX -> src/point_integrate_system/services.py"
+    ],
+    "edges": [
+      {
+        "from": "src/point_integrate_system/app.py",
+        "to": "src/point_integrate_system/config.py",
+        "arrow": "src/point_integrate_system/app.py -> src/point_integrate_system/config.py",
+        "reason": "load runtime configuration"
+      },
+      {
+        "from": "src/point_integrate_system/app.py",
+        "to": "src/point_integrate_system/models.py",
+        "arrow": "src/point_integrate_system/app.py -> src/point_integrate_system/models.py",
+        "reason": "initialize db extension if database is enabled"
+      },
+      {
+        "from": "src/point_integrate_system/app.py",
+        "to": "src/point_integrate_system/routes.py",
+        "arrow": "src/point_integrate_system/app.py -> src/point_integrate_system/routes.py",
+        "reason": "register Flask blueprints/routes"
+      },
+      {
+        "from": "src/point_integrate_system/routes.py",
+        "to": "src/point_integrate_system/forms.py",
+        "arrow": "src/point_integrate_system/routes.py -> src/point_integrate_system/forms.py",
+        "reason": "parse/validate browser form input"
+      },
+      {
+        "from": "src/point_integrate_system/routes.py",
+        "to": "src/point_integrate_system/services.py",
+        "arrow": "src/point_integrate_system/routes.py -> src/point_integrate_system/services.py",
+        "reason": "delegate application behavior"
+      },
+      {
+        "from": "src/point_integrate_system/routes.py",
+        "to": "src/point_integrate_system/errors.py",
+        "arrow": "src/point_integrate_system/routes.py -> src/point_integrate_system/errors.py",
+        "reason": "convert application errors to HTTP responses"
+      },
+      {
+        "from": "src/point_integrate_system/services.py",
+        "to": "src/point_integrate_system/repositories.py",
+        "arrow": "src/point_integrate_system/services.py -> src/point_integrate_system/repositories.py",
+        "reason": "perform persistence through repository layer"
+      },
+      {
+        "from": "src/point_integrate_system/services.py",
+        "to": "src/point_integrate_system/models.py",
+        "arrow": "src/point_integrate_system/services.py -> src/point_integrate_system/models.py",
+        "reason": "use model contracts and DTO-like data"
+      },
+      {
+        "from": "src/point_integrate_system/services.py",
+        "to": "src/point_integrate_system/errors.py",
+        "arrow": "src/point_integrate_system/services.py -> src/point_integrate_system/errors.py",
+        "reason": "raise application/domain errors"
+      },
+      {
+        "from": "src/point_integrate_system/repositories.py",
+        "to": "src/point_integrate_system/models.py",
+        "arrow": "src/point_integrate_system/repositories.py -> src/point_integrate_system/models.py",
+        "reason": "use SQLAlchemy models/db"
+      },
+      {
+        "from": "src/point_integrate_system/repositories.py",
+        "to": "src/point_integrate_system/errors.py",
+        "arrow": "src/point_integrate_system/repositories.py -> src/point_integrate_system/errors.py",
+        "reason": "wrap persistence failures"
+      },
+      {
+        "from": "tests/run_XXX",
+        "to": "src/point_integrate_system/app.py",
+        "arrow": "tests/run_XXX -> src/point_integrate_system/app.py",
+        "reason": "create Flask test app"
+      },
+      {
+        "from": "tests/run_XXX",
+        "to": "src/point_integrate_system/models.py",
+        "arrow": "tests/run_XXX -> src/point_integrate_system/models.py",
+        "reason": "verify model contracts"
+      },
+      {
+        "from": "tests/run_XXX",
+        "to": "src/point_integrate_system/repositories.py",
+        "arrow": "tests/run_XXX -> src/point_integrate_system/repositories.py",
+        "reason": "verify repository contracts"
+      },
+      {
+        "from": "tests/run_XXX",
+        "to": "src/point_integrate_system/services.py",
+        "arrow": "tests/run_XXX -> src/point_integrate_system/services.py",
+        "reason": "verify service behavior"
+      }
+    ],
+    "rules": [
+      "Imports should follow the arrow direction. Avoid reverse imports that create cycles.",
+      "models.py must not import routes.py/services.py/repositories.py.",
+      "repositories.py must not import routes.py or app.py.",
+      "services.py must not import routes.py or app.py.",
+      "routes.py may call services/forms/errors, but should not directly own persistence transaction policy.",
+      "app.py wires config/db/blueprints and should avoid business logic.",
+      "If a new local module is introduced, add its import direction to this design and keep module_contract_design exports aligned."
+    ]
+  },
+  "lock": {
+    "status": "restored_from_lock",
+    "source": "workspace/target_repo/.aideveloper/development_plan.lock.json",
+    "restored_from": "",
+    "plan_hash": "6fb9a168535f1c439ff84e63dfc9e33b53935d4505b225e52dfb53e404d63db4",
+    "raw_resume_from_task_id": "T03",
+    "resume_from_task_id": "T03"
+  }
+}

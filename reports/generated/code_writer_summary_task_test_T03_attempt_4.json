@@ -1,0 +1,260 @@
+{
+  "status": "success",
+  "development_task_id": "T03",
+  "project_mode": "python_flask",
+  "attempts": [
+    {
+      "attempt": 1,
+      "file_count": 1,
+      "report_only_fallback": false,
+      "remaining_timeout_seconds": 265,
+      "web_contract_write_policy": {
+        "enabled": false
+      },
+      "db_binding_repair_contract": {
+        "enabled": true,
+        "status": "satisfied",
+        "dropped_full_rewrites": [],
+        "operation_change_paths": []
+      },
+      "existing_run_tests_read_only_filter": {
+        "schema_version": "existing_run_tests_read_only_filter.v1",
+        "enabled": true,
+        "development_task_id": "T03",
+        "dropped_existing_run_test_changes": [],
+        "dropped_count": 0,
+        "kept_files": [
+          "src/point_integrate_system/templates/error.html"
+        ],
+        "policy": "Existing tests/run_* are read-only. Production CodeWriter output may not rewrite them."
+      },
+      "forced_additive_filter": {
+        "enabled": false,
+        "dropped_existing_rewrites": [],
+        "kept_files": []
+      },
+      "patch_operation_count": 0,
+      "artifact_write_guard": {
+        "status": "success",
+        "enabled": true,
+        "finding_count": 0
+      },
+      "generated_python_safety": {
+        "status": "success",
+        "python_file_count": 0,
+        "blocking_count": 0,
+        "warning_count": 0
+      },
+      "generated_contract_safety": {
+        "status": "success",
+        "blocking_count": 0,
+        "warning_count": 0
+      },
+      "error": ""
+    }
+  ],
+  "empty_like_count": 0,
+  "written_count": 1,
+  "written_files": [
+    "src/point_integrate_system/templates/error.html"
+  ],
+  "report_context_manifest": {
+    "schema_version": "report_context_manifest.v1",
+    "reports_dir": "reports",
+    "development_task_id": "T03",
+    "current_run": "",
+    "previous_run": "",
+    "policy": {
+      "keep_report_history_on_disk": true,
+      "prompt_scope": "previous_run_and_current_task_only",
+      "do_not_embed_all_reports_run_history": true,
+      "dedupe_by_sha256": true,
+      "large_report_files_are_manifest_only": true,
+      "report_file_size_limit": 160000
+    },
+    "allowed_report_files": {
+      "code_writer": [],
+      "development_manager": [],
+      "review": [],
+      "test": []
+    },
+    "all_allowed_report_paths": [],
+    "excluded_report_globs": []
+  },
+  "web_contract_write_policy": {
+    "enabled": false
+  },
+  "existing_run_tests_read_only_filter": {
+    "schema_version": "existing_run_tests_read_only_filter.v1",
+    "enabled": true,
+    "development_task_id": "T03",
+    "dropped_existing_run_test_changes": [],
+    "dropped_count": 0,
+    "kept_files": [
+      "src/point_integrate_system/templates/error.html"
+    ],
+    "policy": "Existing tests/run_* are read-only. Production CodeWriter output may not rewrite them."
+  },
+  "forced_additive_filter": {
+    "enabled": false,
+    "dropped_existing_rewrites": [],
+    "kept_files": []
+  },
+  "patch_operation_count": 0,
+  "artifact_write_guard": {
+    "status": "success",
+    "schema_version": "artifact_write_guard.v45",
+    "enabled": true,
+    "subtask_id": "",
+    "classification": "auth_behavior_assertion_contract_failure",
+    "checked_files": [
+      "src/point_integrate_system/templates/error.html"
+    ],
+    "allowed_writes": [
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/routes.py",
+      "src/point_integrate_system/services.py",
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/forms.py",
+      "src/point_integrate_system/errors.py",
+      "src/point_integrate_system/templates/base.html",
+      "src/point_integrate_system/templates/auth.html",
+      "src/point_integrate_system/templates/register.html",
+      "src/point_integrate_system/templates/menu.html",
+      "src/point_integrate_system/templates/error.html",
+      "src/point_integrate_system/static/css/style.css",
+      "src/point_integrate_system/static/js/main.js",
+      "tests/run_XXX/test_auth.py",
+      "src/*/app.py",
+      "src/*/routes.py",
+      "src/*/views.py",
+      "src/*/templates/error.html",
+      "src/*/auth.py",
+      "src/*/services.py",
+      "src/*/validators.py",
+      "src/*/forms.py",
+      "src/*/templates/*.html",
+      "src/*/static/css/*.css",
+      "src/*/static/js/*.js"
+    ],
+    "read_only_files": [],
+    "protected_exports": {},
+    "findings": []
+  },
+  "generated_python_safety": {
+    "schema_version": "generated_python_safety.v37",
+    "status": "success",
+    "python_file_count": 0,
+    "file_count": 0,
+    "finding_count": 0,
+    "blocking_count": 0,
+    "warning_count": 0,
+    "blocking_findings": [],
+    "warnings": [],
+    "finding_clusters": [],
+    "finding_rule_counts": {},
+    "missing_symbols_by_file": {},
+    "dependency_repair_recommended": false,
+    "files": []
+  },
+  "generated_contract_safety": {
+    "status": "success",
+    "schema_version": "generated_contract_safety.v39",
+    "development_task_id": "T03",
+    "package": "point_integrate_system",
+    "python_overlay_file_count": 0,
+    "blocking_count": 0,
+    "warning_count": 0,
+    "findings": [],
+    "finding_clusters": [],
+    "finding_rule_counts": {},
+    "missing_symbols_by_file": {},
+    "missing_exports_by_target": {},
+    "dependency_repair_recommended": false,
+    "workspace_overlay": {
+      "enabled": true,
+      "workspace_python_file_count": 12,
+      "generated_overlay_python_file_count": 0,
+      "virtual_package_python_file_count": 12,
+      "generated_overlay_files": [],
+      "scope_source_file_count": 16,
+      "scope_reference_file_count": 20
+    },
+    "contract_safety_scope": {
+      "enabled": true,
+      "classification": "auth_behavior_assertion_contract_failure",
+      "subtask_id": "task_test_repair",
+      "source_files": [
+        "src/*/app.py",
+        "src/*/auth.py",
+        "src/*/forms.py",
+        "src/*/routes.py",
+        "src/*/services.py",
+        "src/*/validators.py",
+        "src/*/views.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/auth.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/forms.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/views.py",
+        "tests/run_XXX/test_auth.py"
+      ],
+      "reference_files": [
+        "src/*/app.py",
+        "src/*/auth.py",
+        "src/*/forms.py",
+        "src/*/routes.py",
+        "src/*/services.py",
+        "src/*/validators.py",
+        "src/*/views.py",
+        "src/point_integrate_system/__init__.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/auth.py",
+        "src/point_integrate_system/config.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/forms.py",
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/views.py",
+        "tests/run_XXX/test_auth.py"
+      ],
+      "required_exports": {},
+      "planned_later_exports": {},
+      "enforce_plan_exports": false,
+      "enforce_model_kwargs": false,
+      "enforce_dependency_direction": false,
+      "enforce_persistence_contract": true,
+      "reason": "task_test_repair_focused_contract_safety_scope"
+    },
+    "flask_sqlalchemy_contract_checked": false,
+    "route_service_contract_checked": false
+  },
+  "internal_subtask_contract_summary": "",
+  "internal_subtask_contract_summary_exists": false,
+  "internal_subtask_contract_summary_manifest": "",
+  "artifact_guard_retry_state": {
+    "state_file": "workspace/target_repo/.aideveloper/artifact_guard_retry_state_T03.json",
+    "state_action": "reset_fingerprint_changed",
+    "max_repeat_count": 0,
+    "repeated": []
+  },
+  "context_slimming": {
+    "enabled": true,
+    "development_plan_sent_as_slice": true,
+    "repo_context_reports_limited_by_manifest": true
+  },
+  "summary": "T03認証エラー画面のJinja参照エラーを局所修正し、認証・登録・404/403系のエラー本文に期待される日本語キーワードが表示されるようにしました。",
+  "notes": [
+    "既存テストは読み取り専用契約として扱い、変更していません。",
+    "失敗原因だったerror.html内のcurrent_app参照を削除し、URLはJinjaアプリ状態に依存しない固定パスにしました。",
+    "status_code/title/messageを本文に表示しつつ、401/409/422/403/404の既定メッセージに認証・登録エラーの日本語キーワードを含めています。",
+    "LLM writer used: gpt-5.5",
+    "Prompt used: code_writer_flask"
+  ]
+}

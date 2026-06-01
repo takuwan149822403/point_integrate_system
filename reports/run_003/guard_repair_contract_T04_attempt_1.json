@@ -1,0 +1,854 @@
+{
+  "schema_version": "guard_repair_contract.v46",
+  "created_at": "2026-06-01T11:18:47.815769+00:00",
+  "development_task_id": "T04",
+  "failure_kind": "artifact_write_guard_failure",
+  "repair_mode": "targeted_patch_operation",
+  "guard_driven_repair": true,
+  "blocked_findings": [
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `normalize_email` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_email` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_name` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_password` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_password_confirmation` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `normalize_email` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_email` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_name` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_password` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/validators.py",
+      "title": "function `validate_password_confirmation` signature would change",
+      "reason": "Public function signatures are previous-stage contracts for routes, services, and tests.",
+      "action": "Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.add_all` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.commit` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.create` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.get_by_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.save` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `BaseRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `CouponRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `CouponRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `NotificationRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `OrderRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `OrderRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `PaymentRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `PaymentRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `PointAccountRepository.get_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `PointAccountRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `PointTransactionRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `RankRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `RankRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `UserGroupRepository.list_by_owner_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `UserGroupRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `UserRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "existing import contract `from:collections.abc:Iterable` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.add_all` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.commit` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.create` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `BaseRepository.get_by_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "method `BaseRepository.save` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `BaseRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `CouponRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `CouponRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `NotificationRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `OrderRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `OrderRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `PaymentRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `PaymentRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `PointAccountRepository.get_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `PointAccountRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `PointTransactionRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `RankRepository.list_by_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `RankRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public method `UserGroupRepository.list_by_owner_user_id` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `UserGroupRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED",
+      "file": "src/point_integrate_system/repositories.py",
+      "title": "public class attribute `UserRepository.model_class` would be removed",
+      "reason": "SQLAlchemy model fields, dataclass fields, and public class attributes are previous-stage I/O contracts.",
+      "action": "Preserve the existing class attribute/field and add new fields separately if needed."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "method `AuthService.authenticate` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `AuthService.register_user` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `AuthService.reset_for_tests` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `AuthService.seed_dev_user` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `DomainService.health` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "existing import contract `from:.errors:PermissionError` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "existing import contract `from:.validators:normalize_email` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "existing import contract `from:copy:deepcopy` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-IMPORT-CONTRACT-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "existing import contract `from:threading:RLock` would be removed or rewritten",
+      "reason": "T02+ CodeWriter must not change import module paths or imported symbols from tested previous-stage files. Add imports if needed, but preserve existing external references.",
+      "action": "Keep the existing import and add a new import if necessary. Do not replace import/export contracts unless explicitly allowed_destructive_changes permits it."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "method `AuthService.authenticate` signature would change",
+      "reason": "Changing public method arguments breaks existing route/service/test calls.",
+      "action": "Keep the existing method signature, add an overload-compatible wrapper, or explicitly allow the change."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `AuthService.register_user` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `AuthService.reset_for_tests` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `AuthService.seed_dev_user` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    },
+    {
+      "severity": "critical",
+      "rule_id": "ARTIFACT-PUBLIC-METHOD-REMOVED",
+      "file": "src/point_integrate_system/services.py",
+      "title": "public method `DomainService.health` would be removed",
+      "reason": "Public class methods are protected by the previous-stage artifact lock.",
+      "action": "Preserve the method or add an explicit allowed_destructive_changes entry."
+    }
+  ],
+  "target_files": [
+    "src/point_integrate_system/validators.py",
+    "src/point_integrate_system/repositories.py",
+    "src/point_integrate_system/services.py"
+  ],
+  "read_only_preserve": {
+    "src/point_integrate_system/validators.py": {
+      "preserve_all_existing_definitions": true,
+      "preserve_all_existing_imports": true,
+      "preserve_all_existing_api_io": true,
+      "preserve_symbols_from_guard": [
+        "normalize_email",
+        "validate_email",
+        "validate_name",
+        "validate_password",
+        "validate_password_confirmation"
+      ]
+    },
+    "src/point_integrate_system/repositories.py": {
+      "preserve_all_existing_definitions": true,
+      "preserve_all_existing_imports": true,
+      "preserve_all_existing_api_io": true,
+      "preserve_symbols_from_guard": [
+        "BaseRepository.add_all",
+        "BaseRepository.commit",
+        "BaseRepository.create",
+        "BaseRepository.get_by_id",
+        "BaseRepository.save",
+        "BaseRepository.model_class",
+        "CouponRepository.list_by_user_id",
+        "CouponRepository.model_class",
+        "NotificationRepository.model_class",
+        "OrderRepository.list_by_user_id",
+        "OrderRepository.model_class",
+        "PaymentRepository.list_by_user_id",
+        "PaymentRepository.model_class",
+        "PointAccountRepository.get_by_user_id",
+        "PointAccountRepository.model_class",
+        "PointTransactionRepository.model_class",
+        "RankRepository.list_by_user_id",
+        "RankRepository.model_class",
+        "UserGroupRepository.list_by_owner_user_id",
+        "UserGroupRepository.model_class",
+        "UserRepository.model_class",
+        "from:collections.abc:Iterable"
+      ]
+    },
+    "src/point_integrate_system/services.py": {
+      "preserve_all_existing_definitions": true,
+      "preserve_all_existing_imports": true,
+      "preserve_all_existing_api_io": true,
+      "preserve_symbols_from_guard": [
+        "AuthService.authenticate",
+        "AuthService.register_user",
+        "AuthService.reset_for_tests",
+        "AuthService.seed_dev_user",
+        "DomainService.health",
+        "from:.errors:PermissionError",
+        "from:.validators:normalize_email",
+        "from:copy:deepcopy",
+        "from:threading:RLock"
+      ]
+    },
+    "src/point_integrate_system/errors.py": {
+      "preserve_all_existing_definitions": true,
+      "preserve_all_existing_imports": true,
+      "preserve_all_existing_api_io": true,
+      "preserve_symbols_from_guard": []
+    }
+  },
+  "preserve_symbols": {
+    "src/point_integrate_system/validators.py": [
+      "normalize_email",
+      "validate_email",
+      "validate_name",
+      "validate_password",
+      "validate_password_confirmation"
+    ],
+    "src/point_integrate_system/repositories.py": [
+      "BaseRepository.add_all",
+      "BaseRepository.commit",
+      "BaseRepository.create",
+      "BaseRepository.get_by_id",
+      "BaseRepository.save",
+      "BaseRepository.model_class",
+      "CouponRepository.list_by_user_id",
+      "CouponRepository.model_class",
+      "NotificationRepository.model_class",
+      "OrderRepository.list_by_user_id",
+      "OrderRepository.model_class",
+      "PaymentRepository.list_by_user_id",
+      "PaymentRepository.model_class",
+      "PointAccountRepository.get_by_user_id",
+      "PointAccountRepository.model_class",
+      "PointTransactionRepository.model_class",
+      "RankRepository.list_by_user_id",
+      "RankRepository.model_class",
+      "UserGroupRepository.list_by_owner_user_id",
+      "UserGroupRepository.model_class",
+      "UserRepository.model_class",
+      "from:collections.abc:Iterable"
+    ],
+    "src/point_integrate_system/services.py": [
+      "AuthService.authenticate",
+      "AuthService.register_user",
+      "AuthService.reset_for_tests",
+      "AuthService.seed_dev_user",
+      "DomainService.health",
+      "from:.errors:PermissionError",
+      "from:.validators:normalize_email",
+      "from:copy:deepcopy",
+      "from:threading:RLock"
+    ]
+  },
+  "allowed_patch_operations": [
+    "add_import_if_missing",
+    "insert_after",
+    "append_to_file",
+    "append_class",
+    "append_function",
+    "append_method",
+    "add_class_attribute",
+    "append_missing_export"
+  ],
+  "forbidden_operations": [
+    "rewrite_file",
+    "remove_class",
+    "remove_function",
+    "remove_method",
+    "remove_field",
+    "rename_symbol",
+    "change_signature",
+    "remove_import",
+    "rewrite_imports",
+    "change_api_io_contract",
+    "edit_tests_to_hide_source_failure",
+    "modify_tests",
+    "rewrite_tests",
+    "repeat_previous_failed_strategy"
+  ],
+  "freeform_source_files_allowed": false,
+  "source_file_output_policy": {
+    "existing_target_files_in_files_array": "forbidden",
+    "new_files_in_files_array": "allowed",
+    "existing_files_must_use": "patch_operations",
+    "fail_fast_if_only_existing_file_rewrites": true,
+    "tests_must_not_be_modified": true
+  },
+  "targeted_fix_examples": [
+    "Do not rewrite the target file. Existing target files must be modified through patch_operations only; preserve all existing definitions/imports/API and add only the missing lines/classes/methods."
+  ],
+  "[制限事項:GUARD_DRIVEN_REPAIR]": [
+    "Do not repeat the same freeform generation that was just rejected by the guard.",
+    "Do not rewrite existing files. Apply only the allowed targeted patch operations.",
+    "If the target path already exists, do not include it in files/tests; use patch_operations instead.",
+    "Every symbol/import/field mentioned in preserve_symbols or read_only_preserve is already tested and must remain intact."
+  ],
+  "[機能要件:GUARD_DRIVEN_REPAIR]": [
+    "Repair the root cause shown by the guard/failure evidence.",
+    "Return only files directly needed for the allowed patch operations.",
+    "Keep the resulting project overlay-safe for the existing workspace."
+  ],
+  "source_test_triage_gate": {
+    "schema_version": "source_test_triage_gate.v1",
+    "development_task_id": "T04",
+    "attempt": 1,
+    "failure_kind": "artifact_write_guard_failure",
+    "decision": "production_defect",
+    "confidence": 0.86,
+    "auto_repair_allowed": true,
+    "reason_codes": [
+      "ARTIFACT_GUARD_BLOCKED_SOURCE_REWRITE"
+    ],
+    "evidence": {
+      "finding_paths": [
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/services.py"
+      ],
+      "change_paths": [
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/services.py"
+      ],
+      "fix_instruction_paths": [
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py",
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/forms.py",
+        "tests/"
+      ],
+      "source_paths": [
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/services.py",
+        "src/point_integrate_system/errors.py",
+        "src/point_integrate_system/app.py",
+        "src/point_integrate_system/config.py",
+        "src/point_integrate_system/models.py",
+        "src/point_integrate_system/routes.py",
+        "src/point_integrate_system/forms.py"
+      ],
+      "test_paths": [
+        "tests/"
+      ],
+      "finding_source_paths": [
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/services.py"
+      ],
+      "finding_test_paths": [],
+      "db_binding": {
+        "enabled": true,
+        "models_with_sqlalchemy_db": [
+          "src/point_integrate_system/models.py"
+        ],
+        "repositories_using_db": [
+          "src/point_integrate_system/repositories.py"
+        ],
+        "app_factory_files": [
+          "src/point_integrate_system/app.py"
+        ],
+        "app_factory_calls_db_init_app": true,
+        "app_factory_missing_db_init_app_files": [],
+        "config_files": [
+          "src/point_integrate_system/config.py"
+        ],
+        "config_has_sqlalchemy_settings": true,
+        "config_missing_sqlalchemy_settings_files": [],
+        "dependency_manifest_has_flask_sqlalchemy": true,
+        "dependency_manifest_missing_flask_sqlalchemy": false
+      },
+      "workflow_internal_marker": false,
+      "dependency_or_environment_marker": false
+    },
+    "repair_scope": {
+      "scope": "production_source_only",
+      "must_modify_any_of": [
+        "src/point_integrate_system/validators.py",
+        "src/point_integrate_system/repositories.py",
+        "src/point_integrate_system/services.py"
+      ],
+      "forbidden_modify_globs": [
+        "tests/**"
+      ],
+      "read_only_context_globs": [
+        "tests/**"
+      ],
+      "allowed_ops": [
+        "add_import_if_missing",
+        "insert_before",
+        "insert_after",
+        "append_to_file",
+        "add_class_attribute",
+        "append_missing_export",
+        "ensure_dependency",
+        "append_dependency_if_missing",
+        "replace_exact"
+      ],
+      "source_and_tests_same_response_allowed": false
+    },
+    "strategy": {
+      "repeated_guard_signature_count": 1,
+      "repeated_items": [],
+      "strategy_shift_required": false,
+      "required_next_strategy": "normal_guard_repair",
+      "fail_fast_recommended": false,
+      "do_not_repeat_previous_strategy": false
+    },
+    "policy": {
+      "conservative_test_defect_bias": true,
+      "ambiguous_never_broad_repair": true,
+      "production_defect_forbids_tests": true,
+      "test_defect_requires_high_confidence": true
+    }
+  },
+  "repair_scope": {
+    "scope": "production_source_only",
+    "must_modify_any_of": [
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py"
+    ],
+    "forbidden_modify_globs": [
+      "tests/**"
+    ],
+    "read_only_context_globs": [
+      "tests/**"
+    ],
+    "allowed_ops": [
+      "add_import_if_missing",
+      "insert_before",
+      "insert_after",
+      "append_to_file",
+      "add_class_attribute",
+      "append_missing_export",
+      "ensure_dependency",
+      "append_dependency_if_missing",
+      "replace_exact"
+    ],
+    "source_and_tests_same_response_allowed": false
+  }
+}

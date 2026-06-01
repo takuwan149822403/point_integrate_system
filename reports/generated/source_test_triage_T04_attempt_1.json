@@ -1,0 +1,120 @@
+{
+  "schema_version": "source_test_triage_gate.v1",
+  "development_task_id": "T04",
+  "attempt": 1,
+  "failure_kind": "artifact_write_guard_failure",
+  "decision": "production_defect",
+  "confidence": 0.86,
+  "auto_repair_allowed": true,
+  "reason_codes": [
+    "ARTIFACT_GUARD_BLOCKED_SOURCE_REWRITE"
+  ],
+  "evidence": {
+    "finding_paths": [
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py"
+    ],
+    "change_paths": [
+      "src/point_integrate_system/errors.py",
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py"
+    ],
+    "fix_instruction_paths": [
+      "src/point_integrate_system/errors.py",
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/services.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/config.py",
+      "src/point_integrate_system/models.py",
+      "src/point_integrate_system/routes.py",
+      "src/point_integrate_system/forms.py",
+      "tests/"
+    ],
+    "source_paths": [
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py",
+      "src/point_integrate_system/errors.py",
+      "src/point_integrate_system/app.py",
+      "src/point_integrate_system/config.py",
+      "src/point_integrate_system/models.py",
+      "src/point_integrate_system/routes.py",
+      "src/point_integrate_system/forms.py"
+    ],
+    "test_paths": [
+      "tests/"
+    ],
+    "finding_source_paths": [
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py"
+    ],
+    "finding_test_paths": [],
+    "db_binding": {
+      "enabled": true,
+      "models_with_sqlalchemy_db": [
+        "src/point_integrate_system/models.py"
+      ],
+      "repositories_using_db": [
+        "src/point_integrate_system/repositories.py"
+      ],
+      "app_factory_files": [
+        "src/point_integrate_system/app.py"
+      ],
+      "app_factory_calls_db_init_app": true,
+      "app_factory_missing_db_init_app_files": [],
+      "config_files": [
+        "src/point_integrate_system/config.py"
+      ],
+      "config_has_sqlalchemy_settings": true,
+      "config_missing_sqlalchemy_settings_files": [],
+      "dependency_manifest_has_flask_sqlalchemy": true,
+      "dependency_manifest_missing_flask_sqlalchemy": false
+    },
+    "workflow_internal_marker": false,
+    "dependency_or_environment_marker": false
+  },
+  "repair_scope": {
+    "scope": "production_source_only",
+    "must_modify_any_of": [
+      "src/point_integrate_system/validators.py",
+      "src/point_integrate_system/repositories.py",
+      "src/point_integrate_system/services.py"
+    ],
+    "forbidden_modify_globs": [
+      "tests/**"
+    ],
+    "read_only_context_globs": [
+      "tests/**"
+    ],
+    "allowed_ops": [
+      "add_import_if_missing",
+      "insert_before",
+      "insert_after",
+      "append_to_file",
+      "add_class_attribute",
+      "append_missing_export",
+      "ensure_dependency",
+      "append_dependency_if_missing",
+      "replace_exact"
+    ],
+    "source_and_tests_same_response_allowed": false
+  },
+  "strategy": {
+    "repeated_guard_signature_count": 1,
+    "repeated_items": [],
+    "strategy_shift_required": false,
+    "required_next_strategy": "normal_guard_repair",
+    "fail_fast_recommended": false,
+    "do_not_repeat_previous_strategy": false
+  },
+  "policy": {
+    "conservative_test_defect_bias": true,
+    "ambiguous_never_broad_repair": true,
+    "production_defect_forbids_tests": true,
+    "test_defect_requires_high_confidence": true
+  }
+}

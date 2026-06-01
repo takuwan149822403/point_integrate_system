@@ -1,0 +1,822 @@
+{
+  "schema_version": "staged_success_checkpoint.v38",
+  "status": "success",
+  "created_at": "2026-06-01T11:17:06.310616+00:00",
+  "task": {
+    "task_id": "T03",
+    "title": "認証・セッション・ユーザー入口",
+    "category": "auth"
+  },
+  "completed_tasks": [
+    {
+      "task_id": "T03",
+      "title": "認証・セッション・ユーザー入口",
+      "category": "auth"
+    }
+  ],
+  "task_summary_output": {
+    "task_id": "T03",
+    "title": "認証・セッション・ユーザー入口",
+    "category": "auth",
+    "is_core_task": true,
+    "started_at": "2026-06-01T11:10:00.414084+00:00",
+    "code_writer": {
+      "status": "pass",
+      "returncode": 0,
+      "summary_output": "reports/generated/code_writer_summary_T03.json"
+    },
+    "bootstrap": {
+      "status": "pass",
+      "returncode": 0,
+      "summary_output": "reports/generated/web_bootstrap_loop_summary_T03.json"
+    },
+    "contract_gate": {
+      "status": "pass",
+      "returncode": 0,
+      "summary_output": "reports/generated/web_contract_gate_summary_T03.json"
+    },
+    "tests": {
+      "status": "success",
+      "returncode": 0,
+      "summary_output": "reports/generated/task_test_remediation_summary_T03.json",
+      "details": {
+        "status": "success",
+        "development_task_id": "T03",
+        "task_title": "認証・セッション・ユーザー入口",
+        "test_files": [
+          "tests/run_001/test_auth.py"
+        ],
+        "source_hash": "9b6166a2cca8d648efef265b70d1b3fc0c23f2141a2f37bed15e8ae557836943",
+        "repair_fingerprint": "575af1be55d88c58",
+        "repair_state_action": "initialized",
+        "attempts": [
+          {
+            "attempt": 1,
+            "pytest_returncode": 1,
+            "pytest_log": "logs/pytest-task-T03-attempt-1.log",
+            "status": "fail",
+            "classification": {
+              "auth_like_task": true,
+              "observed_routes": [
+                "/body",
+                "/error",
+                "/error?status=403",
+                "/html",
+                "/login",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/register",
+                "/script",
+                "/static/js/main.js"
+              ],
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page",
+                "tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page",
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes"
+              ],
+              "route_not_registered_or_not_handled": false,
+              "flask_endpoint_namespace_drift_failure": false,
+              "missing_url_for_endpoints": [],
+              "report_artifact_only_failure": false,
+              "flask_app_identity_failure": false,
+              "flask_behavior_contract_failure": true,
+              "t01_minimal_scaffold_failure": false,
+              "t01_template_dependency_failure": false,
+              "t01_root_status_drift_failure": false,
+              "flask_root_redirect_policy_failure": false,
+              "flask_form_error_status_policy_failure": false,
+              "flask_static_reference_contract_failure": true,
+              "flask_api_misuse_failure": false,
+              "flask_route_500_failure": false,
+              "auth_session_assertion_failure": false,
+              "auth_error_body_assertion_failure": false,
+              "business_route_scope_drift_failure": false,
+              "service_serialization_failure": false,
+              "persistence_contract_failure": false,
+              "flask_sqlalchemy_binding_failure": false,
+              "previous_stage_regression": false,
+              "previous_stage_regression_type": "",
+              "session_validity_failure": false,
+              "custom_error_page_failure": false,
+              "app_factory_config_mapping_error": false,
+              "classifier_parser_error": ""
+            },
+            "triage": {
+              "status": "actionable",
+              "recommendation": "auto_fix",
+              "fix_severity_threshold": "high",
+              "highest_severity": "high",
+              "capabilities": {
+                "web": true,
+                "database": true,
+                "network": true,
+                "file_io": true,
+                "image_output": false,
+                "cli": false,
+                "email": false
+              },
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page",
+                "tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page",
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes"
+              ],
+              "observed_routes": [
+                "/error",
+                "/login",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/register"
+              ],
+              "test_files": [
+                "tests/run_001/test_auth.py"
+              ],
+              "items": [
+                {
+                  "id": "required_behavior_assertion:1",
+                  "category": "required_behavior_assertion",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page\ntests/run_001/test_auth.py::test_invalid_register_returns_422_error_page\ntests/run_001/test_auth.py::test_public_password_reset_and_error_routes\ntests/run_001/test_auth.py:128: AssertionError\ntests/run_001/test_auth.py:148: AssertionError\ntests/run_001/test_auth.py:205: AssertionError"
+                }
+              ],
+              "actionable_items": [
+                {
+                  "id": "required_behavior_assertion:1",
+                  "category": "required_behavior_assertion",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page\ntests/run_001/test_auth.py::test_invalid_register_returns_422_error_page\ntests/run_001/test_auth.py::test_public_password_reset_and_error_routes\ntests/run_001/test_auth.py:128: AssertionError\ntests/run_001/test_auth.py:148: AssertionError\ntests/run_001/test_auth.py:205: AssertionError"
+                }
+              ],
+              "deferred_items": [],
+              "counts": {
+                "total": 1,
+                "actionable": 1,
+                "deferred": 0,
+                "high": 1,
+                "medium": 0,
+                "low": 0,
+                "out_of_scope": 0,
+                "test_suspect": 0
+              }
+            },
+            "failure_signatures": [
+              "flask_static_reference_contract_failure",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N.mi",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP N' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N.min."
+            ],
+            "repeated_failure_state": {
+              "max_repeat_count": 1,
+              "repeated": [],
+              "state_file": "workspace/target_repo/.aideveloper/repair_loop_state_T03.json"
+            },
+            "fix": {
+              "returncode": 0,
+              "fix_instructions": "reports/generated/task_test_fix_instructions_T03_attempt_1.json",
+              "summary_output": "reports/generated/code_writer_summary_task_test_T03_attempt_1.json",
+              "failure_evidence": "reports/generated/failure_evidence_T03_attempt_1.json",
+              "scope": "development_task"
+            }
+          },
+          {
+            "attempt": 2,
+            "pytest_returncode": 1,
+            "pytest_log": "logs/pytest-task-T03-attempt-2.log",
+            "status": "fail",
+            "classification": {
+              "auth_like_task": true,
+              "observed_routes": [
+                "/",
+                "/a",
+                "/does-not-exist",
+                "/downloads",
+                "/downloads/",
+                "/downloads/42",
+                "/downloads/<int:id>",
+                "/error",
+                "/error?status=403",
+                "/foo",
+                "/foo/",
+                "/login",
+                "/logout",
+                "/missing",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/register",
+                "/{path_info.lstrip("
+              ],
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page",
+                "tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page",
+                "tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page",
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes",
+                "tests/run_001/test_auth.py::test_404_route_behavior"
+              ],
+              "route_not_registered_or_not_handled": true,
+              "flask_endpoint_namespace_drift_failure": false,
+              "missing_url_for_endpoints": [],
+              "report_artifact_only_failure": false,
+              "flask_app_identity_failure": false,
+              "flask_behavior_contract_failure": true,
+              "t01_minimal_scaffold_failure": false,
+              "t01_template_dependency_failure": false,
+              "t01_root_status_drift_failure": false,
+              "flask_root_redirect_policy_failure": false,
+              "flask_form_error_status_policy_failure": false,
+              "flask_static_reference_contract_failure": false,
+              "flask_api_misuse_failure": false,
+              "flask_route_500_failure": false,
+              "auth_session_assertion_failure": false,
+              "auth_error_body_assertion_failure": true,
+              "business_route_scope_drift_failure": false,
+              "service_serialization_failure": false,
+              "persistence_contract_failure": false,
+              "flask_sqlalchemy_binding_failure": false,
+              "previous_stage_regression": false,
+              "previous_stage_regression_type": "",
+              "session_validity_failure": false,
+              "custom_error_page_failure": true,
+              "app_factory_config_mapping_error": false,
+              "classifier_parser_error": ""
+            },
+            "triage": {
+              "status": "actionable",
+              "recommendation": "auto_fix",
+              "fix_severity_threshold": "high",
+              "highest_severity": "high",
+              "capabilities": {
+                "web": true,
+                "database": true,
+                "network": true,
+                "file_io": true,
+                "image_output": false,
+                "cli": false,
+                "email": false
+              },
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_404_route_behavior",
+                "tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page",
+                "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page",
+                "tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page",
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes"
+              ],
+              "observed_routes": [
+                "/does-not-exist",
+                "/error",
+                "/login",
+                "/logout",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/register"
+              ],
+              "test_files": [
+                "tests/run_001/test_auth.py"
+              ],
+              "items": [
+                {
+                  "id": "route_404:1",
+                  "category": "route_404",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "  ^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <flask.templating.Environment object at 0x7f84599bc690>, obj = Undefined\nattribute = 'view_functions'\n\n    def getattr(self, obj: t.Any, attribute: str) -> t.Any:\n        \"\"\"Get an item or attribute of an object but prefer the attribute.\n        Unlike :meth:`getitem` the attribute *must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-2.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                }
+              ],
+              "actionable_items": [
+                {
+                  "id": "route_404:1",
+                  "category": "route_404",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "  ^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <flask.templating.Environment object at 0x7f84599bc690>, obj = Undefined\nattribute = 'view_functions'\n\n    def getattr(self, obj: t.Any, attribute: str) -> t.Any:\n        \"\"\"Get an item or attribute of an object but prefer the attribute.\n        Unlike :meth:`getitem` the attribute *must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-2.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                }
+              ],
+              "deferred_items": [],
+              "counts": {
+                "total": 1,
+                "actionable": 1,
+                "deferred": 0,
+                "high": 1,
+                "medium": 0,
+                "low": 0,
+                "out_of_scope": 0,
+                "test_suspect": 0
+              }
+            },
+            "failure_signatures": [
+              "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+              "flask_behavior_contract_failure",
+              "custom_error_page_failure",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined"
+            ],
+            "repeated_failure_state": {
+              "max_repeat_count": 1,
+              "repeated": [],
+              "state_file": "workspace/target_repo/.aideveloper/repair_loop_state_T03.json"
+            },
+            "fix": {
+              "returncode": 0,
+              "fix_instructions": "reports/generated/task_test_fix_instructions_T03_attempt_2.json",
+              "summary_output": "reports/generated/code_writer_summary_task_test_T03_attempt_2.json",
+              "failure_evidence": "reports/generated/failure_evidence_T03_attempt_2.json",
+              "scope": "development_task"
+            }
+          },
+          {
+            "attempt": 3,
+            "pytest_returncode": 1,
+            "pytest_log": "logs/pytest-task-T03-attempt-3.log",
+            "status": "fail",
+            "classification": {
+              "auth_like_task": true,
+              "observed_routes": [
+                "/body",
+                "/error",
+                "/error?status=403",
+                "/html",
+                "/main",
+                "/nav",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/script",
+                "/section",
+                "/static/js/main.js"
+              ],
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes"
+              ],
+              "route_not_registered_or_not_handled": false,
+              "flask_endpoint_namespace_drift_failure": false,
+              "missing_url_for_endpoints": [],
+              "report_artifact_only_failure": false,
+              "flask_app_identity_failure": false,
+              "flask_behavior_contract_failure": true,
+              "t01_minimal_scaffold_failure": false,
+              "t01_template_dependency_failure": false,
+              "t01_root_status_drift_failure": false,
+              "flask_root_redirect_policy_failure": false,
+              "flask_form_error_status_policy_failure": false,
+              "flask_static_reference_contract_failure": true,
+              "flask_api_misuse_failure": false,
+              "flask_route_500_failure": false,
+              "auth_session_assertion_failure": false,
+              "auth_error_body_assertion_failure": false,
+              "business_route_scope_drift_failure": false,
+              "service_serialization_failure": false,
+              "persistence_contract_failure": false,
+              "flask_sqlalchemy_binding_failure": false,
+              "previous_stage_regression": false,
+              "previous_stage_regression_type": "",
+              "session_validity_failure": false,
+              "custom_error_page_failure": false,
+              "app_factory_config_mapping_error": false,
+              "classifier_parser_error": ""
+            },
+            "triage": {
+              "status": "actionable",
+              "recommendation": "auto_fix",
+              "fix_severity_threshold": "high",
+              "highest_severity": "high",
+              "capabilities": {
+                "web": true,
+                "database": true,
+                "network": true,
+                "file_io": true,
+                "image_output": false,
+                "cli": false,
+                "email": false
+              },
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes"
+              ],
+              "observed_routes": [
+                "/error",
+                "/password-reset/request",
+                "/password-reset/sample-token"
+              ],
+              "test_files": [
+                "tests/run_001/test_auth.py"
+              ],
+              "items": [
+                {
+                  "id": "required_behavior_assertion:1",
+                  "category": "required_behavior_assertion",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes\ntests/run_001/test_auth.py:205: AssertionError"
+                }
+              ],
+              "actionable_items": [
+                {
+                  "id": "required_behavior_assertion:1",
+                  "category": "required_behavior_assertion",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes\ntests/run_001/test_auth.py:205: AssertionError"
+                }
+              ],
+              "deferred_items": [],
+              "counts": {
+                "total": 1,
+                "actionable": 1,
+                "deferred": 0,
+                "high": 1,
+                "medium": 0,
+                "low": 0,
+                "out_of_scope": 0,
+                "test_suspect": 0
+              }
+            },
+            "failure_signatures": [
+              "flask_static_reference_contract_failure",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP N' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=devic...n </nav>\\n </section>\\n </main>\\n <script src"
+            ],
+            "repeated_failure_state": {
+              "max_repeat_count": 2,
+              "repeated": [
+                {
+                  "signature": "flask_static_reference_contract_failure",
+                  "count": 2,
+                  "first_attempt": 1,
+                  "last_attempt": 3,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "ort\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\nE        +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n\ntests/run_001/test_auth.py:205: AssertionError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-3.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n"
+                }
+              ],
+              "state_file": "workspace/target_repo/.aideveloper/repair_loop_state_T03.json"
+            },
+            "fix": {
+              "returncode": 0,
+              "fix_instructions": "reports/generated/task_test_fix_instructions_T03_attempt_3.json",
+              "summary_output": "reports/generated/code_writer_summary_task_test_T03_attempt_3.json",
+              "failure_evidence": "reports/generated/failure_evidence_T03_attempt_3.json",
+              "scope": "development_task"
+            }
+          },
+          {
+            "attempt": 4,
+            "pytest_returncode": 1,
+            "pytest_log": "logs/pytest-task-T03-attempt-4.log",
+            "status": "fail",
+            "classification": {
+              "auth_like_task": true,
+              "observed_routes": [
+                "/",
+                "/a",
+                "/does-not-exist",
+                "/downloads",
+                "/downloads/",
+                "/downloads/42",
+                "/downloads/<int:id>",
+                "/error",
+                "/error?status=403",
+                "/foo",
+                "/foo/",
+                "/login",
+                "/logout",
+                "/missing",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/register",
+                "/{path_info.lstrip("
+              ],
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page",
+                "tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page",
+                "tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page",
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes",
+                "tests/run_001/test_auth.py::test_404_route_behavior"
+              ],
+              "route_not_registered_or_not_handled": true,
+              "flask_endpoint_namespace_drift_failure": false,
+              "missing_url_for_endpoints": [],
+              "report_artifact_only_failure": false,
+              "flask_app_identity_failure": false,
+              "flask_behavior_contract_failure": true,
+              "t01_minimal_scaffold_failure": false,
+              "t01_template_dependency_failure": false,
+              "t01_root_status_drift_failure": false,
+              "flask_root_redirect_policy_failure": false,
+              "flask_form_error_status_policy_failure": false,
+              "flask_static_reference_contract_failure": false,
+              "flask_api_misuse_failure": false,
+              "flask_route_500_failure": false,
+              "auth_session_assertion_failure": false,
+              "auth_error_body_assertion_failure": true,
+              "business_route_scope_drift_failure": false,
+              "service_serialization_failure": false,
+              "persistence_contract_failure": false,
+              "flask_sqlalchemy_binding_failure": false,
+              "previous_stage_regression": false,
+              "previous_stage_regression_type": "",
+              "session_validity_failure": false,
+              "custom_error_page_failure": true,
+              "app_factory_config_mapping_error": false,
+              "classifier_parser_error": ""
+            },
+            "triage": {
+              "status": "actionable",
+              "recommendation": "auto_fix",
+              "fix_severity_threshold": "high",
+              "highest_severity": "high",
+              "capabilities": {
+                "web": true,
+                "database": true,
+                "network": true,
+                "file_io": true,
+                "image_output": false,
+                "cli": false,
+                "email": false
+              },
+              "failed_nodes": [
+                "tests/run_001/test_auth.py::test_404_route_behavior",
+                "tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page",
+                "tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page",
+                "tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page",
+                "tests/run_001/test_auth.py::test_public_password_reset_and_error_routes"
+              ],
+              "observed_routes": [
+                "/does-not-exist",
+                "/error",
+                "/login",
+                "/logout",
+                "/password-reset/request",
+                "/password-reset/sample-token",
+                "/register"
+              ],
+              "test_files": [
+                "tests/run_001/test_auth.py"
+              ],
+              "items": [
+                {
+                  "id": "route_404:1",
+                  "category": "route_404",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "  ^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <flask.templating.Environment object at 0x7fb789262c50>, obj = Undefined\nattribute = 'view_functions'\n\n    def getattr(self, obj: t.Any, attribute: str) -> t.Any:\n        \"\"\"Get an item or attribute of an object but prefer the attribute.\n        Unlike :meth:`getitem` the attribute *must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                }
+              ],
+              "actionable_items": [
+                {
+                  "id": "route_404:1",
+                  "category": "route_404",
+                  "severity": "high",
+                  "disposition": "fix",
+                  "actionable": true,
+                  "reason": "Current task cannot run or required current-task behavior is broken.",
+                  "evidence": "  ^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <flask.templating.Environment object at 0x7fb789262c50>, obj = Undefined\nattribute = 'view_functions'\n\n    def getattr(self, obj: t.Any, attribute: str) -> t.Any:\n        \"\"\"Get an item or attribute of an object but prefer the attribute.\n        Unlike :meth:`getitem` the attribute *must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                }
+              ],
+              "deferred_items": [],
+              "counts": {
+                "total": 1,
+                "actionable": 1,
+                "deferred": 0,
+                "high": 1,
+                "medium": 0,
+                "low": 0,
+                "out_of_scope": 0,
+                "test_suspect": 0
+              }
+            },
+            "failure_signatures": [
+              "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+              "flask_behavior_contract_failure",
+              "custom_error_page_failure",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+              "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined"
+            ],
+            "repeated_failure_state": {
+              "max_repeat_count": 2,
+              "repeated": [
+                {
+                  "signature": "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "flask_behavior_contract_failure",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "custom_error_page_failure",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                }
+              ],
+              "state_file": "workspace/target_repo/.aideveloper/repair_loop_state_T03.json"
+            },
+            "fix": {
+              "returncode": 0,
+              "fix_instructions": "reports/generated/task_test_fix_instructions_T03_attempt_4.json",
+              "summary_output": "reports/generated/code_writer_summary_task_test_T03_attempt_4.json",
+              "failure_evidence": "reports/generated/failure_evidence_T03_attempt_4.json",
+              "scope": "development_task"
+            }
+          },
+          {
+            "attempt": 5,
+            "pytest_returncode": 0,
+            "pytest_log": "logs/pytest-task-T03-attempt-5.log",
+            "status": "pass",
+            "classification": {
+              "auth_like_task": true,
+              "observed_routes": [],
+              "failed_nodes": [],
+              "route_not_registered_or_not_handled": false,
+              "flask_endpoint_namespace_drift_failure": false,
+              "missing_url_for_endpoints": [],
+              "report_artifact_only_failure": false,
+              "flask_app_identity_failure": false,
+              "flask_behavior_contract_failure": false,
+              "t01_minimal_scaffold_failure": false,
+              "t01_template_dependency_failure": false,
+              "t01_root_status_drift_failure": false,
+              "flask_root_redirect_policy_failure": false,
+              "flask_form_error_status_policy_failure": false,
+              "flask_static_reference_contract_failure": false,
+              "flask_api_misuse_failure": false,
+              "flask_route_500_failure": false,
+              "auth_session_assertion_failure": false,
+              "auth_error_body_assertion_failure": false,
+              "business_route_scope_drift_failure": false,
+              "service_serialization_failure": false,
+              "persistence_contract_failure": false,
+              "flask_sqlalchemy_binding_failure": false,
+              "previous_stage_regression": false,
+              "previous_stage_regression_type": "",
+              "session_validity_failure": false,
+              "custom_error_page_failure": false,
+              "app_factory_config_mapping_error": false,
+              "classifier_parser_error": ""
+            },
+            "triage": {},
+            "failure_signatures": [],
+            "repeated_failure_state": {
+              "max_repeat_count": 2,
+              "repeated": [
+                {
+                  "signature": "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "flask_behavior_contract_failure",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "custom_error_page_failure",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                },
+                {
+                  "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+                  "count": 2,
+                  "first_attempt": 2,
+                  "last_attempt": 4,
+                  "phase": "task_test:T03",
+                  "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+                }
+              ],
+              "state_file": "workspace/target_repo/.aideveloper/repair_loop_state_T03.json"
+            },
+            "fix": {}
+          }
+        ],
+        "policy": {
+          "scope": "development_task",
+          "skip_if_source_hash_unchanged_and_previous_passed": true,
+          "requested_max_attempts": 3,
+          "effective_max_attempts": 6,
+          "fix_severity_threshold": "high",
+          "quality_plan": "plans/generated/quality_plan.json",
+          "repeat_analysis_threshold": 2,
+          "repeat_stop_threshold": 3,
+          "generic_failure_classifier": true
+        },
+        "passed_attempt": 5
+      }
+    },
+    "artifact_lock_output": "reports/generated/stage_artifact_lock_T03.json",
+    "finished_at": "2026-06-01T11:17:06.310605+00:00",
+    "status": "success"
+  },
+  "artifact_lock_output": "reports/generated/stage_artifact_lock_T03.json",
+  "next_task_policy": {
+    "destructive_change_policy": "deny_by_default",
+    "requires_allowed_destructive_changes_for_public_api_changes": true
+  }
+}

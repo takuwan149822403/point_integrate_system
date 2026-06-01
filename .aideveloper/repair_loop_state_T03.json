@@ -1,0 +1,294 @@
+{
+  "schema_version": "repair_loop_state.v2",
+  "fingerprint": "575af1be55d88c58",
+  "loop_name": "task_test",
+  "development_task_id": "T03",
+  "signature_counts": {
+    "flask_static_reference_contract_failure": {
+      "count": 2,
+      "first_attempt": 1,
+      "last_attempt": 3,
+      "phase": "task_test:T03",
+      "last_excerpt": "ort\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\nE        +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n\ntests/run_001/test_auth.py:205: AssertionError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-3.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N.mi": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "task_test:T03",
+      "last_excerpt": "wport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 1247 bytes [403 FORBIDDEN]>.get_data\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "task_test:T03",
+      "last_excerpt": "wport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 1247 bytes [403 FORBIDDEN]>.get_data\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP N' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N.min.": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "task_test:T03",
+      "last_excerpt": "wport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n  <meta charset=\"utf-8\">\\n  <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js\"></script>\\n  <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 1247 bytes [403 FORBIDDEN]>.get_data\n"
+    },
+    "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "flask_behavior_contract_failure": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "custom_error_page_failure": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined": {
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP N' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=devic...n </nav>\\n </section>\\n </main>\\n <script src": {
+      "count": 1,
+      "first_attempt": 3,
+      "last_attempt": 3,
+      "phase": "task_test:T03",
+      "last_excerpt": "ort\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\nE        +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n\ntests/run_001/test_auth.py:205: AssertionError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-3.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n"
+    }
+  },
+  "history": [
+    {
+      "attempt": 1,
+      "phase": "task_test:T03",
+      "signatures": [
+        "flask_static_reference_contract_failure",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N.mi",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP N' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=device-wi...https://code.jquery.com/jquery-N.N.N.min."
+      ],
+      "repeated": []
+    },
+    {
+      "attempt": 2,
+      "phase": "task_test:T03",
+      "signatures": [
+        "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+        "flask_behavior_contract_failure",
+        "custom_error_page_failure",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined"
+      ],
+      "repeated": []
+    },
+    {
+      "attempt": 3,
+      "phase": "task_test:T03",
+      "signatures": [
+        "flask_static_reference_contract_failure",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP N' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n <meta charset=\"utf-N\">\\n <meta name=\"viewport\" content=\"width=devic...n </nav>\\n </section>\\n </main>\\n <script src"
+      ],
+      "repeated": [
+        {
+          "signature": "flask_static_reference_contract_failure",
+          "count": 2,
+          "first_attempt": 1,
+          "last_attempt": 3,
+          "phase": "task_test:T03",
+          "last_excerpt": "ort\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\nE        +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n\ntests/run_001/test_auth.py:205: AssertionError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-3.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>'\n +  where '<!doctype html>\\n<html lang=\"ja\">\\n<head>\\n    <meta charset=\"utf-8\">\\n    <meta name=\"viewport\" content=\"width=devic...n            </nav>\\n        </section>\\n    </main>\\n    <script src=\"/static/js/main.js\"></script>\\n</body>\\n</html>' = get_data(as_text=True)\n +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data\n"
+        }
+      ]
+    },
+    {
+      "attempt": 4,
+      "phase": "task_test:T03",
+      "signatures": [
+        "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+        "flask_behavior_contract_failure",
+        "custom_error_page_failure",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+        "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined"
+      ],
+      "repeated": [
+        {
+          "signature": "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "flask_behavior_contract_failure",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "custom_error_page_failure",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        },
+        {
+          "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+          "count": 2,
+          "first_attempt": 2,
+          "last_attempt": 4,
+          "phase": "task_test:T03",
+          "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+        }
+      ]
+    }
+  ],
+  "repeated": [
+    {
+      "signature": "route_not_registered_or_not_handled:/,/a,/does-not-exist,/downloads,/downloads/,/downloads/42,/downloads/<int:id>,/error,/error?status=403,/foo,/foo/,/login,/logout,/missing,/password-reset/request,/password-reset/sample-token,/register,/{path_info.lstrip(",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "flask_behavior_contract_failure",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "custom_error_page_failure",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    },
+    {
+      "signature": "pytest_node:FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined",
+      "count": 2,
+      "first_attempt": 2,
+      "last_attempt": 4,
+      "phase": "task_test:T03",
+      "last_excerpt": "*must* be a string.\n        \"\"\"\n        try:\n>           return getattr(obj, attribute)\n                   ^^^^^^^^^^^^^^^^^^^^^^^\nE           jinja2.exceptions.UndefinedError: 'current_app' is undefined\n\n/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError\n- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -\n=========================== short test summary info ============================\nFAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined\nFAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined\n"
+    }
+  ],
+  "max_repeat_count": 2,
+  "status": "resolved",
+  "resolved_at": "2026-06-01T11:17:06.262287+00:00"
+}

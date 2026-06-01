@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "dropped_existing_rewrites": [
+    "src/point_integrate_system/errors.py",
+    "src/point_integrate_system/repositories.py",
+    "src/point_integrate_system/services.py",
+    "src/point_integrate_system/validators.py"
+  ],
+  "kept_files": [],
+  "policy": "After Artifact Guard failure, existing Python files must be changed only through patch_operations; full source rewrites are ignored/fail-fast."
+}

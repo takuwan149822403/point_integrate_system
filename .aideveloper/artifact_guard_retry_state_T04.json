@@ -1,0 +1,307 @@
+{
+  "schema_version": "repair_loop_state.v2",
+  "fingerprint": "36ec6676122644a5",
+  "loop_name": "apply_generated_changes_artifact_guard",
+  "development_task_id": "T04",
+  "signature_counts": {
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:normalize_email": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_email": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_name": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_password": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_password_confirmation": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.add_all": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.commit": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED:src/point_integrate_system/repositories.py:BaseRepository.create": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.get_by_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED:src/point_integrate_system/repositories.py:BaseRepository.save": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:CouponRepository.list_by_user_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:CouponRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:NotificationRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:OrderRepository.list_by_user_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:OrderRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:PaymentRepository.list_by_user_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:PaymentRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:PointAccountRepository.get_by_user_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:PointAccountRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:PointTransactionRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:RankRepository.list_by_user_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:RankRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:UserGroupRepository.list_by_owner_user_id": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:UserGroupRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:UserRepository.model_class": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/repositories.py:from:collections.abc:Iterable": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED:src/point_integrate_system/services.py:AuthService.authenticate": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:AuthService.register_user": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:AuthService.reset_for_tests": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:AuthService.seed_dev_user": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:DomainService.health": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:.errors:PermissionError": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:.validators:normalize_email": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:copy:deepcopy": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    },
+    "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:threading:RLock": {
+      "count": 1,
+      "first_attempt": 1,
+      "last_attempt": 1,
+      "phase": "artifact_guard:T04",
+      "last_excerpt": "e.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_name` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED src/point_integrate_system/validators.py: function `validate_password_confirmation` signature would change / action=Keep the existing signature, add a compatible wrapper, or explicitly allow the signature change.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.add_all` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ARTIFACT-PUBLIC-METHOD-REMOVED src/point_integrate_system/repositories.py: public method `BaseRepository.commit` would be removed / action=Preserve the method or add an explicit allowed_destructive_changes entry.\n- ... 55 more findings"
+    }
+  },
+  "history": [
+    {
+      "attempt": 1,
+      "phase": "artifact_guard:T04",
+      "signatures": [
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:normalize_email",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_email",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_name",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_password",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-FUNCTION-SIGNATURE-CHANGED:src/point_integrate_system/validators.py:validate_password_confirmation",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.add_all",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.commit",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED:src/point_integrate_system/repositories.py:BaseRepository.create",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.get_by_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED:src/point_integrate_system/repositories.py:BaseRepository.save",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:BaseRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:CouponRepository.list_by_user_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:CouponRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:NotificationRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:OrderRepository.list_by_user_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:OrderRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:PaymentRepository.list_by_user_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:PaymentRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:PointAccountRepository.get_by_user_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:PointAccountRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:PointTransactionRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:RankRepository.list_by_user_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:RankRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/repositories.py:UserGroupRepository.list_by_owner_user_id",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:UserGroupRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-CLASS-ATTRIBUTE-REMOVED:src/point_integrate_system/repositories.py:UserRepository.model_class",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/repositories.py:from:collections.abc:Iterable",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-SIGNATURE-CHANGED:src/point_integrate_system/services.py:AuthService.authenticate",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:AuthService.register_user",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:AuthService.reset_for_tests",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:AuthService.seed_dev_user",
+        "artifact_write_guard_failure:ARTIFACT-PUBLIC-METHOD-REMOVED:src/point_integrate_system/services.py:DomainService.health",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:.errors:PermissionError",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:.validators:normalize_email",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:copy:deepcopy",
+        "artifact_write_guard_failure:ARTIFACT-IMPORT-CONTRACT-REMOVED:src/point_integrate_system/services.py:from:threading:RLock"
+      ],
+      "repeated": []
+    }
+  ],
+  "repeated": [],
+  "max_repeat_count": 1
+}

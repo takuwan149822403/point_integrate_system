@@ -3,7 +3,7 @@
   "schema_version": "generated_contract_safety.v39",
   "development_task_id": "T03",
   "package": "point_integrate_system",
-  "python_overlay_file_count": 8,
+  "python_overlay_file_count": 0,
   "blocking_count": 0,
   "warning_count": 0,
   "findings": [],
@@ -14,10 +14,26 @@
   "dependency_repair_recommended": false,
   "workspace_overlay": {
     "enabled": true,
-    "workspace_python_file_count": 5,
-    "generated_overlay_python_file_count": 8,
+    "workspace_python_file_count": 12,
+    "generated_overlay_python_file_count": 0,
     "virtual_package_python_file_count": 12,
-    "generated_overlay_files": [
+    "generated_overlay_files": [],
+    "scope_source_file_count": 16,
+    "scope_reference_file_count": 20
+  },
+  "contract_safety_scope": {
+    "enabled": true,
+    "classification": "auth_behavior_assertion_contract_failure",
+    "subtask_id": "task_test_repair",
+    "source_files": [
+      "src/*/app.py",
+      "src/*/auth.py",
+      "src/*/forms.py",
+      "src/*/routes.py",
+      "src/*/services.py",
+      "src/*/validators.py",
+      "src/*/views.py",
+      "src/point_integrate_system/app.py",
       "src/point_integrate_system/auth.py",
       "src/point_integrate_system/errors.py",
       "src/point_integrate_system/forms.py",
@@ -25,30 +41,16 @@
       "src/point_integrate_system/services.py",
       "src/point_integrate_system/validators.py",
       "src/point_integrate_system/views.py",
-      "tests/run_001/test_auth.py"
-    ],
-    "scope_source_file_count": 12,
-    "scope_reference_file_count": 12
-  },
-  "contract_safety_scope": {
-    "enabled": false,
-    "classification": "",
-    "subtask_id": "",
-    "source_files": [
-      "src/point_integrate_system/__init__.py",
-      "src/point_integrate_system/app.py",
-      "src/point_integrate_system/auth.py",
-      "src/point_integrate_system/config.py",
-      "src/point_integrate_system/errors.py",
-      "src/point_integrate_system/forms.py",
-      "src/point_integrate_system/models.py",
-      "src/point_integrate_system/repositories.py",
-      "src/point_integrate_system/routes.py",
-      "src/point_integrate_system/services.py",
-      "src/point_integrate_system/validators.py",
-      "src/point_integrate_system/views.py"
+      "tests/run_XXX/test_auth.py"
     ],
     "reference_files": [
+      "src/*/app.py",
+      "src/*/auth.py",
+      "src/*/forms.py",
+      "src/*/routes.py",
+      "src/*/services.py",
+      "src/*/validators.py",
+      "src/*/views.py",
       "src/point_integrate_system/__init__.py",
       "src/point_integrate_system/app.py",
       "src/point_integrate_system/auth.py",
@@ -60,65 +62,16 @@
       "src/point_integrate_system/routes.py",
       "src/point_integrate_system/services.py",
       "src/point_integrate_system/validators.py",
-      "src/point_integrate_system/views.py"
+      "src/point_integrate_system/views.py",
+      "tests/run_XXX/test_auth.py"
     ],
-    "required_exports": {
-      "src/point_integrate_system/config.py": [
-        "Config",
-        "DevelopmentConfig",
-        "ProductionConfig",
-        "TestingConfig",
-        "config_by_name",
-        "get_config"
-      ],
-      "src/point_integrate_system/errors.py": [
-        "AppError",
-        "AuthError",
-        "ConflictError",
-        "DomainServiceError",
-        "LoginError",
-        "PermissionError",
-        "PersistenceError",
-        "RegistrationError"
-      ],
-      "src/point_integrate_system/app.py": [
-        "create_app"
-      ],
-      "src/point_integrate_system/services.py": [
-        "AuthService",
-        "DomainService"
-      ],
-      "src/point_integrate_system/models.py": [
-        "Coupon",
-        "Notification",
-        "Order",
-        "Payment",
-        "PointAccount",
-        "PointTransaction",
-        "Rank",
-        "User",
-        "UserGroup",
-        "db"
-      ],
-      "src/point_integrate_system/repositories.py": [
-        "CouponRepository",
-        "NotificationRepository",
-        "OrderRepository",
-        "PaymentRepository",
-        "PointAccountRepository",
-        "PointTransactionRepository",
-        "RankRepository",
-        "RepositoryError",
-        "UserGroupRepository",
-        "UserRepository"
-      ]
-    },
+    "required_exports": {},
     "planned_later_exports": {},
-    "enforce_plan_exports": true,
-    "enforce_model_kwargs": true,
-    "enforce_dependency_direction": true,
+    "enforce_plan_exports": false,
+    "enforce_model_kwargs": false,
+    "enforce_dependency_direction": false,
     "enforce_persistence_contract": true,
-    "reason": "full_package_contract_safety"
+    "reason": "task_test_repair_focused_contract_safety_scope"
   },
   "flask_sqlalchemy_contract_checked": false,
   "route_service_contract_checked": false

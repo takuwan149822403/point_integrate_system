@@ -1,0 +1,750 @@
+....FFF.FF...                                                            [100%]
+=================================== FAILURES ===================================
+__________________ test_invalid_login_returns_401_error_page ___________________
+
+    @auth_bp.route("/login", methods=["GET", "POST"])
+    def login() -> Any:
+        """ログイン画面とログイン処理。"""
+    
+        if request.method == "GET":
+            if current_user() is not None:
+                return redirect(url_for("auth.menu"))
+            return render_template("auth.html")
+    
+        try:
+            form = LoginForm.from_mapping(request.form)
+>           user = auth_service.authenticate(form.email, form.password)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/point_integrate_system/routes.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <point_integrate_system.services.AuthService object at 0x7fb78989a290>
+email = 'dev.user@example.com', password = 'wrong-password'
+
+    def authenticate(self, email: str, password: str) -> dict[str, Any]:
+        """メールアドレスとパスワードでログイン認証する。"""
+    
+        clean_email = validate_email(email)
+        if not password:
+            raise LoginError("メールアドレスまたはパスワードが正しくありません。")
+        with self._lock:
+            user = self._users_by_email.get(clean_email)
+            if user is None or not check_password_hash(user["password_hash"], password):
+>               raise LoginError("メールアドレスまたはパスワードが正しくありません。")
+E               point_integrate_system.errors.LoginError: メールアドレスまたはパスワードが正しくありません。
+
+src/point_integrate_system/services.py:96: LoginError
+
+During handling of the above exception, another exception occurred:
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_invalid_login_returns_401_error_page(client):
+        """試験区分: 異常系
+        確認項目: 不正なログインはフォーム200再表示ではなく401エラー画面になる。
+        """
+    
+>       response = client.post(
+            "/login",
+            data={"email": "dev.user@example.com", "password": "wrong-password"},
+        )
+
+tests/run_001/test_auth.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/testing.py:235: in open
+    response = super().open(
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:100: in login
+    return render_error(exc.status_code, exc.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:23: in render_error
+    return render_template("error.html", status_code=status_code, message=message), status_code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:151: in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:132: in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:1295: in render
+    self.environment.handle_exception()
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:942: in handle_exception
+    raise rewrite_traceback_stack(source=source)
+src/point_integrate_system/templates/error.html:1: in top-level template code
+    {% extends "base.html" %}
+src/point_integrate_system/templates/base.html:34: in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/templates/error.html:12: in block 'content'
+    <a class="button button-primary" href="{{ url_for('auth.login') if 'auth.login' in current_app.view_functions else '/login' }}">ログイン画面へ</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <flask.templating.Environment object at 0x7fb7895f59d0>, obj = Undefined
+attribute = 'view_functions'
+
+    def getattr(self, obj: t.Any, attribute: str) -> t.Any:
+        """Get an item or attribute of an object but prefer the attribute.
+        Unlike :meth:`getitem` the attribute *must* be a string.
+        """
+        try:
+>           return getattr(obj, attribute)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+E           jinja2.exceptions.UndefinedError: 'current_app' is undefined
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError
+_________________ test_invalid_register_returns_422_error_page _________________
+
+    @auth_bp.route("/register", methods=["GET", "POST"])
+    def register() -> Any:
+        """ユーザー登録画面と登録処理。"""
+    
+        if request.method == "GET":
+            if current_user() is not None:
+                return redirect(url_for("auth.menu"))
+            return render_template("register.html")
+    
+        try:
+>           form = RegistrationForm.from_mapping(request.form)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/point_integrate_system/routes.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/point_integrate_system/forms.py:49: in from_mapping
+    name = validate_name(values.get("name"))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+value = ''
+
+    def validate_name(value: str | None) -> str:
+        """表示名を検証する。"""
+    
+        name = (value or "").strip()
+        if not name:
+>           raise ValidationError("名前を入力してください。")
+E           point_integrate_system.errors.ValidationError: 名前を入力してください。
+
+src/point_integrate_system/validators.py:35: ValidationError
+
+During handling of the above exception, another exception occurred:
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_invalid_register_returns_422_error_page(client):
+        """試験区分: 異常系
+        確認項目: 登録入力不備は422エラー画面になる。
+        """
+    
+>       response = client.post(
+            "/register",
+            data={
+                "name": "",
+                "email": "bad-email",
+                "password": "short",
+                "confirm_password": "different",
+            },
+        )
+
+tests/run_001/test_auth.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/testing.py:235: in open
+    response = super().open(
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:123: in register
+    return render_error(exc.status_code, exc.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:23: in render_error
+    return render_template("error.html", status_code=status_code, message=message), status_code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:151: in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:132: in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:1295: in render
+    self.environment.handle_exception()
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:942: in handle_exception
+    raise rewrite_traceback_stack(source=source)
+src/point_integrate_system/templates/error.html:1: in top-level template code
+    {% extends "base.html" %}
+src/point_integrate_system/templates/base.html:34: in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/templates/error.html:12: in block 'content'
+    <a class="button button-primary" href="{{ url_for('auth.login') if 'auth.login' in current_app.view_functions else '/login' }}">ログイン画面へ</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <flask.templating.Environment object at 0x7fb789833dd0>, obj = Undefined
+attribute = 'view_functions'
+
+    def getattr(self, obj: t.Any, attribute: str) -> t.Any:
+        """Get an item or attribute of an object but prefer the attribute.
+        Unlike :meth:`getitem` the attribute *must* be a string.
+        """
+        try:
+>           return getattr(obj, attribute)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+E           jinja2.exceptions.UndefinedError: 'current_app' is undefined
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError
+________________ test_duplicate_register_returns_409_error_page ________________
+
+    @auth_bp.route("/register", methods=["GET", "POST"])
+    def register() -> Any:
+        """ユーザー登録画面と登録処理。"""
+    
+        if request.method == "GET":
+            if current_user() is not None:
+                return redirect(url_for("auth.menu"))
+            return render_template("register.html")
+    
+        try:
+            form = RegistrationForm.from_mapping(request.form)
+>           user = auth_service.register_user(
+                name=form.name,
+                email=form.email,
+                password=form.password,
+                confirm_password=form.confirm_password,
+            )
+
+src/point_integrate_system/routes.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <point_integrate_system.services.AuthService object at 0x7fb78989a290>
+name = '重複ユーザー', email = 'duplicate@example.com', password = 'Password123!'
+confirm_password = 'Password123!'
+
+    def register_user(self, name: str, email: str, password: str, confirm_password: str | None = None) -> dict[str, Any]:
+        """ユーザーを登録して公開可能なユーザー辞書を返す。"""
+    
+        clean_name = validate_name(name)
+        clean_email = validate_email(email)
+        clean_password = validate_password(password)
+        if confirm_password is not None and clean_password != confirm_password:
+            raise RegistrationError("確認用パスワードが一致しません。")
+    
+        with self._lock:
+            if clean_email in self._users_by_email:
+>               raise ConflictError("このメールアドレスは既に登録されています。")
+E               point_integrate_system.errors.ConflictError: このメールアドレスは既に登録されています。
+
+src/point_integrate_system/services.py:74: ConflictError
+
+During handling of the above exception, another exception occurred:
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_duplicate_register_returns_409_error_page(client):
+        """試験区分: 異常系
+        確認項目: 登録済みメールアドレスの再登録は409エラー画面になる。
+        """
+    
+        data = {
+            "name": "重複ユーザー",
+            "email": "duplicate@example.com",
+            "password": "Password123!",
+            "confirm_password": "Password123!",
+        }
+        first = client.post("/register", data=data)
+        assert first.status_code == 302
+        client.get("/logout")
+    
+>       second = client.post("/register", data=data)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/run_001/test_auth.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1167: in post
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/testing.py:235: in open
+    response = super().open(
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:123: in register
+    return render_error(exc.status_code, exc.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:23: in render_error
+    return render_template("error.html", status_code=status_code, message=message), status_code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:151: in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:132: in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:1295: in render
+    self.environment.handle_exception()
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:942: in handle_exception
+    raise rewrite_traceback_stack(source=source)
+src/point_integrate_system/templates/error.html:1: in top-level template code
+    {% extends "base.html" %}
+src/point_integrate_system/templates/base.html:34: in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/templates/error.html:12: in block 'content'
+    <a class="button button-primary" href="{{ url_for('auth.login') if 'auth.login' in current_app.view_functions else '/login' }}">ログイン画面へ</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <flask.templating.Environment object at 0x7fb7894c6d10>, obj = Undefined
+attribute = 'view_functions'
+
+    def getattr(self, obj: t.Any, attribute: str) -> t.Any:
+        """Get an item or attribute of an object but prefer the attribute.
+        Unlike :meth:`getitem` the attribute *must* be a string.
+        """
+        try:
+>           return getattr(obj, attribute)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+E           jinja2.exceptions.UndefinedError: 'current_app' is undefined
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError
+_________________ test_public_password_reset_and_error_routes __________________
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_public_password_reset_and_error_routes(client):
+        """試験区分: 正常系
+        確認項目: パスワード再設定関連と明示エラー画面が表示できる。
+        """
+    
+        reset_request = client.get("/password-reset/request")
+        assert reset_request.status_code == 200
+    
+        reset_token = client.get("/password-reset/sample-token")
+        assert reset_token.status_code == 200
+    
+>       error_response = client.get("/error?status=403")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/run_001/test_auth.py:203: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1162: in get
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/testing.py:235: in open
+    response = super().open(
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:917: in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:902: in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:226: in error_page
+    return render_error(status_code, "エラー画面です。")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:23: in render_error
+    return render_template("error.html", status_code=status_code, message=message), status_code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:151: in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:132: in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:1295: in render
+    self.environment.handle_exception()
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:942: in handle_exception
+    raise rewrite_traceback_stack(source=source)
+src/point_integrate_system/templates/error.html:1: in top-level template code
+    {% extends "base.html" %}
+src/point_integrate_system/templates/base.html:34: in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/templates/error.html:12: in block 'content'
+    <a class="button button-primary" href="{{ url_for('auth.login') if 'auth.login' in current_app.view_functions else '/login' }}">ログイン画面へ</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <flask.templating.Environment object at 0x7fb789580c90>, obj = Undefined
+attribute = 'view_functions'
+
+    def getattr(self, obj: t.Any, attribute: str) -> t.Any:
+        """Get an item or attribute of an object but prefer the attribute.
+        Unlike :meth:`getitem` the attribute *must* be a string.
+        """
+        try:
+>           return getattr(obj, attribute)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+E           jinja2.exceptions.UndefinedError: 'current_app' is undefined
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError
+___________________________ test_404_route_behavior ____________________________
+
+self = <Flask 'point_integrate_system.app'>
+
+    def full_dispatch_request(self) -> Response:
+        """Dispatches the request and on top of that performs request
+        pre and postprocessing as well as HTTP exception catching and
+        error handling.
+    
+        .. versionadded:: 0.7
+        """
+        self._got_first_request = True
+    
+        try:
+            request_started.send(self, _async_wrapper=self.ensure_sync)
+            rv = self.preprocess_request()
+            if rv is None:
+>               rv = self.dispatch_request()
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:917: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:891: in dispatch_request
+    self.raise_routing_exception(req)
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:500: in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/ctx.py:362: in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <werkzeug.routing.map.MapAdapter object at 0x7fb789261a10>
+path_info = '/does-not-exist', method = 'GET', return_rule = True
+query_args = {}, websocket = False
+
+    def match(
+        self,
+        path_info: str | None = None,
+        method: str | None = None,
+        return_rule: bool = False,
+        query_args: t.Mapping[str, t.Any] | str | None = None,
+        websocket: bool | None = None,
+    ) -> tuple[t.Any | Rule, t.Mapping[str, t.Any]]:
+        """The usage is simple: you just pass the match method the current
+        path info as well as the method (which defaults to `GET`).  The
+        following things can then happen:
+    
+        - you receive a `NotFound` exception that indicates that no URL is
+          matching.  A `NotFound` exception is also a WSGI application you
+          can call to get a default page not found page (happens to be the
+          same object as `werkzeug.exceptions.NotFound`)
+    
+        - you receive a `MethodNotAllowed` exception that indicates that there
+          is a match for this URL but not for the current request method.
+          This is useful for RESTful applications.
+    
+        - you receive a `RequestRedirect` exception with a `new_url`
+          attribute.  This exception is used to notify you about a request
+          Werkzeug requests from your WSGI application.  This is for example the
+          case if you request ``/foo`` although the correct URL is ``/foo/``
+          You can use the `RequestRedirect` instance as response-like object
+          similar to all other subclasses of `HTTPException`.
+    
+        - you receive a ``WebsocketMismatch`` exception if the only
+          match is a WebSocket rule but the bind is an HTTP request, or
+          if the match is an HTTP rule but the bind is a WebSocket
+          request.
+    
+        - you get a tuple in the form ``(endpoint, arguments)`` if there is
+          a match (unless `return_rule` is True, in which case you get a tuple
+          in the form ``(rule, arguments)``)
+    
+        If the path info is not passed to the match method the default path
+        info of the map is used (defaults to the root URL if not defined
+        explicitly).
+    
+        All of the exceptions raised are subclasses of `HTTPException` so they
+        can be used as WSGI responses. They will all render generic error or
+        redirect pages.
+    
+        Here is a small example for matching:
+    
+        >>> m = Map([
+        ...     Rule('/', endpoint='index'),
+        ...     Rule('/downloads/', endpoint='downloads/index'),
+        ...     Rule('/downloads/<int:id>', endpoint='downloads/show')
+        ... ])
+        >>> urls = m.bind("example.com", "/")
+        >>> urls.match("/", "GET")
+        ('index', {})
+        >>> urls.match("/downloads/42")
+        ('downloads/show', {'id': 42})
+    
+        And here is what happens on redirect and missing URLs:
+    
+        >>> urls.match("/downloads")
+        Traceback (most recent call last):
+          ...
+        RequestRedirect: http://example.com/downloads/
+        >>> urls.match("/missing")
+        Traceback (most recent call last):
+          ...
+        NotFound: 404 Not Found
+    
+        :param path_info: the path info to use for matching.  Overrides the
+                          path info specified on binding.
+        :param method: the HTTP method used for matching.  Overrides the
+                       method specified on binding.
+        :param return_rule: return the rule that matched instead of just the
+                            endpoint (defaults to `False`).
+        :param query_args: optional query arguments that are used for
+                           automatic redirects as string or dictionary.  It's
+                           currently not possible to use the query arguments
+                           for URL matching.
+        :param websocket: Match WebSocket instead of HTTP requests. A
+            websocket request has a ``ws`` or ``wss``
+            :attr:`url_scheme`. This overrides that detection.
+    
+        .. versionadded:: 1.0
+            Added ``websocket``.
+    
+        .. versionchanged:: 0.8
+            ``query_args`` can be a string.
+    
+        .. versionadded:: 0.7
+            Added ``query_args``.
+    
+        .. versionadded:: 0.6
+            Added ``return_rule``.
+        """
+        self.map.update()
+        if path_info is None:
+            path_info = self.path_info
+        if query_args is None:
+            query_args = self.query_args or {}
+        method = (method or self.default_method).upper()
+    
+        if websocket is None:
+            websocket = self.websocket
+    
+        domain_part = self.server_name
+    
+        if not self.map.host_matching and self.subdomain is not None:
+            domain_part = self.subdomain
+    
+        path_part = f"/{path_info.lstrip('/')}" if path_info else ""
+    
+        try:
+            result = self.map._matcher.match(domain_part, path_part, method, websocket)
+        except RequestPath as e:
+            # safe = https://url.spec.whatwg.org/#url-path-segment-string
+            new_path = quote(e.path_info, safe="!$&'()*+,/:;=@")
+            raise RequestRedirect(
+                self.make_redirect_url(new_path, query_args)
+            ) from None
+        except RequestAliasRedirect as e:
+            raise RequestRedirect(
+                self.make_alias_redirect_url(
+                    f"{domain_part}|{path_part}",
+                    e.endpoint,
+                    e.matched_values,
+                    method,
+                    query_args,
+                )
+            ) from None
+        except NoMatch as e:
+            if e.have_match_for:
+                raise MethodNotAllowed(valid_methods=list(e.have_match_for)) from None
+    
+            if e.websocket_mismatch:
+                raise WebsocketMismatch() from None
+    
+>           raise NotFound() from None
+E           werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/routing/map.py:629: NotFound
+
+During handling of the above exception, another exception occurred:
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_404_route_behavior(client):
+        """試験区分: 異常系
+        確認項目: 未定義URLは404エラー画面で処理される。
+        """
+    
+>       response = client.get("/does-not-exist")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/run_001/test_auth.py:213: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1162: in get
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/testing.py:235: in open
+    response = super().open(
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1116: in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:988: in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/werkzeug/test.py:1264: in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1536: in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1514: in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:1511: in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:919: in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:802: in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/app.py:777: in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:75: in handle_not_found
+    return render_error(404, "ページが見つかりません。")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/routes.py:23: in render_error
+    return render_template("error.html", status_code=status_code, message=message), status_code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:151: in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/flask/templating.py:132: in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:1295: in render
+    self.environment.handle_exception()
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:942: in handle_exception
+    raise rewrite_traceback_stack(source=source)
+src/point_integrate_system/templates/error.html:1: in top-level template code
+    {% extends "base.html" %}
+src/point_integrate_system/templates/base.html:34: in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/point_integrate_system/templates/error.html:12: in block 'content'
+    <a class="button button-primary" href="{{ url_for('auth.login') if 'auth.login' in current_app.view_functions else '/login' }}">ログイン画面へ</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <flask.templating.Environment object at 0x7fb789262c50>, obj = Undefined
+attribute = 'view_functions'
+
+    def getattr(self, obj: t.Any, attribute: str) -> t.Any:
+        """Get an item or attribute of an object but prefer the attribute.
+        Unlike :meth:`getitem` the attribute *must* be a string.
+        """
+        try:
+>           return getattr(obj, attribute)
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+E           jinja2.exceptions.UndefinedError: 'current_app' is undefined
+
+/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/jinja2/environment.py:490: UndefinedError
+- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-4.xml -
+=========================== short test summary info ============================
+FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined
+FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined
+FAILED tests/run_001/test_auth.py::test_duplicate_register_returns_409_error_page - jinja2.exceptions.UndefinedError: 'current_app' is undefined
+FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - jinja2.exceptions.UndefinedError: 'current_app' is undefined
+FAILED tests/run_001/test_auth.py::test_404_route_behavior - jinja2.exceptions.UndefinedError: 'current_app' is undefined

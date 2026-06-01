@@ -1,0 +1,39 @@
+{
+  "status": "success",
+  "schema_version": "artifact_write_guard.v45",
+  "enabled": true,
+  "subtask_id": "",
+  "classification": "flask_behavior_contract_failure",
+  "checked_files": [
+    "src/point_integrate_system/templates/error.html"
+  ],
+  "allowed_writes": [
+    "src/point_integrate_system/app.py",
+    "src/point_integrate_system/routes.py",
+    "src/point_integrate_system/services.py",
+    "src/point_integrate_system/validators.py",
+    "src/point_integrate_system/forms.py",
+    "src/point_integrate_system/errors.py",
+    "src/point_integrate_system/templates/base.html",
+    "src/point_integrate_system/templates/auth.html",
+    "src/point_integrate_system/templates/register.html",
+    "src/point_integrate_system/templates/menu.html",
+    "src/point_integrate_system/templates/error.html",
+    "src/point_integrate_system/static/css/style.css",
+    "src/point_integrate_system/static/js/main.js",
+    "tests/run_XXX/test_auth.py",
+    "src/*/app.py",
+    "src/*/routes.py",
+    "src/*/views.py",
+    "src/*/auth.py",
+    "src/*/services.py",
+    "src/*/validators.py",
+    "src/*/forms.py",
+    "src/*/templates/*.html",
+    "src/*/static/css/*.css",
+    "src/*/static/js/*.js"
+  ],
+  "read_only_files": [],
+  "protected_exports": {},
+  "findings": []
+}

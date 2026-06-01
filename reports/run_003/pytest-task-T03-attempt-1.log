@@ -1,0 +1,75 @@
+....FF..F....                                                            [100%]
+=================================== FAILURES ===================================
+__________________ test_invalid_login_returns_401_error_page ___________________
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_invalid_login_returns_401_error_page(client):
+        """試験区分: 異常系
+        確認項目: 不正なログインはフォーム200再表示ではなく401エラー画面になる。
+        """
+    
+        response = client.post(
+            "/login",
+            data={"email": "dev.user@example.com", "password": "wrong-password"},
+        )
+        html = response.get_data(as_text=True)
+        assert response.status_code == 401
+>       assert "エラーが発生しました" in html
+E       assert 'エラーが発生しました' in '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>'
+
+tests/run_001/test_auth.py:128: AssertionError
+_________________ test_invalid_register_returns_422_error_page _________________
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_invalid_register_returns_422_error_page(client):
+        """試験区分: 異常系
+        確認項目: 登録入力不備は422エラー画面になる。
+        """
+    
+        response = client.post(
+            "/register",
+            data={
+                "name": "",
+                "email": "bad-email",
+                "password": "short",
+                "confirm_password": "different",
+            },
+        )
+        html = response.get_data(as_text=True)
+        assert response.status_code == 422
+>       assert "エラーが発生しました" in html
+E       assert 'エラーが発生しました' in '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>'
+
+tests/run_001/test_auth.py:148: AssertionError
+_________________ test_public_password_reset_and_error_routes __________________
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_public_password_reset_and_error_routes(client):
+        """試験区分: 正常系
+        確認項目: パスワード再設定関連と明示エラー画面が表示できる。
+        """
+    
+        reset_request = client.get("/password-reset/request")
+        assert reset_request.status_code == 200
+    
+        reset_token = client.get("/password-reset/sample-token")
+        assert reset_token.status_code == 200
+    
+        error_response = client.get("/error?status=403")
+        assert error_response.status_code == 403
+>       assert "HTTP 403" in error_response.get_data(as_text=True)
+E       assert 'HTTP 403' in '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>'
+E        +  where '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>' = get_data(as_text=True)
+E        +    where get_data = <WrapperTestResponse 1247 bytes [403 FORBIDDEN]>.get_data
+
+tests/run_001/test_auth.py:205: AssertionError
+- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-1.xml -
+=========================== short test summary info ============================
+FAILED tests/run_001/test_auth.py::test_invalid_login_returns_401_error_page - assert 'エラーが発生しました' in '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>'
+FAILED tests/run_001/test_auth.py::test_invalid_register_returns_422_error_page - assert 'エラーが発生しました' in '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>'
+FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>'
+ +  where '<!doctype html>\n<html lang="ja">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-wi...https://code.jquery.com/jquery-3.7.1.min.js"></script>\n  <script src="/static/js/main.js"></script>\n</body>\n</html>' = get_data(as_text=True)
+ +    where get_data = <WrapperTestResponse 1247 bytes [403 FORBIDDEN]>.get_data

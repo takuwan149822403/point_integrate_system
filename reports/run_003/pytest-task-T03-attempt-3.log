@@ -1,0 +1,30 @@
+........F....                                                            [100%]
+=================================== FAILURES ===================================
+_________________ test_public_password_reset_and_error_routes __________________
+
+client = <FlaskClient <Flask 'point_integrate_system.app'>>
+
+    def test_public_password_reset_and_error_routes(client):
+        """試験区分: 正常系
+        確認項目: パスワード再設定関連と明示エラー画面が表示できる。
+        """
+    
+        reset_request = client.get("/password-reset/request")
+        assert reset_request.status_code == 200
+    
+        reset_token = client.get("/password-reset/sample-token")
+        assert reset_token.status_code == 200
+    
+        error_response = client.get("/error?status=403")
+        assert error_response.status_code == 403
+>       assert "HTTP 403" in error_response.get_data(as_text=True)
+E       assert 'HTTP 403' in '<!doctype html>\n<html lang="ja">\n<head>\n    <meta charset="utf-8">\n    <meta name="viewport" content="width=devic...n            </nav>\n        </section>\n    </main>\n    <script src="/static/js/main.js"></script>\n</body>\n</html>'
+E        +  where '<!doctype html>\n<html lang="ja">\n<head>\n    <meta charset="utf-8">\n    <meta name="viewport" content="width=devic...n            </nav>\n        </section>\n    </main>\n    <script src="/static/js/main.js"></script>\n</body>\n</html>' = get_data(as_text=True)
+E        +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data
+
+tests/run_001/test_auth.py:205: AssertionError
+- generated xml file: /home/runner/work/AIDeveloper/AIDeveloper/workspace/logs/pytest-task-T03-attempt-3.xml -
+=========================== short test summary info ============================
+FAILED tests/run_001/test_auth.py::test_public_password_reset_and_error_routes - assert 'HTTP 403' in '<!doctype html>\n<html lang="ja">\n<head>\n    <meta charset="utf-8">\n    <meta name="viewport" content="width=devic...n            </nav>\n        </section>\n    </main>\n    <script src="/static/js/main.js"></script>\n</body>\n</html>'
+ +  where '<!doctype html>\n<html lang="ja">\n<head>\n    <meta charset="utf-8">\n    <meta name="viewport" content="width=devic...n            </nav>\n        </section>\n    </main>\n    <script src="/static/js/main.js"></script>\n</body>\n</html>' = get_data(as_text=True)
+ +    where get_data = <WrapperTestResponse 977 bytes [403 FORBIDDEN]>.get_data

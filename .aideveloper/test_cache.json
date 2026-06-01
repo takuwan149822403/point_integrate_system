@@ -15,5 +15,13 @@
       "tests/run_001/test_models.py",
       "tests/run_001/test_repositories.py"
     ]
+  },
+  "task::T03::tests/run_001/test_auth.py": {
+    "status": "pass",
+    "source_hash": "b388bf2cf5bc6db79f2408302bcaba956f21efbb76cc2310e88253ce6edd4c85",
+    "updated_at": "2026-06-01T11:17:06.267162+00:00",
+    "test_files": [
+      "tests/run_001/test_auth.py"
+    ]
   }
 }
